@@ -47,7 +47,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   Container(
                     alignment: Alignment.center,
                     child: Image(
-                      image: AssetImage(Constants.taxiIcon),
+                      image: AssetImage(taxiIcon),
                       width: 80,
                       height: 80,
                     ),

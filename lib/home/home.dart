@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: context.dynamicWidth(0.015)),
-                            child: SvgPicture.asset(Constants.routeIcon),
+                            child: SvgPicture.asset(routeIcon),
                           ),
                         ),
                         Flexible(

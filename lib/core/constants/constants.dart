@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 
-class Constants{
-  static final String imagesPath = "assets/images/";
-  static final String taxiIcon = imagesPath + "taxi_icon.png";
-  static final String routeIcon = imagesPath + "route_icon.svg";
-  static final String driverImage = imagesPath + "driver_image.png";
-  static final String facebookLoginImage = imagesPath + "facebook.png";
-  static final String googleLoginImage = imagesPath + "google.png";
+const double otpCodeDurationSecond = 30.0;
 
-  static final String splashText = "Safety and comforts is our concerns";
+const List<String> favoriteCountiesCodeTexts = ["TR", "AZ", "GB", "US", "DE"];
 
-  static final Color loginBackgroundColor = Color(0xfff8f8f8);
-}
+// String title, subtitles or texts
+const String seconds = " Seconds";
+const String getOtpTitle = "OTP Code";
+const String initialCountryCode = "+90";
+const String getWarningTitle = "Warning";
+const String initialCountryCodeText = "TR";
+const String phoneNumberHint = "5XXXXXXXXX";
+const String splashText = "Safety and comforts is our concerns";
+const String loginInstructionText = "Enter your phone number to Login";
+const String phoneVerificationFailedError = "Please enter valid phone number with minimum 10 characters";
+
+//String images paths
+const String imagesPath = "assets/images/";
+const String taxiIcon = imagesPath + "taxi_icon.png";
+const String routeIcon = imagesPath + "route_icon.svg";
+const String googleLoginImage = imagesPath + "google.png";
+const String driverImage = imagesPath + "driver_image.png";
+const String facebookLoginImage = imagesPath + "facebook.png";
+
+const Color loginBackgroundColor = Color(0xfff8f8f8);

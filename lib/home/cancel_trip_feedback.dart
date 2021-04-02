@@ -73,7 +73,7 @@ class _CancelTripFeedbackState extends State<CancelTripFeedback> {
                           height: 100,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                            image: AssetImage(Constants.taxiIcon),
+                            image: AssetImage(taxiIcon),
                           )),
                         ),
                         SizedBox(

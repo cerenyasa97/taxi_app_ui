@@ -59,7 +59,7 @@ class _WriteComplaintState extends State<WriteComplaint> {
                             height: 100,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(Constants.taxiIcon),
+                              image: AssetImage(taxiIcon),
                             )),
                           ),
                           Align(

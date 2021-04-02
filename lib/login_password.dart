@@ -49,7 +49,7 @@ class _LoginPasswordState extends State<LoginPassword> {
                   Container(
                     alignment: Alignment.center,
                     child: Image(
-                      image: AssetImage(Constants.taxiIcon),
+                      image: AssetImage(taxiIcon),
                       width: 80,
                       height: 80,
                     ),

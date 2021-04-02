@@ -167,7 +167,7 @@ class _NewsOffersState extends State<NewsOffers> {
                     margin: EdgeInsets.all(12),
                     height: 100,
                     width: 100,
-                    child: Image(image: AssetImage(Constants.taxiIcon)),
+                    child: Image(image: AssetImage(taxiIcon)),
                   ),
                   Column(
                     children: <Widget>[
