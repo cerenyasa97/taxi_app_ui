@@ -22,6 +22,10 @@ class ProjectTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final TextStyle errorStyle;
   final List<TextInputFormatter> textFormatter;
+  final AutovalidateMode autoValidateMode;
+  final TextAlign alignment;
+  final FocusNode focusNode;
+  final bool autofocus;
 
   const ProjectTextFormField(
       {Key key,
@@ -44,12 +48,18 @@ class ProjectTextFormField extends StatelessWidget {
       this.keyboardType,
       this.errorStyle,
       this.textFormatter,
-      this.onEditingComplete})
+      this.onEditingComplete,
+      this.autoValidateMode,
+      this.alignment,
+      this.focusNode,
+        this.autofocus
+      })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      focusNode: focusNode ?? null,
       keyboardType: keyboardType ?? TextInputType.text,
       style: Theme.of(context).textTheme.subtitle1,
       decoration: InputDecoration(
@@ -70,6 +80,9 @@ class ProjectTextFormField extends StatelessWidget {
       onEditingComplete: onEditingComplete,
       validator: validator,
       inputFormatters: textFormatter ?? [],
+      autovalidateMode: autoValidateMode ?? AutovalidateMode.always,
+      textAlign: alignment ?? TextAlign.start,
+      autofocus: autofocus ?? false,
     );
   }
 }

@@ -24,7 +24,7 @@ final ThemeData lightTheme = ThemeData(
   secondaryHeaderColor: Color(0xfffff8e1),
   textSelectionTheme: TextSelectionThemeData(
     selectionColor: Color(0xffffe082),
-    cursorColor: Color(0xff4285f4),
+    cursorColor: Color(0xffffbf00),
     selectionHandleColor: Color(0xffffd54f),
   ),
   backgroundColor: Color(0xffffe082),
@@ -338,13 +338,13 @@ final ThemeData lightTheme = ThemeData(
     EdgeInsets.only(top: 12.0, bottom: 12.0, left: 0.0, right: 0.0),
     isCollapsed: false,
     prefixStyle: TextStyle(
-      color: Color(0xdd000000),
+      color: Color(0xffffbf00),
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     suffixStyle: TextStyle(
-      color: Color(0xdd000000),
+      color: Color(0xffffbf00),
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,

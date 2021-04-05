@@ -9,8 +9,9 @@ class ProjectText extends StatelessWidget {
   final FontWeight weight;
   final String family;
   final TextStyle style;
+  final TextAlign align;
 
-  const ProjectText({Key key, @required this.text, this.textSize, this.color, this.weight, this.family, this.style}) : super(key: key);
+  const ProjectText({Key key, @required this.text, this.textSize, this.color, this.weight, this.family, this.style, this.align}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class ProjectText extends StatelessWidget {
         fontWeight: weight ?? FontWeight.normal,
         fontFamily: family ?? "Roboto",
       ),
+      textAlign: align ?? TextAlign.start,
     );
   }
 }

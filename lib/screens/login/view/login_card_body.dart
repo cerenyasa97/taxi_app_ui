@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:piton_taxi_app/widgets/error_alert_dialog.dart';
 import 'package:piton_taxi_app/core/constants/constants.dart';
@@ -20,9 +21,13 @@ class LoginCardBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ProjectText(
-          text: loginInstructionText,
-          style: Theme.of(context).textTheme.bodyText2,
+        Padding(
+          padding: context.mediumEdgeInsets,
+          child: ProjectText(
+            text: loginInstructionText,
+            style: Theme.of(context).textTheme.bodyText2,
+            align: TextAlign.center,
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,6 +68,7 @@ class LoginCardBody extends StatelessWidget {
     return showDialog(
         barrierDismissible: false,
         context: context,
-        builder: (context) => _validation ? OtpCodeDialog() : ErrorAlertDialog());
+        builder: (context) =>
+            _validation ? OtpCodeDialog() : ErrorAlertDialog());
   }
 }

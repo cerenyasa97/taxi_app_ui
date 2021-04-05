@@ -35,7 +35,7 @@ ThemeData darkTheme = ThemeData(
   secondaryHeaderColor: Color(0xff616161),
   textSelectionTheme: TextSelectionThemeData(
     selectionColor: Color(0xff64ffda),
-    cursorColor: Color(0xff4285f4),
+    cursorColor: Color(0xffffbf00),
     selectionHandleColor: Color(0xff1de9b6),),
   backgroundColor: Color(0xff616161),
   dialogBackgroundColor: Color(0xff424242),
