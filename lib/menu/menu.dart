@@ -11,12 +11,12 @@ import '../my_trips.dart';
 import '../profile.dart';
 import '../rate_card.dart';
 
-class Menu extends StatefulWidget {
+class OldMenu extends StatefulWidget {
   @override
-  _MenuState createState() => _MenuState();
+  _OldMenuState createState() => _OldMenuState();
 }
 
-class _MenuState extends State<Menu> {
+class _OldMenuState extends State<OldMenu> {
   List<MenuListItem> listMenuItem = [];
 
   @override
