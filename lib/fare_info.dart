@@ -4,7 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'home/dialog/payment_dialog.dart';
 import 'home/dialog/promo_code_dialog.dart';
 import 'home/trip_started.dart';
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/app/custom_text_style.dart';
 import 'utils/DottedLine.dart';
 
 class FareInfo extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/constants/custom_text_style.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/app/custom_text_style.dart';
 
 
 class PromoCodeDialog extends StatefulWidget {

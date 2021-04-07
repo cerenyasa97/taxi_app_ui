@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/app/custom_text_style.dart';
 
 class BookLaterDatePicker extends StatefulWidget {
   @override

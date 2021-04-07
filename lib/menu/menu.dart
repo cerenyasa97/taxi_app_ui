@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/home/payment_menu.dart';
 import 'package:piton_taxi_app/modal/menu_list_item.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 import 'package:piton_taxi_app/utils/menu_title.dart';
-
 import '../book_late_pick_date.dart';
 import '../emergency_contact.dart';
 import '../help_support.dart';
@@ -33,8 +32,6 @@ class _MenuState extends State<Menu> {
         createMenuItem(MenuTitle.MENU_MY_TRIPS, "images/menu/my_trips.png"));
     listMenuItem.add(
         createMenuItem(MenuTitle.MENU_RATE_CARD, "images/menu/rate_card.png"));
-    listMenuItem.add(createMenuItem(
-        MenuTitle.MENU_NEWS_OFFERS, "images/menu/news_offers.png"));
     listMenuItem.add(createMenuItem(MenuTitle.MENU_EMERGENCY_CONTACTS,
         "images/menu/emergency_contacts.png"));
     listMenuItem.add(createMenuItem(

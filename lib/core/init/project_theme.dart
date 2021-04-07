@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/constants/light_theme.dart';
-import 'package:piton_taxi_app/core/constants/dark_theme.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/theme/light_theme.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/theme/dark_theme.dart';
 
 class ProjectThemeData extends ChangeNotifier {
   ThemeData _themeData;

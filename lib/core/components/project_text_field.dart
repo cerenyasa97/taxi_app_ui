@@ -60,7 +60,7 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
       obscureText: widget.obsecureText ?? false,
       keyboardType: widget.keyboardType ?? TextInputType.text,
       controller: _controller,
-      style: Theme.of(context).textTheme.subtitle1,
+      style: Theme.of(context).textTheme.bodyText2,
       decoration: InputDecoration(
         border: widget.border,
         focusedBorder: widget.focusedBorder ?? InputBorder.none,

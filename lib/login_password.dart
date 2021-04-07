@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/home/home.dart';
-import 'package:piton_taxi_app/core/constants/custom_text_style.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 
-import 'core/constants/constants.dart';
+import 'core/constants/images/image_constants.dart';
 import 'forgot_password.dart';
 
 class LoginPassword extends StatefulWidget {
@@ -49,7 +49,7 @@ class _LoginPasswordState extends State<LoginPassword> {
                   Container(
                     alignment: Alignment.center,
                     child: Image(
-                      image: AssetImage(taxiIcon),
+                      image: AssetImage(ImageConstants.TAXI_ICON),
                       width: 80,
                       height: 80,
                     ),

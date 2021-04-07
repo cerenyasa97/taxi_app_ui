@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 
 class FacebookLogin extends StatelessWidget {
@@ -8,7 +8,7 @@ class FacebookLogin extends StatelessWidget {
     return Container(
       width: context.dynamicWidth(50/412),
       height: context.dynamicWidth(50/412),
-      child: Image.asset(facebookLoginImage, fit: BoxFit.fill,),
+      child: Image.asset(ImageConstants.FACEBOOK_LOGIN_IMAGE, fit: BoxFit.fill,),
     );
   }
 }

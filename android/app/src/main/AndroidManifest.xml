@@ -1,12 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.piton.piton_taxi_app">
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.settings.MANAGE_ALL_FILES_ACCESS_PERMISSION"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
     <application
         android:label="piton_taxi_app"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        >
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDfKz6MK_DT0jH07nDytHm5eUiP93zbCz0"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -39,6 +50,5 @@
        <meta-data
            android:name="flutterEmbedding"
            android:value="2" />
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAzs5h7rq8yitU2_2P1OeubHE13Xo7Lb3k"/>
     </application>
 </manifest>

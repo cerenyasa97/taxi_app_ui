@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
-
-import 'core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
+import 'core/constants/images/image_constants.dart';
 
 class NewsOffers extends StatefulWidget {
   @override
@@ -167,7 +166,7 @@ class _NewsOffersState extends State<NewsOffers> {
                     margin: EdgeInsets.all(12),
                     height: 100,
                     width: 100,
-                    child: Image(image: AssetImage(taxiIcon)),
+                    child: Image(image: AssetImage(ImageConstants.TAXI_ICON)),
                   ),
                   Column(
                     children: <Widget>[

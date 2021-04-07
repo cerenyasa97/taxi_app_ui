@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 
 class AddCard extends StatefulWidget {
   @override

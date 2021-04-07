@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/menu/menu.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: context.dynamicWidth(0.015)),
-                            child: SvgPicture.asset(routeIcon),
+                            child: SvgPicture.asset(ImageConstants.ROUTE_ICON),
                           ),
                         ),
                         Flexible(
@@ -167,7 +167,7 @@ class _HomeState extends State<Home> {
                                     elevation: MaterialStateProperty.all(0),
                                   ),
                                   child:                               Container(
-                                      width: double.infinity,
+                                      width: double.maxFinite,
                                       child: Text(
                                         _from ?? "Where from...",
                                         style: TextStyle(color: Colors.blueGrey),

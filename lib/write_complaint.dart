@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'core/constants/constants.dart';
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/images/image_constants.dart';
+import 'core/constants/app/custom_text_style.dart';
 
 class WriteComplaint extends StatefulWidget {
   @override
@@ -59,7 +59,7 @@ class _WriteComplaintState extends State<WriteComplaint> {
                             height: 100,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(taxiIcon),
+                              image: AssetImage(ImageConstants.TAXI_ICON),
                             )),
                           ),
                           Align(

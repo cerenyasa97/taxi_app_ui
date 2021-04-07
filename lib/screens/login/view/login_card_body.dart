@@ -1,7 +1,7 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:piton_taxi_app/widgets/error_alert_dialog.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'phone_number_widget.dart';
 import 'country_code_widget.dart';
@@ -12,7 +12,7 @@ import '../../../widgets/next_page.dart';
 
 // ignore: must_be_immutable
 class LoginCardBody extends StatelessWidget {
-  String _countryCode = initialCountryCode;
+  String _countryCode = TextConstants.INITIAL_COUNTRY_CODE;
   String _phoneNumber;
   bool _validation = false;
 
@@ -22,9 +22,9 @@ class LoginCardBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Padding(
-          padding: context.mediumEdgeInsets,
+          padding: context.mediumHorizontalEdgeInsets,
           child: ProjectText(
-            text: loginInstructionText,
+            text: TextConstants.LOGIN_INSTRUCTION_TEXT,
             style: Theme.of(context).textTheme.bodyText2,
             align: TextAlign.center,
           ),

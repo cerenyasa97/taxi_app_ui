@@ -1,7 +1,8 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/screens/login/view/otp_dialog_content.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/init/project_routes.dart';
 import 'package:piton_taxi_app/widgets/next_page.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +22,13 @@ class OtpCodeDialog extends StatelessWidget{
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ProjectText(text: getOtpTitle, style: Theme.of(context).textTheme.headline6,),
+          ProjectText(text: TextConstants.GET_OTP_TITLE, style: Theme.of(context).textTheme.subtitle1,),
           TweenAnimationBuilder(
-            tween: Tween(begin: otpCodeDurationSecond, end: 0),
+            tween: Tween(begin: ProjectConstants.OTP_CODE_DURATION_SECOND, end: 0),
             duration: context.otpCodeDuration,
             builder: (context, value, child) => ProjectText(
-              text: (value.toInt().toString() + seconds),
-              style: Theme.of(context).textTheme.subtitle1,
+              text: (value.toInt().toString() + TextConstants.SECONDS),
+              style: Theme.of(context).textTheme.subtitle2,
             ),
             onEnd: () {
               // süre dolduğunda bir uyarı gönder
@@ -51,13 +52,11 @@ class OtpCodeDialog extends StatelessWidget{
             // otp kod yeniden gönderme işlemini tanımla
           },
         ),
-        SizedBox(width: context.dynamicWidth(1/4),),
         NextPage(
           onTap: () {
             // otp kod doğruluğunu test et
-            Navigator.of(context).pushAndRemoveUntil(
-                ProjectRoute.generateMaterialPageRoute('/home'),
-                (Route<dynamic> route) => false);
+            Navigator.of(context).pushReplacement(
+                ProjectRoute.generateSlidePageRouteBuilder('/home', ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
           },
         )
       ],

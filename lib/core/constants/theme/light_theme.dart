@@ -365,13 +365,13 @@ final ThemeData lightTheme = ThemeData(
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
     ),
-    focusedBorder: UnderlineInputBorder(
+    focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(
-        color: Color(0xff000000),
-        width: 1.0,
+        color: Colors.amber,
+        width: 2.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     focusedErrorBorder: UnderlineInputBorder(
       borderSide: BorderSide(
@@ -389,13 +389,13 @@ final ThemeData lightTheme = ThemeData(
       ),
       borderRadius: BorderRadius.all(Radius.circular(4.0)),
     ),
-    enabledBorder: UnderlineInputBorder(
+    enabledBorder: OutlineInputBorder(
       borderSide: BorderSide(
-        color: Color(0xff000000),
-        width: 1.0,
+        color: Colors.grey,
+        width: 2.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     border: UnderlineInputBorder(
       borderSide: BorderSide(

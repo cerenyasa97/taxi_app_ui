@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'core/constants/constants.dart';
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/images/image_constants.dart';
+import 'core/constants/app/custom_text_style.dart';
 import 'verify_code.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -47,7 +47,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   Container(
                     alignment: Alignment.center,
                     child: Image(
-                      image: AssetImage(taxiIcon),
+                      image: AssetImage(ImageConstants.TAXI_ICON),
                       width: 80,
                       height: 80,
                     ),
