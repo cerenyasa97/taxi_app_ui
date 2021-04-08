@@ -105,14 +105,14 @@ class _TripEndState extends State<TripEnd> {
                 children: <Widget>[
                   tripEnd(),
                   driveSection(),
-                  DottedLine(12, 12, 4),
+                  DottedLine(16,16,0),
                   SizedBox(
                     height: 8,
                   ),
                   addressSection(),
-                  DottedLine(12, 12, 4),
+                  DottedLine(16,16,0),
                   tripFare(),
-                  DottedLine(12, 12, 4),
+                  DottedLine(16,16,0),
                   rate(),
                   getSizedBox(),
                   getSizedBox(),

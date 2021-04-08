@@ -5,13 +5,16 @@ import 'package:piton_taxi_app/emergency_contact.dart';
 import 'package:piton_taxi_app/help_support.dart';
 import 'package:piton_taxi_app/home/payment_menu.dart';
 import 'package:piton_taxi_app/my_trips.dart';
-import 'package:piton_taxi_app/profile.dart';
+import 'package:piton_taxi_app/screens/profile/view/profile.dart';
 import 'package:piton_taxi_app/rate_card.dart';
 import 'package:piton_taxi_app/screens/menu/view/menu.dart';
 import 'package:piton_taxi_app/news_offers.dart';
 import 'package:piton_taxi_app/screens/splash/view/splash.dart';
 import '../../screens/login/view/login.dart';
 import 'package:flutter/material.dart';
+import 'package:piton_taxi_app/screens/profile/view/change_name_surname.dart';
+import 'package:piton_taxi_app/screens/profile/view/change_email.dart';
+import 'package:piton_taxi_app/screens/profile/view/change_phone.dart';
 
 class ProjectRoute{
   static dynamic generatePageRoute(Pages settings, {dynamic variable}){
@@ -40,6 +43,12 @@ class ProjectRoute{
         return HelpSupport();
       case Pages.NEWS_OFFERS:
         return NewsOffers();
+      case Pages.CHANGE_NAME_SURNAME:
+        return ChangeNameSurname();
+      case Pages.CHANGE_EMAIL:
+        return ChangeEmail();
+      case Pages.CHANGE_PHONE:
+        return ChangePhone();
     }
   }
 

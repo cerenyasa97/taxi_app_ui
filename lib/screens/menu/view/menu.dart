@@ -17,7 +17,7 @@ class Menu extends StatelessWidget {
           )),
           color: ProjectConstants.MENU_BACKROUND_COLOR,
           child: Padding(
-            padding: context.lowEdgeInsets,
+            padding: context.lowEdgeInsetsAll,
             child: Column(
               children: [UserInformations(), MenuListView()],
             ),

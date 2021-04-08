@@ -7,7 +7,7 @@ import '../book_late_pick_date.dart';
 import '../emergency_contact.dart';
 import '../help_support.dart';
 import '../my_trips.dart';
-import '../profile.dart';
+import '../old_profile.dart';
 import '../rate_card.dart';
 
 class OldMenu extends StatefulWidget {
@@ -127,7 +127,7 @@ class _OldMenuState extends State<OldMenu> {
       onTap: () {
         if (listMenuItem[position].title == MenuTitle.MENU_PROFILE) {
           Navigator.of(context)
-              .push(new MaterialPageRoute(builder: (context) => Profile()));
+              .push(new MaterialPageRoute(builder: (context) => OldProfile()));
         } else if (listMenuItem[position].title == MenuTitle.MENU_PAYMENT) {
           Navigator.of(context)
               .push(new MaterialPageRoute(builder: (context) => PaymentMenu()));

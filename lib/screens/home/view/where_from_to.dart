@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/components/project_elevated_button.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/circular_corner_container.dart';
@@ -33,7 +34,7 @@ class _WhereFromToState extends State<WhereFromTo> {
           ),
           Flexible(
             child: Container(),
-            flex: 10,
+            flex: 5,
           ),
           Flexible(
             child: FittedBox(
@@ -43,8 +44,10 @@ class _WhereFromToState extends State<WhereFromTo> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   buildProjectElevatedButton(_from, TextConstants.WHERE_FROM),
-                  Divider(
-                    thickness: 0.5,
+                  Container(
+                    height: 1,
+                    width: context.dynamicWidth(270/412),
+                    color: Colors.grey.shade300,
                   ),
                   buildProjectElevatedButton(_to, TextConstants.WHERE_TO),
                 ],

@@ -9,11 +9,11 @@ class MenuListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.dynamicHeight(71/174),
+      height: context.dynamicHeight(42/87),
       child: ListView.builder(
         itemBuilder: (context, index) =>
           MenuListItem(menuItem: menuList.menu[index],),
-        itemCount: 6,
+        itemCount: menuList.getMenuListLength(),
       ),
     );
   }

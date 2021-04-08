@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 final ThemeData lightTheme = ThemeData(
+  appBarTheme: AppBarTheme(
+      color: Colors.white,
+      elevation: 1
+  ),
   primarySwatch: Colors.amber,
   brightness: Brightness.light,
   primaryColor: Color(0xffffc107),
@@ -69,38 +73,38 @@ final ThemeData lightTheme = ThemeData(
   textTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 96.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline2: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 60.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline3: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 48.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline4: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 34.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline5: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 24.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline6: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 20.0,
-      fontWeight: FontWeight.w700,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     subtitle1: TextStyle(
@@ -117,7 +121,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     bodyText2: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 16.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
@@ -149,38 +153,38 @@ final ThemeData lightTheme = ThemeData(
   primaryTextTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 96.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline2: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 60.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline3: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 48.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline4: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 34.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline5: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 24.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline6: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 20.0,
-      fontWeight: FontWeight.w700,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     subtitle1: TextStyle(
@@ -197,7 +201,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     bodyText2: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 16.0,
+      fontSize: 20.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
@@ -229,38 +233,38 @@ final ThemeData lightTheme = ThemeData(
   accentTextTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 96.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline2: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 60.0,
-      fontWeight: FontWeight.w300,
+      fontSize: 20.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline3: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 48.0,
-      fontWeight: FontWeight.w400,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline4: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 34.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     headline5: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 24.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
     headline6: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 20.0,
-      fontWeight: FontWeight.w700,
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),
     subtitle1: TextStyle(
@@ -277,7 +281,7 @@ final ThemeData lightTheme = ThemeData(
     ),
     bodyText2: TextStyle(
       color: Color(0xdd000000),
-      fontSize: 16.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
     ),

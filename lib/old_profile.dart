@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 import 'package:piton_taxi_app/utils/DottedLine.dart';
 
-class Profile extends StatefulWidget {
+class OldProfile extends StatefulWidget {
   @override
-  _ProfileState createState() => _ProfileState();
+  _OldProfileState createState() => _OldProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _OldProfileState extends State<OldProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +122,7 @@ class _ProfileState extends State<Profile> {
                       )
                     ],
                   ),
-                  DottedLine(16,16,4),
+                  DottedLine(16,16,0),
                   Container(
                     child: Text(
                       "SECURITY DETAILS",
@@ -179,7 +179,7 @@ class _ProfileState extends State<Profile> {
                       )
                     ],
                   ),
-                  DottedLine(16,16,4),
+                  DottedLine(16,16,0),
                   Container(
                     child: Text(
                       "LANGUAGE",

@@ -24,4 +24,18 @@ class TextConstants{
   static const String MENU_NEWS_OFFERS = "News and Offers";
   static const String MENU_EMERGENCY_CONTACTS = "Emergency Contacts";
   static const String MENU_HELP_SUPPORT = "Help and Support";
+
+  static const String PROFILE_TITLE = "Profile";
+  static const String PROFILE_CONTACT_INFORMATION = "CONTACT INFORMATION";
+  static const String PROFILE_NAME_LABEL = "Name Surname";
+  static const String PROFILE_EMAIL_LABEL = "Email";
+  static const String PROFILE_PHONE_LABEL = "Phone Number";
+  static const String PROFILE_LOG_OUT = "Log Out";
+
+  static const String CHANGE_NAME_SURNAME = "Change Name Surname";
+  static const String CHANGE_EMAIL = "Change Email";
+  static const String CHANGE_PHONE = "Change Phone Number";
+
+  static const String CANCEL_BUTTON = "Cancel";
+  static const String SAVE_BUTTON = "Save";
 }

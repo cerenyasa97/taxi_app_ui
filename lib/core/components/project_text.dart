@@ -28,8 +28,8 @@ class ProjectText extends StatelessWidget {
       style: style ??
           TextStyle(
             color: color ?? Colors.black,
-            fontSize: context.textScale(10),
-            fontWeight: weight ?? FontWeight.normal,
+            fontSize: context.textScale(16),
+            fontWeight: weight ?? FontWeight.w400,
             fontFamily: family ?? "Roboto",
           ),
       textAlign: align ?? TextAlign.start,

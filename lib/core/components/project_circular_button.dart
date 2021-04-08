@@ -15,7 +15,7 @@ class ProjectCircularButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       child: Padding(
-        padding: context.lowEdgeInsets,
+        padding: context.lowEdgeInsetsAll,
         child: child,
       ),
       style: ElevatedButton.styleFrom(
