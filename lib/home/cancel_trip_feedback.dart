@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/modal/CancelTrip.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
-
-import '../core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
+import '../core/constants/images/image_constants.dart';
 import '../fare_info.dart';
 
 
@@ -73,7 +72,7 @@ class _CancelTripFeedbackState extends State<CancelTripFeedback> {
                           height: 100,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                            image: AssetImage(taxiIcon),
+                            image: AssetImage(ImageConstants.TAXI_ICON),
                           )),
                         ),
                         SizedBox(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'core/constants/constants.dart';
+import 'core/constants/images/image_constants.dart';
 import 'modal/CancelTrip.dart';
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/app/custom_text_style.dart';
 import 'write_complaint.dart';
 
 class Complaint extends StatefulWidget {
@@ -77,7 +77,7 @@ class _ComplaintState extends State<Complaint> {
                             height: 100,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(taxiIcon),
+                              image: AssetImage(ImageConstants.TAXI_ICON),
                             )),
                           ),
                           Align(

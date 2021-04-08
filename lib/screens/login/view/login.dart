@@ -1,5 +1,6 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
+import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:flutter/material.dart';
 import 'login_card.dart';
 
@@ -12,7 +13,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-        backgroundColor: loginBackgroundColor,
+        backgroundColor: ProjectConstants.LOGIN_BACKGROUND_COLOR,
         body: Stack(
           children: [
             LoginCard(),
@@ -22,7 +23,7 @@ class Login extends StatelessWidget {
               child: AnimatedBuilder(
                   animation: transitionAnimation,
                   child: Image.asset(
-                    taxiIcon,
+                    ImageConstants.TAXI_ICON,
                   ),
                   builder: (context, child) => ScaleTransition(
                         scale: Tween<double>(

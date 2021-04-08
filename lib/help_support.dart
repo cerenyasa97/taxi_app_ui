@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/app/custom_text_style.dart';
 
 class HelpSupport extends StatefulWidget {
   @override

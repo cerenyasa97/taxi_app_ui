@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/home/trip_info.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dialog/payment_dialog.dart';
 import 'dialog/promo_code_dialog.dart';

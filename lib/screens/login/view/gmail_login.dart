@@ -1,5 +1,5 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:flutter/material.dart';
 
 class GmailLogin extends StatelessWidget {
@@ -8,7 +8,7 @@ class GmailLogin extends StatelessWidget {
     return Container(
       width: context.dynamicWidth(50/412),
       height: context.dynamicWidth(50/412),
-      child: Image.asset(googleLoginImage, fit: BoxFit.fill,),
+      child: Image.asset(ImageConstants.GOOGLE_LOGIN_ICON, fit: BoxFit.fill,),
     );
   }
 }

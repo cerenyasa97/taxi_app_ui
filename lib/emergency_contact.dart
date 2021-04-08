@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home/home.dart';
-import 'core/constants/custom_text_style.dart';
+import 'core/constants/app/custom_text_style.dart';
 
 class EmergencyContacts extends StatefulWidget {
   @override

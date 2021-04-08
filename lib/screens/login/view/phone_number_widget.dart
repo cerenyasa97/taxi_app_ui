@@ -1,8 +1,8 @@
-import 'package:flutter/services.dart';
-import 'package:piton_taxi_app/core/components/project_text_form_field.dart';
-import 'package:piton_taxi_app/core/components/text_validator.dart';
-import 'package:piton_taxi_app/core/constants/constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/components/project_text_form_field.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/components/text_validator.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 class PhoneNumberWidget extends StatelessWidget {
@@ -40,7 +40,7 @@ class PhoneNumberWidget extends StatelessWidget {
               FocusScope.of(context).unfocus();
             },
             keyboardType: TextInputType.number,
-            hintText: phoneNumberHint,
+            hintText: TextConstants.PHONE_NUMBER_HINT,
             textFormatter: [LengthLimitingTextInputFormatter(10),
             FilteringTextInputFormatter.digitsOnly,
             ],

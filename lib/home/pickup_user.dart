@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/home/drop_off_user.dart';
 import 'package:piton_taxi_app/modal/favorite_place.dart';
-import 'package:piton_taxi_app/core/constants/custom_text_style.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/app/custom_text_style.dart';
 
 class PickupUser extends StatefulWidget {
   @override

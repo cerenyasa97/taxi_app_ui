@@ -1,8 +1,11 @@
-import 'package:piton_taxi_app/core/components/project_text.dart';
 import "package:piton_taxi_app/core/extensions/project_context_extension.dart";
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/init/project_routes.dart';
-import '../../../core/constants/project_animation.dart';
-import '../../../core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:piton_taxi_app/core/constants/enums/routes.dart';
+import 'package:piton_taxi_app/core/init/project_routes.dart';
+import '../../../core/constants/images/image_constants.dart';
+import '../../../core/constants/app/project_animation.dart';
+import '../../../core/constants/app/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -54,9 +57,9 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
         children: [
           SizedBox(
             height: context.dynamicHeight(0.4),
-            child: Image.asset(taxiIcon),
+            child: Image.asset(ImageConstants.TAXI_ICON),
           ),
-          ProjectText(text: splashText,
+          ProjectText(text: TextConstants.SPLASH_TEXT,
             style: Theme.of(context).textTheme.headline5,
           ),
         ]);
@@ -64,7 +67,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
   navigatePage() {
     Navigator.of(context).pushReplacement(
-        ProjectRoute.generateSlidePageRouteBuilder("/login")
+        ProjectRoute.generateSlidePageRouteBuilder(Pages.LOGIN, ProjectConstants.SLOW_PAGE_TRANSITION_DURATION)
     );
   }
 

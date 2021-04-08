@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/constants/constants.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +17,8 @@ class CountryCodeWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(context.dynamicWidth(10/412)),
       ),
       child: CountryCodePicker(
-        initialSelection: initialCountryCodeText,
-        favorite: favoriteCountiesCodeTexts,
+        initialSelection: TextConstants.INITIAL_COUNTRY_CODE_TEXT,
+        favorite: TextConstants.favoriteCountriesCodeTexts,
         showCountryOnly: true,
         flagWidth: 28,
         backgroundColor: Colors.grey,

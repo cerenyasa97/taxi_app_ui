@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/custom_text_style.dart';
+import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 import 'package:piton_taxi_app/utils/DottedLine.dart';
 
 class Profile extends StatefulWidget {
@@ -18,7 +18,7 @@ class _ProfileState extends State<Profile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: 24,
+              height: 35,
             ),
             Stack(
               key: Key("AppBar"),
