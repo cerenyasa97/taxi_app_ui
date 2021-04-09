@@ -263,7 +263,7 @@ class _FareInfoState extends State<FareInfo> {
                                     )
                                   ],
                                 ),
-                                DottedLine(16,16,0),
+                                DottedLine(16,16,0,0),
                                 Container(
                                   margin: EdgeInsets.only(left: 8, top: 8),
                                   child: Text(

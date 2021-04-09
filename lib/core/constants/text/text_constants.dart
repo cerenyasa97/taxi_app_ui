@@ -38,4 +38,12 @@ class TextConstants{
 
   static const String CANCEL_BUTTON = "Cancel";
   static const String SAVE_BUTTON = "Save";
+  static const String USE_BUTTON = "Use";
+
+  static const String PAYMENT_MENU_TITLE = "Payment Menu";
+  static const String PAYMENT_CASH = "Cash";
+  static const String PAYMENT_CARD = "Card";
+  static const String PAYMENT_POINTS = "Points";
+  static const String REGISTERED_CARDS_TITLE = "Registered Cards";
+  static const String TOTAL_POINTS_LABEL = "Total Points";
 }

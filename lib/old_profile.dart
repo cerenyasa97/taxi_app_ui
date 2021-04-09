@@ -122,7 +122,7 @@ class _OldProfileState extends State<OldProfile> {
                       )
                     ],
                   ),
-                  DottedLine(16,16,0),
+                  DottedLine(16,16,0,0),
                   Container(
                     child: Text(
                       "SECURITY DETAILS",
@@ -179,7 +179,7 @@ class _OldProfileState extends State<OldProfile> {
                       )
                     ],
                   ),
-                  DottedLine(16,16,0),
+                  DottedLine(16,16,0,0),
                   Container(
                     child: Text(
                       "LANGUAGE",

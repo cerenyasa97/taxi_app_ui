@@ -18,7 +18,7 @@ class ProfileBody extends StatelessWidget {
         ),
         SizedBox(height: context.dynamicHeight(3/87),),
         ContactDetails(),
-        DottedLine(16,16,0),
+        DottedLine(16,16,0,0),
         ProjectElevatedButton(onPressed: () {}, text: TextConstants.PROFILE_LOG_OUT),
       ],
     );

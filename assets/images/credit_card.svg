@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="318" height="188" viewBox="0 0 318 188">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.015" y1="0.921" x2="0.988" y2="0.079" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#efa614"/>
+      <stop offset="0.437" stop-color="#f8db5e"/>
+      <stop offset="0.608" stop-color="#f1d355"/>
+      <stop offset="1" stop-color="#efa614"/>
+    </linearGradient>
+    <filter id="Rectangle_1" x="0" y="0" width="318" height="188" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.259"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="5.731" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#efa614"/>
+      <stop offset="1" stop-color="#e9c21d"/>
+    </linearGradient>
+    <filter id="Rectangle_2" x="19" y="17" width="46" height="40" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.259"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_1)">
+    <rect id="Rectangle_1-2" data-name="Rectangle 1" width="300" height="170" rx="24" transform="translate(9 6)" fill="url(#linear-gradient)"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_2)">
+    <g id="Rectangle_2-2" data-name="Rectangle 2" transform="translate(28 23)" stroke="rgba(225,222,222,0.81)" stroke-width="1" fill="url(#linear-gradient-2)">
+      <rect width="28" height="22" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="27" height="21" rx="4.5" fill="none"/>
+    </g>
+  </g>
+  <line id="Line_2" data-name="Line 2" y2="16" transform="translate(45.5 26.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-width="2"/>
+  <line id="Line_1" data-name="Line 1" y2="12" transform="translate(37.5 30.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-linecap="round" stroke-width="2"/>
+  <line id="Line_3" data-name="Line 3" x2="6" transform="translate(31.5 30.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-width="2"/>
+  <path id="Path_2" data-name="Path 2" d="M-.951,0H4" transform="translate(32.5 36.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-width="2"/>
+  <line id="Line_5" data-name="Line 5" x2="4" transform="translate(46.5 30.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-width="2"/>
+  <line id="Line_6" data-name="Line 6" x2="4" transform="translate(46.5 36.5)" fill="none" stroke="rgba(225,222,222,0.81)" stroke-width="2"/>
+</svg>

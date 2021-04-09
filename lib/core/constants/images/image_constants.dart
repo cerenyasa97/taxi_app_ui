@@ -14,4 +14,8 @@ class ImageConstants{
   static const String MENU_RATE_CARD = IMAGES_PATH + "rate_card.png";
   static const String MENU_EMERGENCY_CONTACTS = IMAGES_PATH + "emergency_contacts.png";
   static const String MENU_HELP_SUPPORT = IMAGES_PATH + "help_support.png";
+  static const String PAYMENT_CARD = IMAGES_PATH + "card.png";
+  static const String PAYMENT_CASH = IMAGES_PATH + "cash.png";
+  static const String PAYMENT_POINTS = IMAGES_PATH + "points.png";
+  static const String CREDIT_CARD = IMAGES_PATH + "credit_card.svg";
 }

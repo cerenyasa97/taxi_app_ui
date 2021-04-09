@@ -17,7 +17,7 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       trailing: Icon(Icons.arrow_forward_ios, size: 20,),
-      leading: imagePath != null ? Image.asset(imagePath) : null,
+      leading: imagePath != null ? Image.asset(imagePath, fit: BoxFit.fitHeight,) : null,
       title: ProjectText(text: title ?? "", style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle1,),
       subtitle: subtitle != null ? ProjectText(text: subtitle, style: CustomTextStyle.profileGeneralLabelStyle,) : null,
       onTap: onTap,

@@ -27,6 +27,9 @@ extension TaxiAppContext on BuildContext {
   EdgeInsetsGeometry get mediumEdgeInsetsSymmetric => EdgeInsets.symmetric(horizontal: this.dynamicWidth(20/412), vertical: this.dynamicHeight(20/870));
 
   SizedBox get lowSizedBoxHeight => SizedBox(height: this.dynamicHeight(2/87),);
+  SizedBox get mediumSizedBoxHeight => SizedBox(height: this.dynamicHeight(5/87),);
+
+  SizedBox get lowSizedBoxWidth => SizedBox(width: this.dynamicHeight(8/87),);
 }
 
 extension DurationExtension on BuildContext {

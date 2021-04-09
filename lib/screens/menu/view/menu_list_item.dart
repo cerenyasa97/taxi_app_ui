@@ -15,7 +15,7 @@ class MenuListItem extends StatelessWidget {
     return CustomListTile(
       title: menuItem.title,
       imagePath: menuItem.image,
-      onTap: () => Navigator.of(context).push(
+      onTap: () => Navigator.of(context).pushReplacement(
           ProjectRoute.generateSlidePageRouteBuilder(
               menuItem.page, ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
     );
