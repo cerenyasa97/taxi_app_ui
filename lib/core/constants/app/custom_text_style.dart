@@ -13,11 +13,16 @@ class CustomTextStyle {
   static TextStyle yellowTextStyle = TextStyle(
       color: Colors.amber, fontSize: 20.0, fontWeight: FontWeight.w800);
 
+  static TextStyle blackTextStyle = TextStyle(
+      color: Colors.black87, fontSize: 18.0);
+
   static TextStyle cardTextStyle = TextStyle(
       color: Colors.white, fontSize: 22.0, fontWeight: FontWeight.w800);
 
   static TextStyle pointsLabelTextStyle = TextStyle(fontSize: 20, color: Colors.grey.shade700, fontWeight: FontWeight.w700);
   static TextStyle pointsTextStyle = TextStyle(fontSize: 50, color: Colors.black, fontWeight: FontWeight.w700);
+
+  static TextStyle hintTextStyle = TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.w500);
 
   static var regularTextStyle = TextStyle(
       fontSize: 14, fontFamily: "Roboto", fontWeight: FontWeight.w400);
@@ -25,6 +30,6 @@ class CustomTextStyle {
       fontSize: 14, fontFamily: "Roboto", fontWeight: FontWeight.w500);
   static var boldTextStyle = TextStyle(
       fontSize: 14, fontFamily: "Roboto", fontWeight: FontWeight.w700);
-  static var blackTextStyle = TextStyle(
+  static var oldBlackTextStyle = TextStyle(
       fontSize: 14, fontFamily: "Roboto", fontWeight: FontWeight.w900);
 }

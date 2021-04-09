@@ -18,4 +18,5 @@ class ImageConstants{
   static const String PAYMENT_CASH = IMAGES_PATH + "cash.png";
   static const String PAYMENT_POINTS = IMAGES_PATH + "points.png";
   static const String CREDIT_CARD = IMAGES_PATH + "credit_card.svg";
+  static const String SLIDING_UP_PANEL_ICON = IMAGES_PATH + "sliding_up_panel_icon.svg";
 }

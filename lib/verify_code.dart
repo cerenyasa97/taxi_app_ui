@@ -184,7 +184,7 @@ class _VerifyCodeState extends State<VerifyCode> {
                                 style: CustomTextStyle.regularTextStyle
                                     .copyWith(color: Colors.grey)),
                             Text("00:59",
-                                style: CustomTextStyle.blackTextStyle),
+                                style: CustomTextStyle.oldBlackTextStyle),
                           ],
                         ),
                         margin: EdgeInsets.only(left: 18),

@@ -49,7 +49,7 @@ class _RegisteredCardsState extends BaseState<RegisteredCards> {
                             text: DummyData.cardList[index].cardHolder,
                             style: style,
                           ),
-                          context.lowSizedBoxWidth,
+                          context.mediumSizedBoxWidth,
                           ProjectText(
                             text: DummyData.cardList[index].expirationDate,
                             style: style,

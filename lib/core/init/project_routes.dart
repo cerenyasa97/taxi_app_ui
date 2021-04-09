@@ -1,22 +1,4 @@
-import 'package:piton_taxi_app/screens/home/view/homepage.dart';
-import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/book_late_pick_date.dart';
-import 'package:piton_taxi_app/emergency_contact.dart';
-import 'package:piton_taxi_app/help_support.dart';
-import 'package:piton_taxi_app/my_trips.dart';
-import 'package:piton_taxi_app/screens/profile/view/profile.dart';
-import 'package:piton_taxi_app/rate_card.dart';
-import 'package:piton_taxi_app/screens/menu/view/menu.dart';
-import 'package:piton_taxi_app/news_offers.dart';
-import 'package:piton_taxi_app/screens/splash/view/splash.dart';
-import 'package:piton_taxi_app/screens/payment/view/payment_menu.dart';
-import '../../screens/login/view/login.dart';
-import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/screens/profile/view/change_name_surname.dart';
-import 'package:piton_taxi_app/screens/profile/view/change_email.dart';
-import 'package:piton_taxi_app/screens/profile/view/change_phone.dart';
-import 'package:piton_taxi_app/screens/payment/view/registered_cards.dart';
-import 'package:piton_taxi_app/screens/payment/view/payment_points.dart';
+import 'pages_import.dart';
 
 class ProjectRoute{
   static dynamic generatePageRoute(Pages settings, {dynamic variable}){
@@ -34,7 +16,7 @@ class ProjectRoute{
       case Pages.PAYMENT_MENU:
         return PaymentMenu();
       case Pages.BOOK_LATER:
-        return BookLaterDatePicker();
+        return BookLater();
       case Pages.MY_TRIPS:
         return MyTrips();
       case Pages.RATE_CARD:
