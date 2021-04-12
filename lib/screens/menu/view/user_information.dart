@@ -15,8 +15,8 @@ class UserInformations extends StatelessWidget {
         CircleImage(),
         Column(
         children: [
-          ProjectText(text: DummyData.NAME_SURNAME, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline6,),
-          ProjectText(text: DummyData.PHONE, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle1,)
+          ProjectText(text: DummyData.user_1.nameSurname, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline6,),
+          ProjectText(text: DummyData.user_1.phoneNumber, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle1,)
         ],
       ),
         IconButton(

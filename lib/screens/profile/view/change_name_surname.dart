@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/constants/dummy_data.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
@@ -14,7 +15,6 @@ class ChangeNameSurname extends BaseView {
 class _ChangeNameSurnameState extends BaseState<ChangeNameSurname> {
   InputBorder enabled;
   InputBorder focused;
-  String nameSurname = "";
 
   @override
   String appBarTitle() => TextConstants.CHANGE_NAME_SURNAME;
@@ -24,7 +24,7 @@ class _ChangeNameSurnameState extends BaseState<ChangeNameSurname> {
     return ChangeBody(
       label: TextConstants.PROFILE_NAME_LABEL,
       onChanged: (nameSurnameText) {
-        nameSurname = nameSurnameText;
+        DummyData.user_1.nameSurname = nameSurnameText;
       }
     );
   }

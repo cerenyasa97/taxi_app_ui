@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/constants/dummy_data.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
@@ -14,7 +15,6 @@ class ChangeEmail extends BaseView {
 class _ChangeEmailState extends BaseState<ChangeEmail> {
   InputBorder enabled;
   InputBorder focused;
-  String email = "";
 
   @override
   String appBarTitle() => TextConstants.CHANGE_EMAIL;
@@ -22,9 +22,10 @@ class _ChangeEmailState extends BaseState<ChangeEmail> {
   @override
   Widget body() {
     return ChangeBody(
+      keyboardType: TextInputType.emailAddress,
         label: TextConstants.PROFILE_EMAIL_LABEL,
         onChanged: (emailText) {
-          email = emailText;
+           DummyData.user_1.email = emailText;
         }
     );
   }

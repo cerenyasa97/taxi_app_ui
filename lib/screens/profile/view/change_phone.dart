@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/constants/dummy_data.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
@@ -14,7 +15,6 @@ class ChangePhone extends BaseView {
 class _ChangePhoneState extends BaseState<ChangePhone> {
   InputBorder enabled;
   InputBorder focused;
-  String phone = "";
 
   @override
   String appBarTitle() => TextConstants.CHANGE_PHONE;
@@ -22,9 +22,10 @@ class _ChangePhoneState extends BaseState<ChangePhone> {
   @override
   Widget body() {
     return ChangeBody(
+      keyboardType: TextInputType.phone,
         label: TextConstants.PROFILE_PHONE_LABEL,
         onChanged: (phoneText) {
-          phone = phoneText;
+          DummyData.user_1.phoneNumber = phoneText;
         }
     );
   }

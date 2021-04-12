@@ -12,10 +12,11 @@ import 'package:provider/provider.dart';
 class ChangeBody extends StatelessWidget {
 
   final Function(String) onChanged;
+  final TextInputType keyboardType;
   final VoidCallback onSaved;
   final String label;
 
-  const ChangeBody({Key key, this.onChanged, this.label, this.onSaved}) : super(key: key);
+  const ChangeBody({Key key, this.onChanged, this.label, this.onSaved, this.keyboardType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class ChangeBody extends StatelessWidget {
         ),
         context.lowSizedBoxHeight,
         ProjectTextField(
+          keyboardType: keyboardType ?? TextInputType.text,
           contentPadding: context.textInputPadding,
           enabledBorder: Provider.of<ProjectThemeData>(context)
               .getThemeData

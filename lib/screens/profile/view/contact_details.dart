@@ -20,17 +20,17 @@ class ContactDetails extends StatelessWidget {
         ),
         CustomListTile(
           title: TextConstants.PROFILE_NAME_LABEL,
-          subtitle: DummyData.NAME_SURNAME,
+          subtitle: DummyData.user_1.nameSurname,
           onTap: () => _pageNavigation(context, Pages.CHANGE_NAME_SURNAME),
         ),
         CustomListTile(
           title: TextConstants.PROFILE_EMAIL_LABEL,
-          subtitle: DummyData.EMAIL,
+          subtitle: DummyData.user_1.email,
           onTap: () => _pageNavigation(context, Pages.CHANGE_EMAIL),
         ),
         CustomListTile(
           title: TextConstants.PROFILE_PHONE_LABEL,
-          subtitle: DummyData.PHONE,
+          subtitle: DummyData.user_1.phoneNumber,
           onTap: () => _pageNavigation(context, Pages.CHANGE_PHONE),
         )
       ],
