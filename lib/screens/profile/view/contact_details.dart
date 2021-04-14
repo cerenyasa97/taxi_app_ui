@@ -16,7 +16,7 @@ class ContactDetails extends StatelessWidget {
       children: [
         ProjectText(
           text: TextConstants.PROFILE_CONTACT_INFORMATION,
-          style: CustomTextStyle.profileSectionLabelStyle,
+          style: CustomTextStyle.lightGrey18w5,
         ),
         CustomListTile(
           title: TextConstants.PROFILE_NAME_LABEL,

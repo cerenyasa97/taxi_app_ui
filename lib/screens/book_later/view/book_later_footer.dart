@@ -20,7 +20,7 @@ class BookLaterFooter extends StatelessWidget {
       alignment: Alignment.bottomRight,
       child: ProjectTextButton(
         text: TextConstants.SAVE_BUTTON,
-        style: CustomTextStyle.yellowTextStyle,
+        style: CustomTextStyle.amber20w8,
         onPressed: onPressed,
       ),
     );

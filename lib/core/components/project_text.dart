@@ -9,6 +9,7 @@ class ProjectText extends StatelessWidget {
   final String family;
   final TextStyle style;
   final TextAlign align;
+  final int maxLines;
 
   const ProjectText(
       {Key key,
@@ -18,7 +19,8 @@ class ProjectText extends StatelessWidget {
       this.weight,
       this.family,
       this.style,
-      this.align})
+      this.align,
+      this.maxLines})
       : super(key: key);
 
   @override
@@ -33,6 +35,7 @@ class ProjectText extends StatelessWidget {
             fontFamily: family ?? "Roboto",
           ),
       textAlign: align ?? TextAlign.start,
+      maxLines: maxLines ?? 1,
     );
   }
 }

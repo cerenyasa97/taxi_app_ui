@@ -14,6 +14,7 @@ abstract class BaseState<Page extends BaseView> extends State<Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         title: ProjectText(

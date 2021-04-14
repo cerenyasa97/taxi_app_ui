@@ -19,7 +19,7 @@ class RegisteredCards extends BaseView {
 }
 
 class _RegisteredCardsState extends BaseState<RegisteredCards> {
-  final TextStyle style = CustomTextStyle.cardTextStyle;
+  final TextStyle style = CustomTextStyle.white11w8;
 
   @override
   String appBarTitle() => TextConstants.REGISTERED_CARDS_TITLE;

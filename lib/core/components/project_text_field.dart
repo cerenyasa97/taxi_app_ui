@@ -18,6 +18,8 @@ class ProjectTextField extends StatefulWidget {
   final String initialValue;
   final bool obsecureText;
   final TextInputType keyboardType;
+  final int maxLines;
+  final int minLines;
 
   const ProjectTextField(
       {Key key,
@@ -37,7 +39,7 @@ class ProjectTextField extends StatefulWidget {
       this.textSize,
       this.initialValue,
       this.keyboardType,
-      this.obsecureText})
+      this.obsecureText, this.maxLines, this.minLines})
       : super(key: key);
 
   @override
@@ -78,6 +80,8 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
       cursorColor: widget.cursorColor,
       onSubmitted: (text) =>
           widget.onSubmitted != null ? widget.onSubmitted(text) : {},
+      minLines: widget.minLines,
+      maxLines: widget.maxLines,
     );
   }
 

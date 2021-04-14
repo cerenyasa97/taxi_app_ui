@@ -43,5 +43,4 @@ class _PaymentMenuState extends BaseState<PaymentMenu>{
   EdgeInsetsGeometry padding() => context.mediumEdgeInsetsSymmetric;
 
   _pageNavigation(Pages page) => Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(page, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
-
 }

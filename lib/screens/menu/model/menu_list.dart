@@ -10,7 +10,7 @@ class MenuList{
     menu.add(Menu(TextConstants.MENU_PROFILE, ImageConstants.MENU_PROFILE, Pages.PROFILE));
     menu.add(Menu(TextConstants.MENU_PAYMENT, ImageConstants.MENU_PAYMENT, Pages.PAYMENT_MENU));
     menu.add(Menu(TextConstants.MENU_BOOK_LATER, ImageConstants.MENU_BOOK_LATER, Pages.BOOK_LATER));
-    menu.add(Menu(TextConstants.MENU_MY_TRIPS, ImageConstants.MENU_MY_TRIPS, Pages.MY_TRIPS));
+    menu.add(Menu(TextConstants.MENU_MY_TRIPS, ImageConstants.MENU_MY_TRIPS, Pages.TRIPS));
     menu.add(Menu(TextConstants.MENU_RATE_CARD, ImageConstants.MENU_RATE_CARD, Pages.RATE_CARD));
     menu.add(Menu(TextConstants.MENU_EMERGENCY_CONTACTS, ImageConstants.MENU_EMERGENCY_CONTACTS, Pages.EMERGENCY_CONTACTS));
     menu.add(Menu(TextConstants.MENU_HELP_SUPPORT, ImageConstants.MENU_HELP_SUPPORT, Pages.HELP_SUPPORT));

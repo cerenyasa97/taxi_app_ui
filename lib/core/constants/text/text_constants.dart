@@ -50,4 +50,11 @@ class TextConstants{
   static const String SLIDING_UP_PANEL_HINT = "Slide up to change date and time";
   static const String DATE = "Date : ";
   static const String TIME = "Time : ";
+
+  static const String TRIPS_TITLE = "Trips";
+  static const String TRIPS_TAB_BAR_TITLE_1 = "Oncoming";
+  static const String TRIPS_TAB_BAR_TITLE_2 = "Completed";
+  static const String TRIPS_TAB_BAR_TITLE_3 = "Cancelled";
+  static const String TRIP_DETAILS = "Trip Details";
+  static const String TRIP_REVIEW = "Trip Review";
 }

@@ -23,7 +23,7 @@ class ProjectButtonBar extends StatelessWidget {
         ProjectTextButton(
           onPressed: () => onPressed(),
           text: rightButtonText ??  TextConstants.SAVE_BUTTON,
-          style: CustomTextStyle.yellowTextStyle,
+          style: CustomTextStyle.amber20w8,
         ),
       ],
     );

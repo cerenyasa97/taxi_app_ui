@@ -25,7 +25,7 @@ class ChangeBody extends StatelessWidget {
       children: [
         ProjectText(
           text: label ?? "Change",
-          style: CustomTextStyle.profileLabelStyle,
+          style: CustomTextStyle.lightGrey16w4,
         ),
         context.lowSizedBoxHeight,
         ProjectTextField(

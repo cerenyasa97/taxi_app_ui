@@ -30,7 +30,7 @@ class BookLaterHeader extends StatelessWidget {
           Center(
               child: ProjectText(
                 text: TextConstants.SLIDING_UP_PANEL_HINT,
-                style: CustomTextStyle.hintTextStyle,
+                style: CustomTextStyle.grey12w5,
               )),
           context.lowSizedBoxHeight,
           _getDateTime(TextConstants.DATE, date.dateString),
@@ -44,8 +44,8 @@ class BookLaterHeader extends StatelessWidget {
   Row _getDateTime(String label, String value) {
     return Row(
           children: [
-            ProjectText(text: label, style: CustomTextStyle.yellowTextStyle,),
-            ProjectText(text: value, style: CustomTextStyle.blackTextStyle,)
+            ProjectText(text: label, style: CustomTextStyle.amber20w8,),
+            ProjectText(text: value, style: CustomTextStyle.lightBlack18,)
           ],
         );
   }

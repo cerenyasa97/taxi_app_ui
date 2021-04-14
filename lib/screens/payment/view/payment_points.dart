@@ -50,7 +50,7 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                 children: [
                   ProjectText(
                       text: TextConstants.TOTAL_POINTS_LABEL,
-                      style: CustomTextStyle.pointsLabelTextStyle),
+                      style: CustomTextStyle.lightGrey20w7),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -59,7 +59,7 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                       ),
                       ProjectText(
                           text: DummyData.TOTAL_POINTS,
-                          style: CustomTextStyle.pointsTextStyle)
+                          style: CustomTextStyle.black50w7)
                     ],
                   )
                 ],

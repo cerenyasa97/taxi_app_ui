@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CircleImage extends StatelessWidget {
 
-  final int width;
+  final double width;
   final int radius;
   final String image;
 
@@ -19,7 +19,7 @@ class CircleImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(context.dynamicWidth(context.dynamicWidth((radius ?? 50)/412))),
           border: Border.all(color: Colors.grey),
           image: DecorationImage(
-              image: AssetImage(image ?? ImageConstants.DRIVER_IMAGE)
+              image: AssetImage(image ?? ImageConstants.USER_IMAGE)
           )
       ),
     );

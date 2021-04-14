@@ -17,3 +17,5 @@ export 'package:piton_taxi_app/screens/profile/view/change_email.dart';
 export 'package:piton_taxi_app/screens/profile/view/change_phone.dart';
 export 'package:piton_taxi_app/screens/payment/view/registered_cards.dart';
 export 'package:piton_taxi_app/screens/payment/view/payment_points.dart';
+export 'package:piton_taxi_app/screens/trips/view/trips.dart';
+export 'package:piton_taxi_app/screens/trips/view/trip_detail.dart';

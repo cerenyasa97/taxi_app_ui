@@ -1,4 +1,5 @@
 class User{
+  int userID;
   String nameSurname;
   String email;
   String phoneNumber;
