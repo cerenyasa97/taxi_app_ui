@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/constants/dummy_data.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/dummy_data/dummy_data.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';

@@ -19,3 +19,4 @@ export 'package:piton_taxi_app/screens/payment/view/registered_cards.dart';
 export 'package:piton_taxi_app/screens/payment/view/payment_points.dart';
 export 'package:piton_taxi_app/screens/trips/view/trips.dart';
 export 'package:piton_taxi_app/screens/trips/view/trip_detail.dart';
+export 'package:piton_taxi_app/screens/notifications/view/taxi_notifications.dart';

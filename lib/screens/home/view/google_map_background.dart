@@ -32,20 +32,20 @@ class _GoogleMapBackgroundState extends State<GoogleMapBackground> {
       initialCameraPosition:
       CameraPosition(target: ProjectConstants.CURRENT_LOCATION, zoom: 15),
       mapType: widget.mapType,
-      onMapCreated: (controller) async {
-        await createMarker();
-        setState(() {});
+      onMapCreated: (controller) async{
+        await _createCustomMarker();
+        _controller.complete(controller);
       },
       markers: _getMarkers(),
     );
   }
 
-  createMarker() async {
-    if (taxiIcon == null) {
-      ImageConfiguration configuration = createLocalImageConfiguration(context);
-      taxiIcon = await BitmapDescriptor.fromAssetImage(
-          configuration, ImageConstants.TAXI_ICON);
-      setState(() {});
+  _createCustomMarker() async{
+    if(taxiIcon == null){
+      var customIcon = await BitmapDescriptor.fromAssetImage(ImageConfiguration(), ImageConstants.TAXI_MARKER);
+      setState(() {
+        taxiIcon = customIcon;
+      });
     }
   }
 
@@ -54,12 +54,19 @@ class _GoogleMapBackgroundState extends State<GoogleMapBackground> {
       Marker(
           position: ProjectConstants.CURRENT_LOCATION,
           markerId: MarkerId("me"),
+          infoWindow: InfoWindow(
+            title: "Current Location"
+          ),
           icon: BitmapDescriptor.defaultMarkerWithHue(
               BitmapDescriptor.hueOrange)),
-      /*Marker(position: LatLng(39.753055, 30.492381),
-        markerId: MarkerId("taxi1"),
-          icon: taxiIcon
-        )*/
+      Marker(
+        position: LatLng(39.752931,30.4859343),
+        markerId: MarkerId("taxi"),
+        infoWindow: InfoWindow(
+          title: "Taxi"
+        ),
+        icon: taxiIcon ?? BitmapDescriptor.defaultMarker
+      )
     ].toSet();
   }
 }

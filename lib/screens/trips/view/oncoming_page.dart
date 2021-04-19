@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/constants/dummy_data.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/dummy_data/dummy_data.dart';
 import 'package:flutter/material.dart';
 import 'trip_card.dart';
 

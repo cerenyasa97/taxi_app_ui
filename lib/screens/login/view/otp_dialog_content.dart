@@ -43,14 +43,15 @@ class _OtpDialogContentState extends State<OtpDialogContent> {
 
   SizedBox _codeField(BuildContext context,
       {bool autoFocus = false, FocusNode currentFNode, FocusNode nextFNode}) {
+    final InputDecorationTheme inputTheme = Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme;
     return SizedBox(
         width: context.dynamicWidth(35/412),
         child: ProjectTextFormField(
           autofocus: autoFocus ?? false,
           focusNode: currentFNode ?? FocusNode(),
           keyboardType: TextInputType.number,
-          enabledBorder: ProjectConstants.otpVerificationEnabledBorder,
-          focusedBorder: ProjectConstants.otpVerificationFocusedBorder,
+          enabledBorder: inputTheme.enabledBorder,
+          focusedBorder: inputTheme.focusedBorder,
           hintText: "0",
           alignment: TextAlign.center,
           textFormatter: [LengthLimitingTextInputFormatter(1)],

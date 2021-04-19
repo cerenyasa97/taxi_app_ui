@@ -22,7 +22,7 @@ abstract class BaseState<Page extends BaseView> extends State<Page> {
           style: Provider.of<ProjectThemeData>(context)
               .getThemeData
               .textTheme
-              .bodyText2,
+              .subtitle2,
         ),
       ),
       body: Container(

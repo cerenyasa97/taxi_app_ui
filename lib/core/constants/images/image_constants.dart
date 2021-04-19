@@ -6,7 +6,7 @@ class ImageConstants{
   static const String SATELLITE_ICON = IMAGES_PATH + "satellite.png";
   static const String USER_IMAGE = IMAGES_PATH + "user_profile.png";
   static const String FACEBOOK_LOGIN_IMAGE = IMAGES_PATH + "facebook.png";
-  static const String TAXI_LOCATION_ICON = IMAGES_PATH + "taxi_current_location.png";
+  static const String TAXI_MARKER = IMAGES_PATH + "taxi_marker.png";
   static const String MENU_PROFILE = IMAGES_PATH + "user.png";
   static const String MENU_PAYMENT = IMAGES_PATH + "payment.png";
   static const String MENU_BOOK_LATER = IMAGES_PATH + "book_later.png";
@@ -21,4 +21,5 @@ class ImageConstants{
   static const String SLIDING_UP_PANEL_ICON = IMAGES_PATH + "sliding_up_panel_icon.svg";
   static const String ONCOMING_ICON = IMAGES_PATH + "oncoming_icon.png";
   static const String DRIVER_IMAGE = IMAGES_PATH + "driver.png";
+  static const String OFFER_1 = IMAGES_PATH + "offer1.png";
 }

@@ -1,10 +1,11 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/components/project_svg_image.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
+import 'package:piton_taxi_app/core/components/project_svg_image.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
 import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
 
 class TripCardBody extends StatelessWidget {
 
@@ -14,6 +15,7 @@ class TripCardBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return Row(
       children: [
         Expanded(child: Column(
@@ -21,11 +23,11 @@ class TripCardBody extends StatelessWidget {
           children: [
             ProjectText(
               text: trip.startTime,
-              style: CustomTextStyle.grey20w6,
+              style: textTheme.subtitle1.copyWith(color: Colors.grey),
             ),
             ProjectText(
               text: trip.endTime,
-              style: CustomTextStyle.grey20w6,
+              style: textTheme.subtitle1.copyWith(color: Colors.grey),
             ),
           ],
         ), flex: 15,),
@@ -36,12 +38,12 @@ class TripCardBody extends StatelessWidget {
           children: [
             ProjectText(
               text: trip.startLocation,
-              style: CustomTextStyle.black16w6,
+              style: textTheme.bodyText1,
               maxLines: 2,
             ),
             ProjectText(
               text: trip.endLocation,
-              style: CustomTextStyle.black16w6,
+              style: textTheme.bodyText1,
               maxLines: 2,
             )
           ],

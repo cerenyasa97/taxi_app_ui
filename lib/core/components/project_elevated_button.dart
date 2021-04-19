@@ -24,7 +24,7 @@ class ProjectElevatedButton extends StatelessWidget {
               style: Provider.of<ProjectThemeData>(context)
                   .getThemeData
                   .textTheme
-                  .bodyText2,
+                  .bodyText1,
               align: TextAlign.start,
             )),
         onPressed: onPressed ?? () {});

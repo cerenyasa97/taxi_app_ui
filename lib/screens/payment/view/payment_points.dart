@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/components/project_image.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:flutter/src/painting/edge_insets.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import '../../../core/base/view/base_view.dart';
-import '../../../core/components/project_text.dart';
 import 'package:piton_taxi_app/core/components/project_button_bar.dart';
-import '../../../core/constants/app/constants.dart';
-import '../../../core/constants/app/custom_text_style.dart';
-import '../../../core/constants/dummy_data.dart';
-import '../../../core/constants/enums/routes.dart';
+import 'package:piton_taxi_app/core/components/project_image.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
 import '../../../core/constants/images/image_constants.dart';
+import '../../../core/constants/dummy_data/dummy_data.dart';
 import '../../../core/constants/text/text_constants.dart';
+import '../../../core/components/project_text.dart';
+import '../../../core/constants/app/constants.dart';
+import '../../../core/constants/enums/routes.dart';
+import '../../../core/base/view/base_view.dart';
 import '../../../core/init/project_routes.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
 
 class PaymentPoints extends BaseView {
   PaymentPoints({Key key}) : super(key: key);
@@ -27,6 +26,8 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
 
   @override
   Widget body() {
+    final TextTheme textTheme =
+        Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return ListView(
       children: [
         Center(
@@ -49,8 +50,10 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ProjectText(
-                      text: TextConstants.TOTAL_POINTS_LABEL,
-                      style: CustomTextStyle.lightGrey20w7),
+                    text: TextConstants.TOTAL_POINTS_LABEL,
+                    style: textTheme.headline4
+                        .copyWith(color: Colors.black87),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -59,7 +62,7 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                       ),
                       ProjectText(
                           text: DummyData.TOTAL_POINTS,
-                          style: CustomTextStyle.black50w7)
+                          style: textTheme.headline1),
                     ],
                   )
                 ],

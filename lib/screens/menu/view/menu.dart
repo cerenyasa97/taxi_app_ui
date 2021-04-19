@@ -15,7 +15,7 @@ class Menu extends StatelessWidget {
             bottomLeft: Radius.circular(context.dynamicWidth(40 / 412)),
             bottomRight: Radius.circular(context.dynamicWidth(40 / 412)),
           )),
-          color: ProjectConstants.MENU_BACKROUND_COLOR,
+          color: ProjectConstants.MENU_BACKGROUND_COLOR,
           child: Padding(
             padding: context.lowEdgeInsetsAll,
             child: Column(

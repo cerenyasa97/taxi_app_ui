@@ -1,15 +1,16 @@
-import 'package:piton_taxi_app/core/components/project_svg_image.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
-import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:flutter/material.dart';
+import 'package:piton_taxi_app/core/components/project_svg_image.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
+import 'package:piton_taxi_app/core/base/view/base_view.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
+import '../../../core/constants/dummy_data/dummy_data.dart';
 import '../../../core/components/project_text.dart';
 import '../../../core/constants/app/constants.dart';
-import '../../../core/constants/app/custom_text_style.dart';
-import '../../../core/constants/dummy_data.dart';
 import '../../../core/init/project_routes.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
 
 class RegisteredCards extends BaseView {
   RegisteredCards({Key key}) : super(key: key);
@@ -19,13 +20,13 @@ class RegisteredCards extends BaseView {
 }
 
 class _RegisteredCardsState extends BaseState<RegisteredCards> {
-  final TextStyle style = CustomTextStyle.white11w8;
 
   @override
   String appBarTitle() => TextConstants.REGISTERED_CARDS_TITLE;
 
   @override
   Widget body() {
+    final TextStyle style = Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline3.copyWith(color: Colors.white.withOpacity(0.95));
     return ListView.builder(
       itemCount: DummyData.cardList.length,
       itemBuilder: (context, index) {

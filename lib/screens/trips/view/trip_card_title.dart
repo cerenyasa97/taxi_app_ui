@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
 
 class TripCardTitle extends StatelessWidget {
 
@@ -11,16 +12,17 @@ class TripCardTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         ProjectText(
           text: date,
-          style: CustomTextStyle.black16w6,
+          style: textTheme.bodyText1,
         ),
         ProjectText(
           text: status.toUpperCase(),
-          style: CustomTextStyle.amber20w8,
+          style: textTheme.headline4.copyWith(color: Colors.amber),
         )
       ],
     );

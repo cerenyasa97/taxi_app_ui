@@ -1,5 +1,4 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:google_maps_flutter_platform_interface/src/types/ui.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
 import '../../../core/constants/text/text_constants.dart';

@@ -1,10 +1,11 @@
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
-import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
 import 'package:piton_taxi_app/screens/trips/model/driver_model.dart';
-import 'package:flutter/material.dart';
+import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:piton_taxi_app/widgets/circle_image.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DriversInformation extends StatelessWidget {
   final Driver driver;
@@ -13,6 +14,7 @@ class DriversInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return Row(
       children: [
         Flexible(child: Container(), flex: 5,),
@@ -26,8 +28,8 @@ class DriversInformation extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ProjectText(text: driver.nameSurname, style: CustomTextStyle.black18w6,),
-              ProjectText(text: driver.phoneNumber, style: CustomTextStyle.lightGrey18w5,)
+              ProjectText(text: driver.nameSurname, style: textTheme.subtitle2,),
+              ProjectText(text: driver.phoneNumber, style: textTheme.subtitle2.copyWith(color: Colors.grey.shade700),)
             ],
           ),
         )

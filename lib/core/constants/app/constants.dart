@@ -13,14 +13,5 @@ class ProjectConstants{
   static const int FAST_PAGE_TRANSITION_DURATION = 300;
 
   static const Color LOGIN_BACKGROUND_COLOR = Color(0xfff8f8f8);
-  static const Color MENU_BACKROUND_COLOR = Colors.white;
-
-  static final OutlineInputBorder otpVerificationEnabledBorder = OutlineInputBorder(
-      borderSide: BorderSide(width: 2, color: Colors.grey),
-      borderRadius: BorderRadius.circular(10)
-  );
-  static final OutlineInputBorder otpVerificationFocusedBorder = OutlineInputBorder(
-      borderSide: BorderSide(width: 2, color: Colors.amber),
-      borderRadius: BorderRadius.circular(10)
-  );
+  static const Color MENU_BACKGROUND_COLOR = Colors.white;
 }

@@ -25,8 +25,8 @@ class ProjectRoute{
         return EmergencyContacts();
       case Pages.HELP_SUPPORT:
         return HelpSupport();
-      case Pages.NEWS_OFFERS:
-        return NewsOffers();
+      case Pages.NOTIFICATIONS:
+        return TaxiNotifications();
       case Pages.CHANGE_NAME_SURNAME:
         return ChangeNameSurname();
       case Pages.CHANGE_EMAIL:

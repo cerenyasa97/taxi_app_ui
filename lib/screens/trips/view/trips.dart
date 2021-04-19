@@ -1,12 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
 import 'package:piton_taxi_app/screens/trips/view/cancelled_page.dart';
 import 'package:piton_taxi_app/screens/trips/view/oncoming_page.dart';
-
+import 'package:piton_taxi_app/core/base/view/base_view.dart';
+import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:flutter/material.dart';
 import 'completed_page.dart';
 
 class Trips extends BaseView {

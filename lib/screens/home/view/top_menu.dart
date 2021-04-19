@@ -23,7 +23,7 @@ class TopMenu extends StatelessWidget {
         ProjectCircularButton(
           color: Colors.white,
             onPressed: () {
-              Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(Pages.NEWS_OFFERS, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
+              Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(Pages.NOTIFICATIONS, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
             },
             child: Icon(Icons.notification_important_outlined))
       ],

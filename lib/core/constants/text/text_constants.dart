@@ -19,7 +19,7 @@ class TextConstants{
   static const String MENU_PROFILE = "Profile";
   static const String MENU_PAYMENT = "Payment";
   static const String MENU_BOOK_LATER = "Book Later";
-  static const String MENU_MY_TRIPS = "My Trips";
+  static const String MENU_MY_TRIPS = "Trips";
   static const String MENU_RATE_CARD = "Rate Cards";
   static const String MENU_NEWS_OFFERS = "News and Offers";
   static const String MENU_EMERGENCY_CONTACTS = "Emergency Contacts";

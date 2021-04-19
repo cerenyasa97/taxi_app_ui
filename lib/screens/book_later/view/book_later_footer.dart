@@ -1,8 +1,8 @@
-import 'package:piton_taxi_app/core/components/project_button_bar.dart';
-import 'package:piton_taxi_app/core/components/project_text_button.dart';
-import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/components/project_text_button.dart';
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class BookLaterFooter extends StatelessWidget {
@@ -20,7 +20,7 @@ class BookLaterFooter extends StatelessWidget {
       alignment: Alignment.bottomRight,
       child: ProjectTextButton(
         text: TextConstants.SAVE_BUTTON,
-        style: CustomTextStyle.amber20w8,
+        style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline4.copyWith(color: Colors.amber),
         onPressed: onPressed,
       ),
     );

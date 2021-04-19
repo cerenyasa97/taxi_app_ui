@@ -20,7 +20,7 @@ class LocationSearchAlertDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(context.dynamicWidth(30/412))
       ),
-      title: ProjectText(text: title, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline6,),
+      title: ProjectText(text: title, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline5.copyWith(fontWeight: FontWeight.w600),),
       content: ProjectTextField(
         enabledBorder: Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme.enabledBorder,
         focusedBorder: Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme.focusedBorder,

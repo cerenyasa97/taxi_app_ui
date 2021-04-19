@@ -1,11 +1,11 @@
-import 'package:piton_taxi_app/core/components/project_text_button.dart';
-import 'package:piton_taxi_app/core/components/project_text_field.dart';
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/components/project_rating_stars.dart';
-import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
+import 'package:piton_taxi_app/core/components/project_text_button.dart';
+import 'package:piton_taxi_app/core/components/project_text_field.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class Comments extends StatelessWidget {
@@ -15,6 +15,8 @@ class Comments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData themeData =
+        Provider.of<ProjectThemeData>(context).getThemeData;
     return Column(
       children: [
         Row(
@@ -27,7 +29,7 @@ class Comments extends StatelessWidget {
             Flexible(
               child: ProjectText(
                 text: TextConstants.TRIP_REVIEW,
-                style: CustomTextStyle.black18w6,
+                style: themeData.textTheme.subtitle2,
               ),
               flex: 50,
             ),
@@ -50,15 +52,19 @@ class Comments extends StatelessWidget {
           child: ProjectTextField(
             contentPadding: context.lowEdgeInsetsAll,
             minLines: 4,
-            enabledBorder: ProjectConstants.otpVerificationEnabledBorder,
-            focusedBorder: ProjectConstants.otpVerificationFocusedBorder,
+            enabledBorder: themeData.inputDecorationTheme.enabledBorder,
+            focusedBorder: themeData.inputDecorationTheme.focusedBorder,
           ),
         ),
         Container(
           width: double.maxFinite,
           padding: context.lowEdgeInsetsHorizontal,
           alignment: Alignment.centerRight,
-          child: ProjectTextButton(text: "Save", onPressed: () {}, style: CustomTextStyle.amber20w8,),
+          child: ProjectTextButton(
+            text: "Save",
+            onPressed: () {},
+            style: themeData.textTheme.headline4.copyWith(color: Colors.amber),
+          ),
         )
       ],
     );

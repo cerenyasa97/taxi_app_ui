@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/constants/dummy_data.dart';
+import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
 import 'package:piton_taxi_app/screens/trips/view/trip_card.dart';
+import 'package:flutter/material.dart';
 
 class CancelledPage extends StatefulWidget {
   @override
@@ -19,6 +19,5 @@ class _CancelledPageState extends State<CancelledPage>
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }

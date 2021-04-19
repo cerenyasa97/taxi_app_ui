@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-
-import '../constants/app/custom_text_style.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
 import '../constants/text/text_constants.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
 import 'project_text_button.dart';
 
 class ProjectButtonBar extends StatelessWidget {
@@ -23,7 +23,7 @@ class ProjectButtonBar extends StatelessWidget {
         ProjectTextButton(
           onPressed: () => onPressed(),
           text: rightButtonText ??  TextConstants.SAVE_BUTTON,
-          style: CustomTextStyle.amber20w8,
+          style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline4.copyWith(color: Colors.amber),
         ),
       ],
     );

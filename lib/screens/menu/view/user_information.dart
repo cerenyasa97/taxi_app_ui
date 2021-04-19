@@ -1,6 +1,6 @@
 import 'package:piton_taxi_app/widgets/circle_image.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/constants/dummy_data.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/dummy_data/dummy_data.dart';
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/init/project_theme.dart';
 import 'package:provider/provider.dart';

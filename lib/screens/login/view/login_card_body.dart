@@ -12,8 +12,8 @@ import '../../../widgets/next_page.dart';
 
 // ignore: must_be_immutable
 class LoginCardBody extends StatelessWidget {
-  String _countryCode = TextConstants.INITIAL_COUNTRY_CODE;
-  String _phoneNumber;
+  String countryCode = TextConstants.INITIAL_COUNTRY_CODE;
+  String phoneNumber;
   bool _validation = false;
 
   @override
@@ -34,12 +34,12 @@ class LoginCardBody extends StatelessWidget {
           children: [
             CountryCodeWidget(
               onChanged: (code) {
-                _countryCode = code.dialCode;
+                this.countryCode = code.dialCode;
               },
             ),
             PhoneNumberWidget(
               onChanged: (phoneNumber) {
-                _phoneNumber = phoneNumber;
+                this.phoneNumber = phoneNumber;
               },
               validator: (validate) {
                 _validation = validate ?? false;
