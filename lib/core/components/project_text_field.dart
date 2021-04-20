@@ -16,10 +16,14 @@ class ProjectTextField extends StatefulWidget {
   final Color cursorColor;
   final double textSize;
   final String initialValue;
-  final bool obsecureText;
+  final bool obscureText;
   final TextInputType keyboardType;
   final int maxLines;
   final int minLines;
+  final bool autofocus;
+  final FocusNode fNode;
+  final VoidCallback completed;
+  final int maxLength;
 
   const ProjectTextField(
       {Key key,
@@ -39,7 +43,11 @@ class ProjectTextField extends StatefulWidget {
       this.textSize,
       this.initialValue,
       this.keyboardType,
-      this.obsecureText, this.maxLines, this.minLines})
+      this.obscureText,
+      this.maxLines,
+      this.minLines,
+      this.autofocus,
+        this.fNode, this.completed, this.maxLength})
       : super(key: key);
 
   @override
@@ -59,7 +67,9 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: widget.obsecureText ?? false,
+      focusNode: widget.fNode ?? FocusNode(),
+      autofocus: widget.autofocus ?? false,
+      obscureText: widget.obscureText ?? false,
       keyboardType: widget.keyboardType ?? TextInputType.text,
       controller: _controller,
       style: Theme.of(context).textTheme.bodyText2,
@@ -80,8 +90,10 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
       cursorColor: widget.cursorColor,
       onSubmitted: (text) =>
           widget.onSubmitted != null ? widget.onSubmitted(text) : {},
+      onEditingComplete: () => widget.completed ?? {},
       minLines: widget.minLines,
       maxLines: widget.maxLines,
+      maxLength: widget.maxLength ?? null,
     );
   }
 

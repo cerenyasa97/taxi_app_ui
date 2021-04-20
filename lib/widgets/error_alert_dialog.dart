@@ -27,6 +27,7 @@ class ErrorAlertDialog extends StatelessWidget {
       ),
       content: ProjectText(
         text: contentText ?? " ",
+        maxLines: 5,
         style: textTheme.bodyText1,
       ),
       actions: [NextPage(onTap: () => Navigator.of(context).pop())],

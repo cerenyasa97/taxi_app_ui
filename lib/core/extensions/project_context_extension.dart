@@ -72,6 +72,10 @@ extension SizedBoxExtension on BuildContext {
   SizedBox get mediumSizedBoxWidth => SizedBox(
         width: this.dynamicHeight(8 / 87),
       );
+
+  SizedBox get lowSizedBoxWidth => SizedBox(
+    width: this.dynamicHeight(2 / 87),
+  );
 }
 
 extension DurationExtension on BuildContext {

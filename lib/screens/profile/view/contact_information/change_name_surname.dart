@@ -3,30 +3,29 @@ import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:flutter/material.dart';
-import 'change_body.dart';
+import '../change_body.dart';
 
-class ChangePhone extends BaseView {
-  ChangePhone({Key key}) : super(key: key);
+class ChangeNameSurname extends BaseView {
+  ChangeNameSurname({Key key}) : super(key: key);
 
   @override
-  _ChangePhoneState createState() => _ChangePhoneState();
+  _ChangeNameSurnameState createState() => _ChangeNameSurnameState();
 }
 
-class _ChangePhoneState extends BaseState<ChangePhone> {
+class _ChangeNameSurnameState extends BaseState<ChangeNameSurname> {
   InputBorder enabled;
   InputBorder focused;
 
   @override
-  String appBarTitle() => TextConstants.CHANGE_PHONE;
+  String appBarTitle() => TextConstants.CHANGE_NAME_SURNAME;
 
   @override
   Widget body() {
     return ChangeBody(
-      keyboardType: TextInputType.phone,
-        label: TextConstants.PROFILE_PHONE_LABEL,
-        onChanged: (phoneText) {
-          DummyData.user_1.phoneNumber = phoneText;
-        }
+      label: TextConstants.PROFILE_NAME_LABEL,
+      onChanged: (nameSurnameText) {
+        DummyData.user_1.nameSurname = nameSurnameText;
+      }
     );
   }
 

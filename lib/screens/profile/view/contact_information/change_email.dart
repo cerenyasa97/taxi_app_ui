@@ -3,29 +3,30 @@ import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:flutter/material.dart';
-import 'change_body.dart';
+import '../change_body.dart';
 
-class ChangeNameSurname extends BaseView {
-  ChangeNameSurname({Key key}) : super(key: key);
+class ChangeEmail extends BaseView {
+  ChangeEmail({Key key}) : super(key: key);
 
   @override
-  _ChangeNameSurnameState createState() => _ChangeNameSurnameState();
+  _ChangeEmailState createState() => _ChangeEmailState();
 }
 
-class _ChangeNameSurnameState extends BaseState<ChangeNameSurname> {
+class _ChangeEmailState extends BaseState<ChangeEmail> {
   InputBorder enabled;
   InputBorder focused;
 
   @override
-  String appBarTitle() => TextConstants.CHANGE_NAME_SURNAME;
+  String appBarTitle() => TextConstants.CHANGE_EMAIL;
 
   @override
   Widget body() {
     return ChangeBody(
-      label: TextConstants.PROFILE_NAME_LABEL,
-      onChanged: (nameSurnameText) {
-        DummyData.user_1.nameSurname = nameSurnameText;
-      }
+      keyboardType: TextInputType.emailAddress,
+        label: TextConstants.PROFILE_EMAIL_LABEL,
+        onChanged: (emailText) {
+           DummyData.user_1.email = emailText;
+        }
     );
   }
 

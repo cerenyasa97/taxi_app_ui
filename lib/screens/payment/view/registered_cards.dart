@@ -26,12 +26,26 @@ class _RegisteredCardsState extends BaseState<RegisteredCards> {
 
   @override
   Widget body() {
-    final TextStyle style = Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline3.copyWith(color: Colors.white.withOpacity(0.95));
+    final TextStyle style = Provider.of<ProjectThemeData>(context)
+        .getThemeData
+        .textTheme
+        .headline3
+        .copyWith(color: Colors.white.withOpacity(0.95));
     return ListView.builder(
       itemCount: DummyData.cardList.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () => Navigator.of(context).pushReplacement(ProjectRoute.generateSlidePageRouteBuilder(Pages.HOME, ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+          key: UniqueKey(),
+          onTap: () => Navigator.of(context).pushReplacement(
+              ProjectRoute.generateSlidePageRouteBuilder(
+                  Pages.HOME, ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+          onPanUpdate: (detail) {
+            if(detail.delta.dx > 0){
+              setState(() {
+                DummyData.cardList.removeAt(index);
+              });
+            }
+          },
           child: Center(
             child: Stack(
               children: [
@@ -59,8 +73,8 @@ class _RegisteredCardsState extends BaseState<RegisteredCards> {
                       )
                     ],
                   ),
-                  bottom: context.dynamicHeight(3/87),
-                  left: context.dynamicWidth(20/412),
+                  bottom: context.dynamicHeight(3 / 87),
+                  left: context.dynamicWidth(20 / 412),
                 )
               ],
             ),
@@ -72,4 +86,16 @@ class _RegisteredCardsState extends BaseState<RegisteredCards> {
 
   @override
   EdgeInsetsGeometry padding() => context.mediumEdgeInsetsSymmetric;
+
+  @override
+  FloatingActionButton floatingActionButton() => FloatingActionButton(
+        child: Icon(
+          Icons.add,
+          size: 33,
+          color: Colors.white,
+        ),
+        onPressed: () => Navigator.of(context).push(
+            ProjectRoute.generateSlidePageRouteBuilder(Pages.ADD_CARD,
+                ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+      );
 }

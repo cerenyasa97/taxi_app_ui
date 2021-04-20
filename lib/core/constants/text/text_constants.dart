@@ -55,6 +55,9 @@ class TextConstants{
   static const String PAYMENT_POINTS = "Points";
   static const String REGISTERED_CARDS_TITLE = "Registered Cards";
   static const String TOTAL_POINTS_LABEL = "Total Points";
+  static const String ADD_CREDIT_CARD_TITLE = "Add Card";
+  static const String CREDIT_CARD_ADD_ERROR = "Please make sure the information is correct";
+  static const String INPUT_ERROR = "Input Error";
 
   static const String SLIDING_UP_PANEL_HINT = "Slide up to change date and time";
   static const String DATE = "Date : ";

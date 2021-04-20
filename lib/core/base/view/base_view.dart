@@ -14,6 +14,7 @@ abstract class BaseState<Page extends BaseView> extends State<Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: floatingActionButton(),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
@@ -35,4 +36,6 @@ abstract class BaseState<Page extends BaseView> extends State<Page> {
   Widget body();
 
   EdgeInsetsGeometry padding();
+
+  FloatingActionButton floatingActionButton() => null;
 }
