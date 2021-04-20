@@ -39,6 +39,14 @@ class ProjectRoute{
         return PaymentPoints();
       case Pages.TRIP_DETAIL:
         return TripDetail(trip: variable);
+      case Pages.ADDRESS:
+        return UserAddress();
+      case Pages.CHANGE_HOME_ADDRESS:
+        return ChangeHomeAddress();
+      case Pages.CHANGE_WORK_ADDRESS:
+        return ChangeWorkAddress();
+      case Pages.ADD_ANOTHER_ADDRESS:
+        return AddAnotherAddress();
     }
   }
 

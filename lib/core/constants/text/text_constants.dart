@@ -4,7 +4,7 @@ class TextConstants{
 
   // String title, subtitles or texts
 
-  static const String SECONDS = " Seconds";
+  static const String SECONDS = " s";
   static const String WHERE_TO = "Where to...";
   static const String INITIAL_COUNTRY_CODE = "+90";
   static const String WHERE_FROM = "Where from...";
@@ -21,7 +21,7 @@ class TextConstants{
   static const String MENU_BOOK_LATER = "Book Later";
   static const String MENU_MY_TRIPS = "Trips";
   static const String MENU_RATE_CARD = "Rate Cards";
-  static const String MENU_NEWS_OFFERS = "News and Offers";
+  static const String MENU_NEWS_OFFERS = "Notifications and Offers";
   static const String MENU_EMERGENCY_CONTACTS = "Emergency Contacts";
   static const String MENU_HELP_SUPPORT = "Help and Support";
 
@@ -30,7 +30,16 @@ class TextConstants{
   static const String PROFILE_NAME_LABEL = "Name Surname";
   static const String PROFILE_EMAIL_LABEL = "Email";
   static const String PROFILE_PHONE_LABEL = "Phone Number";
+  static const String PROFILE_ADDRESS = "ADDRESS INFORMATION";
   static const String PROFILE_LOG_OUT = "Log Out";
+
+  static const String ADDRESSES_TITLE = "Addresses";
+  static const String ADDRESSES_SUBTITLE = "Favorite Addresses";
+  static const String ADDRESSES_HOME = "Home";
+  static const String ADDRESSES_WORK = "Work";
+  static const String ADDRESSES_ANOTHER = "Add Another";
+  static const String ANOTHER_ADDRESS_LABEL = "Address Label";
+  static const String ANOTHER_ADDRESS = "Address";
 
   static const String CHANGE_NAME_SURNAME = "Change Name Surname";
   static const String CHANGE_EMAIL = "Change Email";
