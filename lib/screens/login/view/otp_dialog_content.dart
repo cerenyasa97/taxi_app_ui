@@ -3,6 +3,7 @@ import 'package:piton_taxi_app/core/components/project_text_form_field.dart';
 import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/init/otp_dialog_focus_nodes.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:piton_taxi_app/screens/login/view/otp_code_body.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +32,7 @@ class _OtpDialogContentState extends State<OtpDialogContent> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _codeField(context, autoFocus: true, nextFNode: OTPDialogConstants.field2FNode),
+        _codeField(context, currentFNode: OTPDialogConstants.field1FNode, nextFNode: OTPDialogConstants.field2FNode),
         _codeField(context, currentFNode: OTPDialogConstants.field2FNode, nextFNode: OTPDialogConstants.field3FNode),
         _codeField(context, currentFNode: OTPDialogConstants.field3FNode, nextFNode: OTPDialogConstants.field4FNode),
         _codeField(context, currentFNode: OTPDialogConstants.field4FNode, nextFNode: OTPDialogConstants.field5FNode),
@@ -42,13 +43,12 @@ class _OtpDialogContentState extends State<OtpDialogContent> {
   }
 
   SizedBox _codeField(BuildContext context,
-      {bool autoFocus = false, FocusNode currentFNode, FocusNode nextFNode}) {
+      {FocusNode currentFNode, FocusNode nextFNode}) {
     final InputDecorationTheme inputTheme = Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme;
     return SizedBox(
         width: context.dynamicWidth(35/412),
         child: ProjectTextFormField(
-          autofocus: autoFocus ?? false,
-          focusNode: currentFNode ?? FocusNode(),
+          focusNode: currentFNode,
           keyboardType: TextInputType.number,
           enabledBorder: inputTheme.enabledBorder,
           focusedBorder: inputTheme.focusedBorder,
@@ -68,6 +68,4 @@ class _OtpDialogContentState extends State<OtpDialogContent> {
   void nextField(String text, FocusNode focusNode) {
     if(text.length == 1) context.nextFocusNode(focusNode);
   }
-
-
 }

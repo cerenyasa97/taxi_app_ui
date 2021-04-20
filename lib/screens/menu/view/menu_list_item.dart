@@ -5,7 +5,7 @@ import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class MenuListItem extends StatelessWidget {
-  final Menu menuItem;
+  final MenuModel menuItem;
 
   const MenuListItem({Key key, this.menuItem}) : super(key: key);
 

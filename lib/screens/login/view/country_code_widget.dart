@@ -13,14 +13,14 @@ class CountryCodeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(context.dynamicWidth(10/412)),
+        border: Border.all(color: Colors.grey, width: 2),
+        borderRadius: BorderRadius.circular(context.dynamicWidth(6/412)),
       ),
       child: CountryCodePicker(
         initialSelection: TextConstants.INITIAL_COUNTRY_CODE_TEXT,
         favorite: TextConstants.favoriteCountriesCodeTexts,
         showCountryOnly: true,
-        flagWidth: 28,
+        flagWidth: 26,
         backgroundColor: Colors.grey,
         onChanged: onChanged,
       ),

@@ -69,6 +69,6 @@ class LoginCardBody extends StatelessWidget {
         barrierDismissible: false,
         context: context,
         builder: (context) =>
-            _validation ? OtpCodeDialog() : ErrorAlertDialog());
+            _validation ? OtpCodeDialog() : ErrorAlertDialog(title: TextConstants.GET_WARNING_TITLE, contentText: TextConstants.PHONE_VERIFICATION_FIELD_ERROR));
   }
 }

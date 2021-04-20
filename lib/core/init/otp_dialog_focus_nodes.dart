@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 class OTPDialogConstants{
+  static final FocusNode field1FNode = FocusNode();
   static FocusNode field2FNode = FocusNode();
   static FocusNode field3FNode = FocusNode();
   static FocusNode field4FNode = FocusNode();
   static FocusNode field5FNode = FocusNode();
   static FocusNode field6FNode = FocusNode();
 
+  OTPDialogConstants(){
+    field1FNode.requestFocus();
+  }
+
   static getIndex(FocusNode currentFNode) {
-    if(currentFNode == field2FNode) return 1;
+    if(currentFNode == field2FNode) return 0;
+    else if(currentFNode == field2FNode) return 1;
     else if(currentFNode == field3FNode) return 2;
     else if(currentFNode == field4FNode) return 3;
     else if(currentFNode == field5FNode) return 4;

@@ -30,7 +30,7 @@ class TaxiApp extends StatelessWidget {
         builder: () => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Provider.of<ProjectThemeData>(context).getThemeData,
-          home: TaxiNotifications()//Menu()//HomePage() //Splash() HomePage() Profile() ,
+          home: Menu()//Profile() //TaxiNotifications() // HomePage() Profile() ,
         )
     );
   }

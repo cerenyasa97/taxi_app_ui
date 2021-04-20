@@ -5,25 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/init/project_theme.dart';
 import 'package:provider/provider.dart';
 
-
 class UserInformations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        CircleImage(),
-        Column(
-        children: [
-          ProjectText(text: DummyData.user_1.nameSurname, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline6,),
-          ProjectText(text: DummyData.user_1.phoneNumber, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle1,)
-        ],
+    return ListTile(
+      leading: CircleImage(),
+      title: ProjectText(
+        text: DummyData.user_1.nameSurname,
+        style: Provider.of<ProjectThemeData>(context)
+            .getThemeData
+            .textTheme
+            .headline4
+            .copyWith(color: Colors.black87),
       ),
-        IconButton(
+      subtitle: ProjectText(
+        text: DummyData.user_1.phoneNumber,
+        style: Provider.of<ProjectThemeData>(context)
+            .getThemeData
+            .textTheme
+            .bodyText1,
+      ),
+      trailing: IconButton(
         icon: Icon(Icons.close),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      ],
     );
   }
 }
