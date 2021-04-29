@@ -1,9 +1,9 @@
 import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/dummy_data/dummy_data.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:flutter/material.dart';
-import '../change_body.dart';
+import 'change_body.dart';
 
 class ChangePhone extends BaseView {
   ChangePhone({Key key}) : super(key: key);
@@ -13,9 +13,6 @@ class ChangePhone extends BaseView {
 }
 
 class _ChangePhoneState extends BaseState<ChangePhone> {
-  InputBorder enabled;
-  InputBorder focused;
-
   @override
   String appBarTitle() => TextConstants.CHANGE_PHONE;
 

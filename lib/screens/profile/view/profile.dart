@@ -1,5 +1,5 @@
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:flutter/material.dart';
 import 'profile_body.dart';

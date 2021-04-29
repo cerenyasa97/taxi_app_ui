@@ -3,7 +3,6 @@ import 'package:piton_taxi_app/core/components/project_text_form_field.dart';
 import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/init/otp_dialog_focus_nodes.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/init/project_theme.dart';
-import 'package:piton_taxi_app/screens/login/view/otp_code_body.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

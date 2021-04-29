@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/utils/DottedLine.dart';
+import 'package:piton_taxi_app/widgets/dotted_line.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/constants/app/custom_text_style.dart';

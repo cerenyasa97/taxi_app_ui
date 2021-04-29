@@ -9,14 +9,16 @@ abstract class BaseView extends StatefulWidget {
 }
 
 abstract class BaseState<Page extends BaseView> extends State<Page> {
-  String appBarTitle();
+  String appBarTitle() => null;
+
+  AppBar appBar() => null;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: floatingActionButton(),
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
+      appBar: appBar() ?? AppBar(
         centerTitle: true,
         title: ProjectText(
           text: appBarTitle(),

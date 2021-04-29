@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/components/project_rating_stars.dart';
 import 'package:piton_taxi_app/core/components/project_text_button.dart';
 import 'package:piton_taxi_app/core/components/project_text_field.dart';

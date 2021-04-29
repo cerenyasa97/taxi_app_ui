@@ -1,7 +1,8 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/components/project_button_bar.dart';
+import 'package:piton_taxi_app/core/extensions/theme_extension.dart';
 import 'package:piton_taxi_app/core/components/project_image.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
 import '../../../core/constants/images/image_constants.dart';
 import '../../../core/constants/dummy_data/dummy_data.dart';
 import '../../../core/constants/text/text_constants.dart';
@@ -10,7 +11,6 @@ import '../../../core/constants/app/constants.dart';
 import '../../../core/constants/enums/routes.dart';
 import '../../../core/base/view/base_view.dart';
 import '../../../core/init/project_routes.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPoints extends BaseView {
@@ -26,8 +26,6 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
 
   @override
   Widget body() {
-    final TextTheme textTheme =
-        Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return ListView(
       children: [
         Center(
@@ -51,7 +49,7 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                 children: [
                   ProjectText(
                     text: TextConstants.TOTAL_POINTS_LABEL,
-                    style: textTheme.headline4
+                    style: context.textTheme.headline4
                         .copyWith(color: Colors.black87),
                   ),
                   Row(
@@ -62,7 +60,7 @@ class _PaymentPointsState extends BaseState<PaymentPoints> {
                       ),
                       ProjectText(
                           text: DummyData.TOTAL_POINTS,
-                          style: textTheme.headline1),
+                          style: context.textTheme.headline1),
                     ],
                   )
                 ],

@@ -46,9 +46,11 @@ class ProjectRoute{
       case Pages.CHANGE_WORK_ADDRESS:
         return ChangeWorkAddress();
       case Pages.ADD_ANOTHER_ADDRESS:
-        return AddAnotherAddress();
+        return AddAnotherAddress(variable);
       case Pages.ADD_CARD:
         return AddCreditCard();
+      case Pages.SEARCH_LOCATION:
+        return SearchLocation(variable);
     }
   }
 

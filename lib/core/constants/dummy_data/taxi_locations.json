@@ -1,0 +1,48 @@
+{
+  "Taxi" : [
+    {
+    "id" : 1,
+    "driver" : {
+      "name" : "Jack Doe",
+      "phoneNumber" : "+90 545 545 54 54"
+    },
+    "location" : {
+      "latitude" : 39.7529721,
+      "longitude" : 30.4901687
+    }
+  },
+    {
+      "id" : 1,
+      "driver" : {
+        "name" : "James Doe",
+        "phoneNumber" : "+90 541 512 47 98"
+      },
+      "location" : {
+        "latitude" : 39.7530151,
+        "longitude" : 30.4815127
+      }
+    },
+    {
+      "id" : 1,
+      "driver" : {
+        "name" : "Chris Doe",
+        "phoneNumber" : "+90 546 541 45 56"
+      },
+      "location" : {
+        "latitude" : 39.7511011,
+        "longitude" : 30.4797107
+      }
+    },
+    {
+      "id" : 1,
+      "driver" : {
+        "name" : "Michael Doe",
+        "phoneNumber" : "+90 532 456 21 54"
+      },
+      "location" : {
+        "latitude" : 39.74994,
+        "longitude" : 30.4713282
+      }
+    }
+  ]
+}

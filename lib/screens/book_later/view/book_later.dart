@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
@@ -63,5 +64,11 @@ class _BookLaterState extends MapBaseState<BookLater> {
           topLeft: Radius.circular(context.dynamicWidth(40 / 412)),
           topRight: Radius.circular(context.dynamicWidth(40 / 412))),
     );
+  }
+
+  @override
+  ValueNotifier<Map<MarkerId, Marker>> getMarkerListenable() {
+    // TODO: implement getMarkerListenable
+    throw UnimplementedError();
   }
 }

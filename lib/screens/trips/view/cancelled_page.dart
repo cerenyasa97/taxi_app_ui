@@ -10,6 +10,7 @@ class CancelledPage extends StatefulWidget {
 class _CancelledPageState extends State<CancelledPage>
     with AutomaticKeepAliveClientMixin<CancelledPage> {
   @override
+  // ignore: must_call_super
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) =>

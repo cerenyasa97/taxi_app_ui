@@ -1,9 +1,9 @@
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/components/project_text_field.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/components/project_text_field.dart';
+import 'package:piton_taxi_app/core/extensions/theme_extension.dart';
+import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
-import 'package:provider/provider.dart';
 import 'alert_dialog_button.dart';
 
 class LocationSearchAlertDialog extends StatelessWidget {
@@ -20,10 +20,10 @@ class LocationSearchAlertDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(context.dynamicWidth(30/412))
       ),
-      title: ProjectText(text: title, style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.headline5.copyWith(fontWeight: FontWeight.w600),),
+      title: ProjectText(text: title, style: context.textTheme.headline5.copyWith(fontWeight: FontWeight.w600),),
       content: ProjectTextField(
-        enabledBorder: Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme.enabledBorder,
-        focusedBorder: Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme.focusedBorder,
+        enabledBorder: context.inputDecorationTheme.enabledBorder,
+        focusedBorder: context.inputDecorationTheme.focusedBorder,
         contentPadding: context.textInputPadding,
         initialValue: initialText,
         onChanged: onChanged,

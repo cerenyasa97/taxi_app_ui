@@ -46,3 +46,5 @@ app.*.map.json
 /android/app/release
 apk from previous versions/1.apk
 apk from previous versions/2.apk
+
+/lib/core/constants/credentials

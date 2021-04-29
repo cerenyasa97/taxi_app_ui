@@ -22,4 +22,5 @@ class ImageConstants{
   static const String ONCOMING_ICON = IMAGES_PATH + "oncoming_icon.png";
   static const String DRIVER_IMAGE = IMAGES_PATH + "driver.png";
   static const String OFFER_1 = IMAGES_PATH + "offer1.png";
+  static const String LOADING_INDICATOR = IMAGES_PATH + "loading.gif";
 }

@@ -1,7 +1,8 @@
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/screens/notifications/model/notification_model.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
+import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
 import 'package:piton_taxi_app/core/init/project_routes.dart';
 import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
@@ -25,7 +26,7 @@ class _NotificationListState extends State<NotificationList> {
   Widget build(BuildContext context) {
     return Container(
       margin: context.lowEdgeInsetsVertical,
-      height: context.dynamicHeight(1/2),
+      height: context.dynamicHeight(1 / 2),
       child: ListView.builder(
         itemBuilder: (context, index) => Container(
           margin: context.lowEdgeInsetsVertical,
@@ -42,8 +43,13 @@ class _NotificationListState extends State<NotificationList> {
           ),
           child: CustomListTile(
             title: _notificationList[index].notificationTitle,
-            leadingIcon: Icon(_notificationList[index].typeIcon, size: 30, color: Colors.amber,),
-            onTap: () => _navigateOnTap(_notificationList[index].notificationType),
+            leadingIcon: Icon(
+              _notificationList[index].typeIcon,
+              size: 30,
+              color: Colors.amber,
+            ),
+            onTap: () =>
+                _navigateOnTap(_notificationList[index].notificationType),
           ),
         ),
         itemCount: _notificationList.length,
@@ -51,13 +57,15 @@ class _NotificationListState extends State<NotificationList> {
     );
   }
 
-  _navigateOnTap(NotificationType type){
-    if(type == NotificationType.oncoming || type == NotificationType.completed || type == NotificationType.cancelled){
-      ProjectRoute.generateSlidePageRouteBuilder(Pages.TRIP_DETAIL, ProjectConstants.FAST_PAGE_TRANSITION_DURATION);
-    }
-    else{
-      ProjectRoute.generateSlidePageRouteBuilder(Pages.HOME, ProjectConstants.FAST_PAGE_TRANSITION_DURATION);
+  _navigateOnTap(NotificationType type) {
+    if (type == NotificationType.oncoming ||
+        type == NotificationType.completed ||
+        type == NotificationType.cancelled) {
+      ProjectRoute.generateSlidePageRouteBuilder(
+          Pages.TRIP_DETAIL, ProjectConstants.FAST_PAGE_TRANSITION_DURATION);
+    } else {
+      ProjectRoute.generateSlidePageRouteBuilder(
+          Pages.HOME, ProjectConstants.FAST_PAGE_TRANSITION_DURATION);
     }
   }
 }
-

@@ -20,7 +20,8 @@ class ProjectText extends StatelessWidget {
       this.family,
       this.style,
       this.align,
-      this.maxLines})
+      this.maxLines,
+      })
       : super(key: key);
 
   @override

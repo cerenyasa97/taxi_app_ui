@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/sized_box_extension.dart';
 import 'package:piton_taxi_app/core/components/project_button_bar.dart';
 import 'package:piton_taxi_app/core/components/project_text_field.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
@@ -11,35 +11,39 @@ class ChangeBody extends StatelessWidget {
   final TextInputType keyboardType;
   final VoidCallback onSaved;
   final String label;
+  final int minLine;
+  final int maxLine;
 
-  const ChangeBody(
-      {Key key, this.onChanged, this.label, this.onSaved, this.keyboardType})
-      : super(key: key);
+  const ChangeBody({
+    Key key,
+    this.onChanged,
+    this.label,
+    this.onSaved,
+    this.keyboardType,
+    this.minLine,
+    this.maxLine,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Provider.of<ProjectThemeData>(context)
-              .getThemeData;
+    final ThemeData themeData =
+        Provider.of<ProjectThemeData>(context).getThemeData;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ProjectText(
           text: label ?? "Change",
-          style: themeData
-              .textTheme
-              .bodyText1
+          style: themeData.textTheme.bodyText1
               .copyWith(color: Colors.grey.shade700),
         ),
         context.lowSizedBoxHeight,
         ProjectTextField(
+          minLines: minLine ?? 1,
+          maxLines: maxLine ?? 1,
+          autofocus: true,
           keyboardType: keyboardType ?? TextInputType.text,
-          contentPadding: context.textInputPadding,
-          enabledBorder: themeData
-              .inputDecorationTheme
-              .enabledBorder,
-          focusedBorder: themeData
-              .inputDecorationTheme
-              .focusedBorder,
+          enabledBorder: themeData.inputDecorationTheme.enabledBorder,
+          focusedBorder: themeData.inputDecorationTheme.focusedBorder,
           onChanged: onChanged,
         ),
         ProjectButtonBar(

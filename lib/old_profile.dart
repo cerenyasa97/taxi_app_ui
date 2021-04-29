@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/constants/app/custom_text_style.dart';
-import 'package:piton_taxi_app/utils/DottedLine.dart';
+import 'package:piton_taxi_app/widgets/dotted_line.dart';
 
 class OldProfile extends StatefulWidget {
   @override

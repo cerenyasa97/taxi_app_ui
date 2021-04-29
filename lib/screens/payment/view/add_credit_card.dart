@@ -1,16 +1,17 @@
-import 'package:piton_taxi_app/core/components/project_button_bar.dart';
-import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/components/dropdown_menu_with_border.dart';
-import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/screens/payment/model/credit_card_model.dart';
+import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
+import 'package:piton_taxi_app/core/extensions/sized_box_extension.dart';
 import 'package:piton_taxi_app/core/components/project_text_field.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
-import 'package:piton_taxi_app/screens/payment/model/credit_card_model.dart';
+import 'package:piton_taxi_app/core/components/project_button_bar.dart';
+import 'package:piton_taxi_app/core/extensions/theme_extension.dart';
+import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:piton_taxi_app/widgets/error_alert_dialog.dart';
-import 'package:provider/provider.dart';
+import 'package:piton_taxi_app/core/base/view/base_view.dart';
+import 'package:piton_taxi_app/core/init/pages_import.dart';
 
 class AddCreditCard extends BaseView {
   @override
@@ -43,22 +44,25 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
 
   @override
   Widget body() {
-    final ThemeData themeData =
-        Provider.of<ProjectThemeData>(context).getThemeData;
-    final textStyle =
-        themeData.textTheme.bodyText1.copyWith(color: Colors.grey.shade700);
-    final enabledBorder = themeData.inputDecorationTheme.enabledBorder;
-    final focusedBorder = themeData.inputDecorationTheme.focusedBorder;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProjectText(text: "Card Holder", style: textStyle),
-        _getText(enabledBorder, focusedBorder, focusNode0),
+        ProjectText(
+            text: "Card Holder",
+            style: context.textTheme.bodyText1
+                .copyWith(color: Colors.grey.shade700)),
+        _getText(context, focusNode0),
         context.lowSizedBoxHeight,
-        ProjectText(text: "Card Number", style: textStyle),
-        _getText(enabledBorder, focusedBorder, focusNode1),
+        ProjectText(
+            text: "Card Number",
+            style: context.textTheme.bodyText1
+                .copyWith(color: Colors.grey.shade700)),
+        _getText(context, focusNode1),
         context.lowSizedBoxHeight,
-        ProjectText(text: "Expiration Date", style: textStyle),
+        ProjectText(
+            text: "Expiration Date",
+            style: context.textTheme.bodyText1
+                .copyWith(color: Colors.grey.shade700)),
         Row(
           children: [
             DropDownMenuWithBorder(
@@ -79,7 +83,7 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
             Navigator.of(context).pop();
           } else {
             return showDialog(
-              barrierDismissible: false,
+                barrierDismissible: false,
                 context: context,
                 builder: (context) => ErrorAlertDialog(
                       contentText: TextConstants.CREDIT_CARD_ADD_ERROR,
@@ -92,14 +96,14 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
   }
 
   ProjectTextField _getText(
-      InputBorder enabledBorder, InputBorder focusedBorder, FocusNode node) {
+      BuildContext context, FocusNode node) {
     return ProjectTextField(
       fNode: node,
       keyboardType:
           node == focusNode0 ? TextInputType.text : TextInputType.number,
       contentPadding: context.textInputPadding,
-      enabledBorder: enabledBorder,
-      focusedBorder: focusedBorder,
+      enabledBorder: context.inputDecorationTheme.enabledBorder,
+      focusedBorder: context.inputDecorationTheme.focusedBorder,
       maxLength: node == focusNode0 ? null : 16,
       onChanged: (value) =>
           node == focusNode0 ? cardHolder = value : cardNumber = value,

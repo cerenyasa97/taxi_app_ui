@@ -1,4 +1,4 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
 import 'package:piton_taxi_app/screens/trips/view/trip_card.dart';

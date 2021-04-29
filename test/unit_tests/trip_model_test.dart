@@ -16,7 +16,7 @@ void main() {
         distance: 7.2,
         time: 17,
         price: 34,
-        driver: Driver("Jack Doe", "+90 545 545 54 54"),
+        driver: Driver("Jack Doe", "+90 545 545 54 54", "26 XX 545"),
         rating: 5);
 
     expect(trip.startLocation, "Piton Ar-Ge and Software House");

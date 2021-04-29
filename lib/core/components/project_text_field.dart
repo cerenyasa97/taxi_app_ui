@@ -1,3 +1,7 @@
+import 'package:flutter/services.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class ProjectTextField extends StatefulWidget {
@@ -24,6 +28,7 @@ class ProjectTextField extends StatefulWidget {
   final FocusNode fNode;
   final VoidCallback completed;
   final int maxLength;
+  final TextEditingController controller;
 
   const ProjectTextField(
       {Key key,
@@ -47,7 +52,10 @@ class ProjectTextField extends StatefulWidget {
       this.maxLines,
       this.minLines,
       this.autofocus,
-        this.fNode, this.completed, this.maxLength})
+      this.fNode,
+      this.completed,
+      this.maxLength,
+      this.controller})
       : super(key: key);
 
   @override
@@ -60,14 +68,22 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController();
+    _controller = widget.controller ?? TextEditingController();
     _controller.text = widget.initialValue ?? "";
   }
 
+  get controller => _controller;
+
   @override
   Widget build(BuildContext context) {
+    final inputTheme = Provider.of<ProjectThemeData>(context)
+        .getThemeData
+        .inputDecorationTheme;
+    final textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return TextField(
-      focusNode: widget.fNode ?? FocusNode(),
+      textCapitalization: TextCapitalization.sentences,
+      textInputAction: TextInputAction.done,
+      focusNode: widget.fNode ?? null,
       autofocus: widget.autofocus ?? false,
       obscureText: widget.obscureText ?? false,
       keyboardType: widget.keyboardType ?? TextInputType.text,
@@ -75,12 +91,13 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
       style: Theme.of(context).textTheme.bodyText2,
       decoration: InputDecoration(
         border: widget.border,
-        focusedBorder: widget.focusedBorder ?? InputBorder.none,
-        enabledBorder: widget.enabledBorder ?? InputBorder.none,
+        focusedBorder: widget.focusedBorder ?? inputTheme.focusedBorder,
+        enabledBorder: widget.enabledBorder ?? inputTheme.enabledBorder,
         errorBorder: widget.errorBorder ?? InputBorder.none,
         disabledBorder: widget.disabledBorder ?? InputBorder.none,
-        contentPadding: widget.contentPadding ?? null,
+        contentPadding: widget.contentPadding ?? context.textInputPadding,
         hintText: widget.hintText ?? "Enter...",
+        hintStyle: textTheme.bodyText2.copyWith(color: Colors.blueGrey),
         labelText: widget.label ?? null,
         suffixIcon: widget.suffixIcon ?? null,
         prefixIcon: widget.prefixIcon ?? null,

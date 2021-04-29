@@ -5,7 +5,7 @@ import 'home/dialog/payment_dialog.dart';
 import 'home/dialog/promo_code_dialog.dart';
 import 'home/trip_started.dart';
 import 'core/constants/app/custom_text_style.dart';
-import 'utils/DottedLine.dart';
+import 'widgets/dotted_line.dart';
 
 class FareInfo extends StatefulWidget {
   @override

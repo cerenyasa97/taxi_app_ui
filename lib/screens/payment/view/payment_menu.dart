@@ -1,4 +1,5 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/extensions/sized_box_extension.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import '../../../core/constants/images/image_constants.dart';

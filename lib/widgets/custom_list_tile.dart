@@ -4,24 +4,53 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class CustomListTile extends StatelessWidget {
-
   final String imagePath;
   final String title;
   final String subtitle;
   final Function() onTap;
   final bool titleBold;
   final Icon leadingIcon;
+  final Icon trailingIcon;
+  final TextStyle titleStyle;
 
-  const CustomListTile({Key key, this.imagePath, @required this.title, this.subtitle, this.onTap, this.titleBold = true, this.leadingIcon}) : super(key: key);
+  const CustomListTile(
+      {Key key,
+      this.imagePath,
+      @required this.title,
+      this.subtitle,
+      this.onTap,
+      this.titleBold = true,
+      this.leadingIcon,
+      this.trailingIcon,
+        this.titleStyle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
+    final TextTheme textTheme =
+        Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
     return ListTile(
-      trailing: Icon(Icons.arrow_forward_ios, size: 20,),
-      leading: imagePath != null ? Image.asset(imagePath, fit: BoxFit.fitHeight,) : (leadingIcon ?? null),
-      title: ProjectText(text: title ?? "", style: textTheme.bodyText1.copyWith(fontWeight: titleBold ? FontWeight.bold : FontWeight.normal),),
-      subtitle: subtitle != null ? ProjectText(text: subtitle, style: textTheme.bodyText1,) : null,
+      trailing: trailingIcon ?? Icon(
+            Icons.arrow_forward_ios,
+            size: 20,
+          ),
+      leading: imagePath != null
+          ? Image.asset(
+              imagePath,
+              fit: BoxFit.fitHeight,
+            )
+          : (leadingIcon ?? null),
+      title: ProjectText(
+        text: title ?? "",
+        style: titleStyle ?? textTheme.bodyText1.copyWith(
+            fontWeight: titleBold ? FontWeight.bold : FontWeight.normal),
+      ),
+      subtitle: subtitle != null
+          ? ProjectText(
+              text: subtitle,
+              style: textTheme.bodyText1,
+            )
+          : null,
       onTap: onTap,
     );
   }

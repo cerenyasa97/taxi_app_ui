@@ -6,6 +6,7 @@ export 'package:piton_taxi_app/screens/profile/view/address_information/user_add
 export 'package:piton_taxi_app/screens/profile/view/contact_information/change_email.dart';
 export 'package:piton_taxi_app/screens/profile/view/contact_information/change_phone.dart';
 export 'package:piton_taxi_app/screens/notifications/view/taxi_notifications.dart';
+export 'package:piton_taxi_app/screens/search_location/view/search_location.dart';
 export 'package:piton_taxi_app/screens/payment/view/registered_cards.dart';
 export 'package:piton_taxi_app/screens/payment/view/add_credit_card.dart';
 export 'package:piton_taxi_app/screens/payment/view/payment_points.dart';

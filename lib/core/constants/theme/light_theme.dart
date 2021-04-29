@@ -259,7 +259,7 @@ final ThemeData lightTheme = ThemeData(
     floatingLabelBehavior: FloatingLabelBehavior.auto,
     isDense: false,
     contentPadding:
-    EdgeInsets.only(top: 12.0, bottom: 12.0, left: 0.0, right: 0.0),
+    EdgeInsets.only(top: 12.0, bottom: 12.0, left: 10, right: 10),
     isCollapsed: false,
     prefixStyle: TextStyle(
       color: Color(0xffffbf00),

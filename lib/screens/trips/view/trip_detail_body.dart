@@ -1,8 +1,9 @@
 import 'package:piton_taxi_app/core/components/white_container_with_shadow.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:piton_taxi_app/core/extensions/divider_extension.dart';
 import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:piton_taxi_app/core/init/project_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

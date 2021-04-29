@@ -10,7 +10,8 @@ class DummyData {
   static User user_1 = User(
       nameSurname: "John Doe",
       email: "johndoe@hotmail.com",
-      phoneNumber: "+90 555 415 62 54");
+      phoneNumber: "+90 555 415 62 54",
+  );
   static const String TOTAL_POINTS = "10,000";
 
   static const String CARD_NUMBER = "XXXXXXXXXXXXXXXX";
