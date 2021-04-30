@@ -65,6 +65,12 @@ class GoogleMapModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  clearAll(){
+    clearCircles();
+    clearMarkers();
+    clearPolylineSet();
+  }
+
   /// Captures the instant position and returns it to the location model and stores it in currentLocation
   fetchCurrentLocation() async {
     Position currentPosition = await Geolocator.getCurrentPosition(
@@ -73,7 +79,6 @@ class GoogleMapModel extends ChangeNotifier {
         currentPosition.latitude, currentPosition.longitude);
     initialLocation = currentLocation;
     notifyListeners();
-    debugPrint(currentLocation.toString());
   }
 
   /// Takes a parameter of the LocationModel type and assigns this parameter to the initialLocation
@@ -182,6 +187,8 @@ class GoogleMapModel extends ChangeNotifier {
   }
 
   addInitialDestinationMarkersAndCircles() {
+    clearMarkers();
+    clearCircles();
     MarkerId initialID = MarkerId("Initial Location");
     addMarker(createMarker(initialID, initialLocation), initialID);
     addCircle(createCircle(initialLocation));
@@ -201,9 +208,9 @@ class GoogleMapModel extends ChangeNotifier {
 
   Circle createCircle(LocationModel location){
     return Circle(
-      fillColor: Colors.amber.shade100,
+      fillColor: Colors.amberAccent.shade100,
       center: location.latLong,
-      radius: 16,
+      radius: 10,
       strokeColor: Colors.amberAccent.shade100,
       strokeWidth: 4,
       circleId: CircleId(location.name)

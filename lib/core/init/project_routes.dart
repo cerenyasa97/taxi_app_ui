@@ -51,6 +51,8 @@ class ProjectRoute{
         return AddCreditCard();
       case Pages.SEARCH_LOCATION:
         return SearchLocation(variable);
+      case Pages.SELECT_LOCATION_ON_MAP:
+        return SelectLocationOnMapScreen();
     }
   }
 

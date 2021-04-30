@@ -88,7 +88,8 @@ class TextConstants{
   static const String TRIP_REVIEW = "Trip Review";
 
   // Search location screen text constants
-  static const String SELECT_FROM_MAP = "Select a location from the map";
+  static const String SELECT_ON_MAP = "Select a location from the map";
   static const String USE_CURRENT_LOCATION = "Use current location";
   static const String ENTER_LOCATION_LABEL = "Enter location";
+  static const String SELECT_ON_MAP_HINT = "To select a location from the map, you can slide the map to the desired location or click the desired location on the map";
 }

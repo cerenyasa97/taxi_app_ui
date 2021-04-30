@@ -17,7 +17,11 @@ class ContactDetails extends StatelessWidget {
       children: [
         ProjectText(
           text: TextConstants.PROFILE_CONTACT_INFORMATION,
-          style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle2.copyWith(fontWeight: FontWeight.w800),
+          style: Provider.of<ProjectThemeData>(context)
+              .getThemeData
+              .textTheme
+              .bodyText1
+              .copyWith(fontWeight: FontWeight.w700),
         ),
         CustomListTile(
           title: TextConstants.PROFILE_NAME_LABEL,
@@ -39,6 +43,7 @@ class ContactDetails extends StatelessWidget {
   }
 
   _pageNavigation(BuildContext context, var page) {
-    Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(page, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
+    Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(
+        page, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
   }
 }

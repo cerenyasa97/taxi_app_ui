@@ -17,12 +17,18 @@ class AddressesInformation extends StatelessWidget {
       children: [
         ProjectText(
           text: TextConstants.PROFILE_ADDRESS,
-          style: Provider.of<ProjectThemeData>(context).getThemeData.textTheme.subtitle2.copyWith(fontWeight: FontWeight.w800),
+          style: Provider.of<ProjectThemeData>(context)
+              .getThemeData
+              .textTheme
+              .bodyText1
+              .copyWith(fontWeight: FontWeight.w700),
         ),
         CustomListTile(
           title: TextConstants.ADDRESSES_TITLE,
           subtitle: TextConstants.ADDRESSES_SUBTITLE,
-          onTap: () => Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(Pages.ADDRESS, ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+          onTap: () => Navigator.of(context).push(
+              ProjectRoute.generateSlidePageRouteBuilder(Pages.ADDRESS,
+                  ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
         ),
       ],
     );

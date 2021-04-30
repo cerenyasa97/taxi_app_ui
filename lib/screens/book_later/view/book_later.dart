@@ -67,8 +67,14 @@ class _BookLaterState extends MapBaseState<BookLater> {
   }
 
   @override
-  ValueNotifier<Map<MarkerId, Marker>> getMarkerListenable() {
-    // TODO: implement getMarkerListenable
+  onTap(LatLng location) {
+    // TODO: implement onTap
+    throw UnimplementedError();
+  }
+
+  @override
+  onCameraMove(CameraPosition position) {
+    // TODO: implement onCameraMove
     throw UnimplementedError();
   }
 }

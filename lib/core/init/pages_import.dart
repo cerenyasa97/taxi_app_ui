@@ -2,6 +2,7 @@ export 'package:piton_taxi_app/screens/profile/view/address_information/change_h
 export 'package:piton_taxi_app/screens/profile/view/address_information/change_work_address.dart';
 export 'package:piton_taxi_app/screens/profile/view/address_information/add_another_address.dart';
 export 'package:piton_taxi_app/screens/profile/view/contact_information/change_name_surname.dart';
+export 'package:piton_taxi_app/screens/search_location/view/select_location_on_map_screen.dart';
 export 'package:piton_taxi_app/screens/profile/view/address_information/user_addresses.dart';
 export 'package:piton_taxi_app/screens/profile/view/contact_information/change_email.dart';
 export 'package:piton_taxi_app/screens/profile/view/contact_information/change_phone.dart';

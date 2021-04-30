@@ -43,12 +43,12 @@ class CustomListTile extends StatelessWidget {
       title: ProjectText(
         text: title ?? "",
         style: titleStyle ?? textTheme.bodyText1.copyWith(
-            fontWeight: titleBold ? FontWeight.bold : FontWeight.normal),
+            fontWeight: titleBold ? FontWeight.w600 : FontWeight.normal),
       ),
       subtitle: subtitle != null
           ? ProjectText(
               text: subtitle,
-              style: textTheme.bodyText1,
+              style: textTheme.bodyText2,
             )
           : null,
       onTap: onTap,

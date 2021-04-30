@@ -29,7 +29,7 @@ class ErrorAlertDialog extends StatelessWidget {
         maxLines: 5,
         style: textTheme.bodyText1,
       ),
-      actions: [NextPage(onTap: () => Navigator.of(context).pop())],
+      actions: [NextPageButton(onTap: () => Navigator.of(context).pop())],
     );
   }
 }

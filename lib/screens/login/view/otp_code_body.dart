@@ -58,7 +58,7 @@ class OtpCodeDialog extends StatelessWidget {
             // otp kod yeniden gönderme işlemini tanımla
           },
         ),
-        NextPage(
+        NextPageButton(
           onTap: () {
             // otp kod doğruluğunu test et
             Navigator.of(context).pushReplacement(

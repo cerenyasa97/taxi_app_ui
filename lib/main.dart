@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
 import 'package:piton_taxi_app/screens/home/service/locator.dart';
 import 'package:piton_taxi_app/screens/home/view/homepage.dart';
+import 'package:piton_taxi_app/screens/search_location/utils/select_location_on_map_provider.dart';
 import 'core/extensions/theme_extension.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => GoogleMapModel()),
         ChangeNotifierProvider(create: (context) => ProjectThemeData()),
+        ChangeNotifierProvider(create: (context) => SelectLocationOnMapProvider()),
       ],
       child: TaxiApp(),
     ));

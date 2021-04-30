@@ -24,8 +24,7 @@ class ChangeAddressBody extends MapBaseView {
 }
 
 class _ChangeAddressBodyState extends MapBaseState<ChangeAddressBody> {
-  ValueNotifier<Map<MarkerId, Marker>> listenableMapMarker =
-      ValueNotifier<Map<MarkerId, Marker>>({});
+
   TextEditingController controller;
   LocationModel selectedLocation;
 
@@ -76,7 +75,7 @@ class _ChangeAddressBodyState extends MapBaseState<ChangeAddressBody> {
                         controller.text = predictions[index].mainText;
                         selectedLocation = await mapModel
                             .getPlaceDetail(predictions[index].placeID);
-                        mapModel.animateCameraNewLatLng(selectedLocation);
+                        mapController.animateCamera(CameraUpdate.newLatLng(selectedLocation.latLong));
                         _addMarker(selectedLocation);
                         mapModel.clearPlacePredictions();
                       },
@@ -107,16 +106,21 @@ class _ChangeAddressBodyState extends MapBaseState<ChangeAddressBody> {
   @override
   EdgeInsetsGeometry padding() => EdgeInsets.zero;
 
-  @override
-  ValueNotifier<Map<MarkerId, Marker>> getMarkerListenable() =>
-      listenableMapMarker;
-
   _addMarker(LocationModel location) {
+    markerMap[MarkerId("Selected")] = Marker(
+        markerId: MarkerId("Selected"),
+        position: location.latLong,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+        infoWindow: InfoWindow(title: widget.appBarTitle));
+    markerStreamController.sink.add(markerMap);
+
+    /*
     listenableMapMarker.value.clear();
     listenableMapMarker.value[MarkerId("Selected")] = Marker(
         markerId: MarkerId("Selected"),
         position: location.latLong,
-        infoWindow: InfoWindow(title: widget.appBarTitle));
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet),
+        infoWindow: InfoWindow(title: widget.appBarTitle));*/
   }
 
   onSubmitted() {
@@ -133,4 +137,10 @@ class _ChangeAddressBodyState extends MapBaseState<ChangeAddressBody> {
     }
     Navigator.of(context).pop();
   }
+
+  @override
+  onTap(LatLng location){}
+
+  @override
+  onCameraMove(CameraPosition position) {}
 }

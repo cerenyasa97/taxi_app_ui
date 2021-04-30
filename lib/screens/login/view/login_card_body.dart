@@ -52,7 +52,7 @@ class LoginCardBody extends StatelessWidget {
           children: [
             FacebookLogin(),
             GmailLogin(),
-            NextPage(
+            NextPageButton(
               onTap: () {
                 debugPrint(_validation.toString());
                 _showOTPDialog(context);

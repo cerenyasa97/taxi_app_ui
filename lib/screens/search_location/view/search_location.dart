@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/screens/search_location/utils/select_location_on_map_provider.dart';
 import 'package:piton_taxi_app/screens/search_location/view/address_text_field.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
@@ -9,8 +10,8 @@ import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:piton_taxi_app/core/init/project_routes.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/screens/search_location/view/select_location_on_map_widget.dart';
 import 'package:provider/provider.dart';
-import 'select_location_from_map.dart';
 import 'registered_addresses.dart';
 import 'use_current_location.dart';
 import 'predictions_list.dart';
@@ -56,13 +57,11 @@ class SearchLocationState extends BaseState<SearchLocation> {
         context.lowestSizedBoxHeight,
         AddressTextField(searchLocationKey: widget.key),
         RegisteredAddresses(searchLocationKey: widget.key),
-        SelectLocationFromMap(),
+        SelectLocationOnMapWidget(searchLocationKey: widget.key),
         UseCurrentLocation(
           onTap: () {
             controller.text = model.currentLocation.name;
-            widget.title == TextConstants.WHERE_FROM
-                ? model.setInitialLocation(model.currentLocation)
-                : model.setDestinationLocation(model.currentLocation);
+            location = model.currentLocation;
           },
         ),
         PredictionsList(searchLocationKey: widget.key, onTap: (location){
@@ -81,7 +80,8 @@ class SearchLocationState extends BaseState<SearchLocation> {
             model.setDestinationLocation(location);
             Navigator.of(context).pop();
           }
-          model.getDirection();
+          if(model.initialLocation != null && model.destinationLocation != null) model.getDirection();
+          else model.clearAll();
         },)
       ],
     );

@@ -1,11 +1,12 @@
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:flutter/material.dart';
 
-class NextPage extends StatelessWidget {
+class NextPageButton extends StatelessWidget {
 
   final VoidCallback onTap;
+  final double width;
 
-  const NextPage({Key key, @required this.onTap}) : super(key: key);
+  const NextPageButton({Key key, @required this.onTap, this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +14,10 @@ class NextPage extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: onTap,
       child: Container(
-        width: context.dynamicWidth(50/412),
-        height: context.dynamicWidth(50/412),
+        width: context.dynamicWidth((width ?? 50)/412),
+        height: context.dynamicWidth((width ?? 50)/412),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+          borderRadius: BorderRadius.all(Radius.circular(context.dynamicWidth((width ?? 50)/412))),
           color: const Color(0xffffc107),
           boxShadow: [
             BoxShadow(

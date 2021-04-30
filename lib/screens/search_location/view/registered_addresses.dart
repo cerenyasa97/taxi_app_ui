@@ -1,3 +1,4 @@
+import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
@@ -5,6 +6,7 @@ import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/core/init/project_routes.dart';
 
 class RegisteredAddresses extends StatefulWidget {
 
@@ -65,17 +67,29 @@ class _RegisteredAddressesState extends State<RegisteredAddresses> {
   _selectedWhichAddress(int index) {
     switch (index) {
       case 0:
-        widget.searchLocationKey.currentState.controller.text = DummyData.user_1.homeAddress.name;
-        widget.searchLocationKey.currentState.location = DummyData.user_1.homeAddress;
+        if(DummyData.user_1.homeAddress == null) {
+          _navigatorAddAddress(Pages.CHANGE_HOME_ADDRESS);
+        }else{
+          widget.searchLocationKey.currentState.controller.text = DummyData.user_1.homeAddress.name;
+          widget.searchLocationKey.currentState.location = DummyData.user_1.homeAddress;
+        }
         break;
       case 1:
-        widget.searchLocationKey.currentState.controller.text = DummyData.user_1.workAddress.name;
-        widget.searchLocationKey.currentState.location = DummyData.user_1.workAddress;
+        if(DummyData.user_1.workAddress == null) {
+          _navigatorAddAddress(Pages.CHANGE_WORK_ADDRESS);
+        }else{
+          widget.searchLocationKey.currentState.controller.text = DummyData.user_1.workAddress.name;
+          widget.searchLocationKey.currentState.location = DummyData.user_1.workAddress;
+        }
         break;
       default:
         widget.searchLocationKey.currentState.controller.text = DummyData.user_1.anotherAddresses.values.toList()[index - 2].name;
         widget.searchLocationKey.currentState.location = DummyData.user_1.anotherAddresses.values.toList()[index - 2];
         break;
     }
+  }
+
+  _navigatorAddAddress(Pages address) {
+    Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(address, ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
   }
 }
