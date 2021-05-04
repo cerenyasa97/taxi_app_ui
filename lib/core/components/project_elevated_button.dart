@@ -11,36 +11,38 @@ class ProjectElevatedButton extends StatelessWidget {
   final TextStyle style;
   final Color color;
   final Alignment align;
+  final Widget child;
 
   const ProjectElevatedButton(
       {Key key,
       @required this.onPressed,
-      @required this.text,
+      this.text,
       this.width,
       this.height,
       this.style,
-      this.color, this.align})
+      this.color,
+      this.align,
+      this.child})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final themeData = Provider.of<ProjectThemeData>(context).getThemeData;
     return ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          elevation: MaterialStateProperty.all(0),
-        ),
-        child: Container(
-          color: color ?? themeData.buttonTheme.colorScheme.primary,
+        style: ElevatedButton.styleFrom(
+            primary: color ?? Colors.amber,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(width / 10))),
+        child: child ?? Container(
           width: width,
           height: height,
           child: Align(
-            alignment: align ?? Alignment.center,
-            child: ProjectText(
-              text: text ?? "Enter a text",
-              style: style ?? themeData.textTheme.bodyText1,
-            )
-          ),
+              alignment: align ?? Alignment.center,
+              child: ProjectText(
+                text: text ?? "Enter a text",
+                style: style ?? themeData.textTheme.bodyText1,
+              )),
         ),
         onPressed: onPressed ?? () {});
   }

@@ -7,7 +7,7 @@ import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:piton_taxi_app/screens/search_location/model/place_model.dart';
@@ -50,14 +50,14 @@ class _ChangeAddressBodyState extends MapBaseState<ChangeAddressBody> {
               controller: controller,
               onChanged: (text) {
                 if (text.length > 1)
-                  Provider.of<GoogleMapModel>(context, listen: false)
+                  Provider.of<GoogleMapProvider>(context, listen: false)
                       .autocompleteAddress(text);
               },
               onSubmitted: (text) => onSubmitted(),
             ),
           ),
         ),
-        Consumer<GoogleMapModel>(
+        Consumer<GoogleMapProvider>(
           builder: (context, mapModel, child) {
             List<PlaceModel> predictions = mapModel.placePredictions;
             if (predictions != null && predictions.length != 0) {

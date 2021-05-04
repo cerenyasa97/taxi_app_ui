@@ -4,7 +4,7 @@ import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/components/project_elevated_button.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/components/circular_corner_container.dart';
-import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/init/project_routes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,7 +33,7 @@ class _WhereFromToState extends State<WhereFromTo> {
           Flexible(
             child: FittedBox(
               fit: BoxFit.fitHeight,
-              child: Consumer<GoogleMapModel>(
+              child: Consumer<GoogleMapProvider>(
                 builder: (context, mapModel, child) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

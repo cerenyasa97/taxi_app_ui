@@ -41,7 +41,7 @@ extension EdgeInsetsGeometryExtension on BuildContext {
 
   EdgeInsetsGeometry get lowEdgeInsetsSymmetric => EdgeInsets.symmetric(
       horizontal: this.dynamicWidth(15 / 412),
-      vertical: this.dynamicHeight(5 / 870));
+      vertical: this.dynamicHeight(7 / 870));
 
   EdgeInsetsGeometry get medium1EdgeInsetsSymmetric => EdgeInsets.symmetric(
       horizontal: this.dynamicWidth(25 / 412),

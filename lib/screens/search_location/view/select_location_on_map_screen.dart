@@ -1,4 +1,5 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:piton_taxi_app/screens/search_location/utils/select_location_on_map_provider.dart';
 import 'package:flutter/src/painting/edge_insets.dart';
@@ -10,7 +11,7 @@ import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
-import 'package:piton_taxi_app/screens/search_location/view/okey_button.dart';
+import 'package:piton_taxi_app/widgets/amber_button.dart';
 import 'package:provider/provider.dart';
 
 class SelectLocationOnMapScreen extends MapBaseView {
@@ -29,6 +30,14 @@ class _SelectLocationOnMapScreenState
 
   @override
   String appBarTitle() => TextConstants.SELECT_ON_MAP;
+
+  @override
+  void initState() {
+    super.initState();
+    var mapModel = Provider.of<GoogleMapProvider>(context, listen: false);
+    mapModel.fetchCurrentLocation();
+    _addMarker(mapModel.currentLocation.latLong);
+  }
 
   @override
   Widget body() {
@@ -50,7 +59,7 @@ class _SelectLocationOnMapScreenState
         ),
         Padding(
           padding: context.mediumEdgeInsetsSymmetric,
-          child: OKButton(
+          child: AmberButton(
             onPressed: () async {
               LocationModel location =
                   await Provider.of<SelectLocationOnMapProvider>(context,

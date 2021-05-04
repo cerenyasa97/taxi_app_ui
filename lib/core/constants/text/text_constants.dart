@@ -20,6 +20,11 @@ class TextConstants{
   static const String WHERE_TO = "Where to...";
   static const String WHERE_FROM = "Where from...";
 
+  // Home screen trip information container text constants
+  static const String TRIP_INFO = "Trip Information";
+  static const String TRIP_PAYMENT_MENU = "Payment Methods";
+  static const String TRIP_PAYMENT_HINT = "Select a payment method and then start the trip";
+
   // Menu screen text constants
   static const String MENU_PROFILE = "Profile";
   static const String MENU_PAYMENT = "Payment";
@@ -58,6 +63,7 @@ class TextConstants{
   static const String NEW_ADDRESS_TITLE = "New Address Title";
 
   // General used buttons text constants
+  static const String START_TRIP_BUTTON = "Start Trip";
   static const String CANCEL_BUTTON = "Cancel";
   static const String SAVE_BUTTON = "Save";
   static const String USE_BUTTON = "Use";
@@ -88,7 +94,7 @@ class TextConstants{
   static const String TRIP_REVIEW = "Trip Review";
 
   // Search location screen text constants
-  static const String SELECT_ON_MAP = "Select a location from the map";
+  static const String SELECT_ON_MAP = "Select a location on map";
   static const String USE_CURRENT_LOCATION = "Use current location";
   static const String ENTER_LOCATION_LABEL = "Enter location";
   static const String SELECT_ON_MAP_HINT = "To select a location from the map, you can slide the map to the desired location or click the desired location on the map";

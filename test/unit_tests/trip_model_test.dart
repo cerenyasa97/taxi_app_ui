@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/screens/trips/model/trip_status_enum.dart';
 import 'package:piton_taxi_app/screens/trips/model/driver_model.dart';
 
 
 void main() {
   test('Is trip empty or not', () {
-    final Trip trip = Trip(
+    final DummyTrip trip = DummyTrip(
         startLocation: "Piton Ar-Ge and Software House",
         endLocation: "İsmet İnönü 1 Avenue",
         date: "16 April 2021",

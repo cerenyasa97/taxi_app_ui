@@ -6,15 +6,16 @@ class ProjectTextButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final TextStyle style;
+  final Widget child;
 
   const ProjectTextButton(
-      {Key key, @required this.text, @required this.onPressed, this.style})
+      {Key key, this.child, this.text, @required this.onPressed, this.style})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: Text(
+      child: child ?? Text(
         text ?? "Text Button",
         style: style ??
             Provider.of<ProjectThemeData>(context)

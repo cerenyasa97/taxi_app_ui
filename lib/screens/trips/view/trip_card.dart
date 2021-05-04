@@ -2,7 +2,7 @@ import 'package:piton_taxi_app/core/components/white_container_with_shadow.dart'
 import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/extensions/divider_extension.dart';
-import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
 import 'package:piton_taxi_app/core/init/project_routes.dart';
@@ -11,7 +11,7 @@ import 'trip_card_title.dart';
 import 'trip_card_body.dart';
 
 class TripCard extends StatelessWidget {
-  final Trip trip;
+  final DummyTrip trip;
   final EdgeInsetsGeometry margin;
 
   const TripCard({Key key, this.trip, this.margin}) : super(key: key);

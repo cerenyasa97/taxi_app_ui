@@ -9,7 +9,7 @@ import 'package:piton_taxi_app/screens/home/service/locator.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:piton_taxi_app/screens/home/model/direction_model.dart';
 
-class GoogleMapModel extends ChangeNotifier {
+class GoogleMapProvider extends ChangeNotifier {
   GoogleMapRepository _repository = locator<
       GoogleMapRepository>(); // Intermediary class that performs API operations
 
@@ -26,12 +26,15 @@ class GoogleMapModel extends ChangeNotifier {
 
   DirectionModel directionModel;
 
+  TextEditingController initialLocationController = TextEditingController();
+  TextEditingController destinationLocationController = TextEditingController();
+
   Map<MarkerId, Marker> markerMap =
       Map<MarkerId, Marker>(); // Keeps markers and marker ids
   Set<Polyline> polylineSet = {}; //Keeps polyline
   Set<Circle> circleSet = {};
 
-  GoogleMapModel() {
+  GoogleMapProvider() {
     fetchCurrentLocation();
   }
 
@@ -129,6 +132,9 @@ class GoogleMapModel extends ChangeNotifier {
     PolylinePoints polylinePoints = PolylinePoints();
     List<PointLatLng> decodedPolylinePoints =
         polylinePoints.decodePolyline(encodedPoints);
+    print("********************************************************************");
+    print("Decoded polyline points: "  + decodedPolylinePoints.toString());
+    print("********************************************************************");
     if (decodedPolylinePoints.isNotEmpty) {
       decodedPolylinePoints.forEach((pointLatLng) {
         polylineCoordinates

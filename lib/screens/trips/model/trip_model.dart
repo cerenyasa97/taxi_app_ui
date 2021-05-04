@@ -1,24 +1,16 @@
 import 'driver_model.dart';
+import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
+import 'package:piton_taxi_app/core/constants/enums/payments.dart';
 
 class Trip{
-  int tripID;
-  String startLocation;
-  String endLocation;
-  String date;
-  String startTime;
-  String endTime;
-  String tripStatus;
-  double distance;
-  int time;
-  double price;
+  LocationModel initialLocation;
+  LocationModel destinationLocation;
+  String distance;
+  String duration;
+  String price;
+  Payments payments;
   Driver driver;
-  int rating;
-  String comments;
 
-  Trip({this.startLocation, this.endLocation, this.date, this.startTime, this.endTime, this.tripStatus, this.distance, this.time, this.price, this.driver, this.rating, this.comments});
-
-  @override
-  String toString() {
-    return 'Trip{tripID: $tripID, startLocation: $startLocation, endLocation: $endLocation, date: $date, startTime: $startTime, endTime: $endTime, tripStatus: $tripStatus, distance: $distance, time: $time, price: $price, driver: $driver, rating: $rating, comments: $comments}';
-  }
+  Trip(this.initialLocation, this.destinationLocation, this.distance,
+      this.duration, this.price, this.payments, this.driver);
 }

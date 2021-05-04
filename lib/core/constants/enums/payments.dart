@@ -1,0 +1,1 @@
+enum Payments{CASH, CARD}

@@ -4,7 +4,7 @@ import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/screens/trips/model/trip_status_enum.dart';
 import 'package:piton_taxi_app/screens/profile/model/user_model.dart';
 import 'package:piton_taxi_app/screens/trips/model/driver_model.dart';
-import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 
 class DummyData {
   static User user_1 = User(
@@ -20,7 +20,9 @@ class DummyData {
       CreditCard(user_1.nameSurname, CARD_NUMBER, CARD_EXPIRATION_DATE);
   static final List<CreditCard> cardList = [card1];
 
-  static Trip oncomingTrip = Trip(
+  static Driver driver = Driver("Jack Doe", "+90 545 545 54 54", "26 XXX 216");
+
+  static DummyTrip oncomingTrip = DummyTrip(
       startLocation: "Piton Ar-Ge and Software House",
       endLocation: "İsmet İnönü 1 Avenue",
       date: "16 April 2021",
@@ -32,7 +34,7 @@ class DummyData {
       price: 34,
       driver: Driver("Jack Doe", "+90 545 545 54 54", "26 XXX 216"),
       rating: 5);
-  static Trip compLetedTrip = Trip(
+  static DummyTrip compLetedTrip = DummyTrip(
       startLocation: "İsmet İnönü 1 Avenue",
       endLocation: "Odunpazarı Modern Museum",
       date: "12 April 2021",
@@ -44,7 +46,7 @@ class DummyData {
       price: 19,
       driver: Driver("Jack Doe", "+90 545 545 54 54", "26 XXX 216"),
       rating: 3);
-  static Trip cancelledTrip = Trip(
+  static DummyTrip cancelledTrip = DummyTrip(
       startLocation: "Opera",
       endLocation: "Home",
       date: "09 January 2021",
@@ -56,9 +58,9 @@ class DummyData {
       price: 15,
       driver: Driver("Jack Doe", "+90 545 545 54 54", "26 XXX 216"),
       rating: 4);
-  static List<Trip> oncoming = [oncomingTrip];
-  static List<Trip> completed = [compLetedTrip];
-  static List<Trip> cancelled = [cancelledTrip];
+  static List<DummyTrip> oncoming = [oncomingTrip];
+  static List<DummyTrip> completed = [compLetedTrip];
+  static List<DummyTrip> cancelled = [cancelledTrip];
 
   static List<String> offersList = [
     ImageConstants.OFFER_1,

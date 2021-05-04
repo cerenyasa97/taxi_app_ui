@@ -2,14 +2,14 @@ import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/components/project_svg_image.dart';
 import 'package:piton_taxi_app/core/init/project_theme.dart';
-import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/core/components/project_text.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class TripCardBody extends StatelessWidget {
 
-  final Trip trip;
+  final DummyTrip trip;
 
   const TripCardBody({Key key, @required this.trip}) : super(key: key);
 

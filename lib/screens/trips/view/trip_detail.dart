@@ -1,6 +1,6 @@
 import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/screens/trips/model/trip_model.dart';
+import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/screens/trips/view/trip_card.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ import 'driver_detail.dart';
 
 class TripDetail extends BaseView{
 
-  final Trip trip;
+  final DummyTrip trip;
 
   TripDetail({@required this.trip});
 

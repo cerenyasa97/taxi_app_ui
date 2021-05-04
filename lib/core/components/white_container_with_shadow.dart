@@ -7,7 +7,7 @@ class WhiteContainerWithShadow extends StatelessWidget {
   final double width;
   final double height;
   final BorderRadius radius;
-  final double color;
+  final Color color;
   final double shadowColor;
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;

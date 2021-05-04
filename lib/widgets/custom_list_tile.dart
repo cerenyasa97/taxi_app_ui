@@ -10,36 +10,41 @@ class CustomListTile extends StatelessWidget {
   final Function() onTap;
   final bool titleBold;
   final Icon leadingIcon;
+  final Widget leadingCircleImage;
   final Icon trailingIcon;
   final TextStyle titleStyle;
 
-  const CustomListTile(
-      {Key key,
-      this.imagePath,
-      @required this.title,
-      this.subtitle,
-      this.onTap,
-      this.titleBold = true,
-      this.leadingIcon,
-      this.trailingIcon,
-        this.titleStyle})
+  const CustomListTile({Key key,
+    this.imagePath,
+    @required this.title,
+    this.subtitle,
+    this.onTap,
+    this.titleBold = true,
+    this.leadingIcon,
+    this.trailingIcon,
+    this.titleStyle, this.leadingCircleImage})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme =
-        Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
+        Provider
+            .of<ProjectThemeData>(context)
+            .getThemeData
+            .textTheme;
     return ListTile(
       trailing: trailingIcon ?? Icon(
-            Icons.arrow_forward_ios,
-            size: 20,
-          ),
-      leading: imagePath != null
+        Icons.arrow_forward_ios,
+        size: 20,
+      ),
+      leading: (imagePath == null && leadingIcon == null)
+          ? leadingCircleImage
+          : (imagePath != null
           ? Image.asset(
-              imagePath,
-              fit: BoxFit.fitHeight,
-            )
-          : (leadingIcon ?? null),
+        imagePath,
+        fit: BoxFit.fitHeight,
+      )
+          : (leadingIcon ?? null)),
       title: ProjectText(
         text: title ?? "",
         style: titleStyle ?? textTheme.bodyText1.copyWith(
@@ -47,9 +52,9 @@ class CustomListTile extends StatelessWidget {
       ),
       subtitle: subtitle != null
           ? ProjectText(
-              text: subtitle,
-              style: textTheme.bodyText2,
-            )
+        text: subtitle,
+        style: textTheme.bodyText2,
+      )
           : null,
       onTap: onTap,
     );

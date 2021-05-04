@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:provider/provider.dart';
 
 abstract class MapBaseView extends StatefulWidget {
@@ -32,8 +32,8 @@ abstract class MapBaseState<Page extends MapBaseView> extends State<Page> {
 
   @override
   Widget build(BuildContext context) {
-    final GoogleMapModel mapModel =
-        Provider.of<GoogleMapModel>(context, listen: false);
+    final GoogleMapProvider mapModel =
+        Provider.of<GoogleMapProvider>(context, listen: false);
     return Scaffold(
       body: Stack(
         children: [

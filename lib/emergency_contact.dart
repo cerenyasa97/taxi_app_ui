@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home/home.dart';
+import 'package:piton_taxi_app/core/init/pages_import.dart';
+
 import 'core/constants/app/custom_text_style.dart';
 
 class EmergencyContacts extends StatefulWidget {
@@ -114,7 +115,7 @@ class _EmergencyContactsState extends State<EmergencyContacts> {
                   child:  GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (context) => Home()));
+                          builder: (context) => HomePage()));
                     },
                     child: Container(
                       width: 40,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
 import 'package:provider/provider.dart';
 

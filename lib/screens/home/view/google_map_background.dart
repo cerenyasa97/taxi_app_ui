@@ -1,5 +1,5 @@
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
-import 'package:piton_taxi_app/screens/home/model/google_map_model.dart';
+import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +19,7 @@ class _GoogleMapBackgroundState extends State<GoogleMapBackground> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<GoogleMapModel>(
+    return Consumer<GoogleMapProvider>(
       builder: (context, googleMapModel, child) {
         return googleMapModel.currentLocation == null
             ? Center(

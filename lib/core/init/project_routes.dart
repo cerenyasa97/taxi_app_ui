@@ -53,6 +53,8 @@ class ProjectRoute{
         return SearchLocation(variable);
       case Pages.SELECT_LOCATION_ON_MAP:
         return SelectLocationOnMapScreen();
+      case Pages.TRIP_DURING:
+        return TripDuring();
     }
   }
 

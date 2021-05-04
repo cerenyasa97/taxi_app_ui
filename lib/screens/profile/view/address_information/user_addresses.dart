@@ -50,35 +50,36 @@ class _UserAddressState extends BaseState<UserAddress> {
                   Pages.CHANGE_WORK_ADDRESS,
                   ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
         ),
-        DummyData.user_1.anotherAddresses.isEmpty
-            ? Container()
-            : ListView.builder(
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  final keyList =
-                      DummyData.user_1.anotherAddresses.keys.toList();
-                  return Dismissible(
-                    onDismissed: (direction) {
-                      if (direction == DismissDirection.startToEnd) {
-                        DummyData.user_1.anotherAddresses
-                            .remove(keyList[index]);
-                      }
-                    },
-                    key: Key(keyList[index]),
-                    child: CustomListTile(
-                      leadingIcon: _getIcon(Icons.location_on),
-                      title: keyList[index],
-                      subtitle: DummyData
-                          .user_1.anotherAddresses[keyList[index]].name,
-                      onTap: () => Navigator.of(context).push(
-                          ProjectRoute.generateSlidePageRouteBuilder(
-                              Pages.CHANGE_WORK_ADDRESS,
-                              ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
-                    ),
-                  );
+        Visibility(
+          visible: DummyData.user_1.anotherAddresses.isNotEmpty,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              final keyList =
+              DummyData.user_1.anotherAddresses.keys.toList();
+              return Dismissible(
+                onDismissed: (direction) {
+                  if (direction == DismissDirection.startToEnd) {
+                    DummyData.user_1.anotherAddresses
+                        .remove(keyList[index]);
+                  }
                 },
-                itemCount: DummyData.user_1.anotherAddresses.length,
-              ),
+                key: Key(keyList[index]),
+                child: CustomListTile(
+                  leadingIcon: _getIcon(Icons.location_on),
+                  title: keyList[index],
+                  subtitle: DummyData
+                      .user_1.anotherAddresses[keyList[index]].name,
+                  onTap: () => Navigator.of(context).push(
+                      ProjectRoute.generateSlidePageRouteBuilder(
+                          Pages.CHANGE_WORK_ADDRESS,
+                          ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+                ),
+              );
+            },
+            itemCount: DummyData.user_1.anotherAddresses.length,
+          ),
+        ),
         CustomListTile(
             leadingIcon: _getIcon(Icons.location_on),
             title: TextConstants.ADDRESSES_ANOTHER,
@@ -123,3 +124,34 @@ class _UserAddressState extends BaseState<UserAddress> {
   @override
   EdgeInsetsGeometry padding() => context.lowEdgeInsetsSymmetric;
 }
+/*
+DummyData.user_1.anotherAddresses.isEmpty
+            ? Container()
+            : ListView.builder(
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final keyList =
+                      DummyData.user_1.anotherAddresses.keys.toList();
+                  return Dismissible(
+                    onDismissed: (direction) {
+                      if (direction == DismissDirection.startToEnd) {
+                        DummyData.user_1.anotherAddresses
+                            .remove(keyList[index]);
+                      }
+                    },
+                    key: Key(keyList[index]),
+                    child: CustomListTile(
+                      leadingIcon: _getIcon(Icons.location_on),
+                      title: keyList[index],
+                      subtitle: DummyData
+                          .user_1.anotherAddresses[keyList[index]].name,
+                      onTap: () => Navigator.of(context).push(
+                          ProjectRoute.generateSlidePageRouteBuilder(
+                              Pages.CHANGE_WORK_ADDRESS,
+                              ProjectConstants.FAST_PAGE_TRANSITION_DURATION)),
+                    ),
+                  );
+                },
+                itemCount: DummyData.user_1.anotherAddresses.length,
+              ),
+ */
