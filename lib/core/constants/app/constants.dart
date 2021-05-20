@@ -14,4 +14,13 @@ class ProjectConstants{
 
   static const Color LOGIN_BACKGROUND_COLOR = Color(0xfff8f8f8);
   static const Color MENU_BACKGROUND_COLOR = Colors.white;
+  static const Color LIGHT_WHITE = Color(0xffedf1f8);
+
+  static const int SPLASH_SCREEN_COUNT = 3;
+
+  static const double TEXT_FIELD_BORDER_RADIUS = 8;
+  static const double BUTTON_BORDER_RADIUS = 10;
+  static const double CONTAINER_BORDER_RADIUS = 15;
+  static const double MENU_ITEM_BORDER_RADIUS = 37;
+  static const double ALERT_DIALOG_RADIUS = 25;
 }

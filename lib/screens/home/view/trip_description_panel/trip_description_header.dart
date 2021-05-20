@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/components/project_svg_image.dart';
+import 'package:piton_taxi_app/core/components/image/project_svg_image.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 
 class TripDescriptionHeader extends StatelessWidget {

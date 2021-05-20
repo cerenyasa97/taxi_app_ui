@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="100" viewBox="0 0 30 100">
-  <g id="Ellipse_2" data-name="Ellipse 2" fill="none" stroke="#ffc107" stroke-width="8">
-    <circle cx="15" cy="15" r="15" stroke="none"/>
-    <circle cx="15" cy="15" r="11" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="97" viewBox="0 0 25 97">
+  <g id="Ellipse_2" data-name="Ellipse 2" fill="none" stroke="#ffc107" stroke-width="7">
+    <circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+    <circle cx="12.5" cy="12.5" r="9" fill="none"/>
   </g>
-  <circle id="Ellipse_3" data-name="Ellipse 3" cx="15" cy="15" r="15" transform="translate(0 70)" fill="#ffc107"/>
-  <path id="Path_1" data-name="Path 1" d="M7.5,0,15,15,7.43,12.229,0,15Z" transform="translate(12.255 73.755) rotate(30)" fill="#fff"/>
-  <line id="Line_1" data-name="Line 1" y2="34" transform="translate(15 33)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="3" style="mix-blend-mode: darken;isolation: isolate"/>
+  <circle id="Ellipse_3" data-name="Ellipse 3" cx="12.5" cy="12.5" r="12.5" transform="translate(0 72)" fill="#ffc107"/>
+  <path id="Path_1" data-name="Path 1" d="M5,0l5,10L4.953,8.153,0,10Z" transform="translate(11.17 76.34) rotate(30)" fill="#fff"/>
+  <line id="Line_1" data-name="Line 1" y2="39" transform="translate(13 29)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2" style="mix-blend-mode: darken;isolation: isolate"/>
 </svg>

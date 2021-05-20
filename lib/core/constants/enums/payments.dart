@@ -1,1 +1,1 @@
-enum Payments{CASH, CARD}
+enum Payments{CASH, CARD, WALLET, DONE}
