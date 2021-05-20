@@ -1,11 +1,12 @@
-import 'package:piton_taxi_app/core/components/white_container_with_shadow.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
-import 'package:piton_taxi_app/core/extensions/divider_extension.dart';
+import 'package:piton_taxi_app/core/components/container/white_container_with_shadow.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/divider_extension.dart';
+import 'package:piton_taxi_app/core/init/navigation/navigation_service.dart';
 import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/core/init/project_routes.dart';
+import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
 import 'package:flutter/material.dart';
 import 'trip_card_title.dart';
 import 'trip_card_body.dart';
@@ -13,30 +14,43 @@ import 'trip_card_body.dart';
 class TripCard extends StatelessWidget {
   final DummyTrip trip;
   final EdgeInsetsGeometry margin;
+  final bool isEnabled;
 
-  const TripCard({Key key, this.trip, this.margin}) : super(key: key);
+  TripCard({Key key, this.trip, this.margin, this.isEnabled = true})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    debugPrint(isEnabled.toString());
     return GestureDetector(
-      onTap: () => Navigator.of(context).push(ProjectRoute.generateSlidePageRouteBuilder(Pages.TRIP_DETAIL, ProjectConstants.FAST_PAGE_TRANSITION_DURATION, variable: trip)),
+      onTap: () {
+        if (isEnabled)
+          NavigationService.instance.navigatorPushSlidePage(
+              context, Pages.TRIP_DETAIL,
+              variable: trip);
+      },
       child: WhiteContainerWithShadow(
-        width: context.dynamicWidth(360/412),
-        height: context.dynamicHeight(18/87),
+        width: context.dynamicWidth(360),
+        height: context.dynamicHeight(180),
         margin: margin ?? context.largestEdgeInsetsSymmetric,
         padding: context.medium1EdgeInsetsSymmetric,
         child: Column(
           children: [
             Expanded(
-              child: TripCardTitle(date: trip.date, status: trip.tripStatus,),
+              child: TripCardTitle(
+                date: trip.date,
+                status: trip.tripStatus,
+              ),
               flex: 20,
             ),
             Expanded(
-              child: context.greyThinHorizontalDivider,
+              child: context.greyMediumHorizontalDivider,
               flex: 15,
             ),
             Expanded(
-              child: TripCardBody(trip: trip,),
+              child: TripCardBody(
+                trip: trip,
+              ),
               flex: 80,
             )
           ],

@@ -1,5 +1,5 @@
-import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
 import 'package:piton_taxi_app/screens/trips/view/trip_card.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
@@ -19,14 +19,14 @@ class TripDetail extends BaseView{
 
 class _TripDetailState extends BaseState<TripDetail>{
   @override
-  String appBarTitle() => TextConstants.TRIP_DETAILS;
+  String appBarTitle() => LocaleKeys.trips_tripDetails_title;
 
   @override
   Widget body() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        TripCard(trip: widget.trip, margin: context.lowEdgeInsetsHorizontal,),
+        TripCard(trip: widget.trip, margin: context.lowEdgeInsetsHorizontal, isEnabled: false),
         TripDetailBody(trip: widget.trip),
         DriverDetail(driver: widget.trip.driver, rating: widget.trip.rating,),
       ],

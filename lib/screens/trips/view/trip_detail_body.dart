@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:piton_taxi_app/core/components/white_container_with_shadow.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/extensions/divider_extension.dart';
-import 'package:piton_taxi_app/screens/home/model/direction_model.dart';
-import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
+import 'package:piton_taxi_app/core/components/container/white_container_with_shadow.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/divider_extension.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
+import 'package:piton_taxi_app/core/init/theme/project_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,53 +21,43 @@ class TripDetailBody extends StatefulWidget {
 
 class _TripDetailBodyState extends State<TripDetailBody> {
 
-  DirectionModel _directionModel;
-
   @override
   Widget build(BuildContext context) {
-    return Consumer<GoogleMapProvider>(
-      builder: (context, mapModel, child) {
-        _directionModel = mapModel.directionModel;
-        return WhiteContainerWithShadow(
-          width: context.dynamicWidth(360 / 412),
-          height: context.dynamicHeight(widget.height ?? (10 / 87)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _getInformationWithLabel("Distance"),
-              context.greyThinVerticalDivider,
-              _getInformationWithLabel("Time"),
-              context.greyThinVerticalDivider,
-              _getInformationWithLabel("Price"),
-            ],
-          ),
-        );
-      },
+    return WhiteContainerWithShadow(
+      width: context.dynamicWidth(360),
+      height: context.dynamicHeight(widget.height ?? 100),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _getInformationWithLabel(LocaleKeys.trips_tripDetails_distanceLabel),
+          context.greyThinVerticalDivider,
+          _getInformationWithLabel(LocaleKeys.trips_tripDetails_durationLabel),
+          context.greyThinVerticalDivider,
+          _getInformationWithLabel(LocaleKeys.trips_tripDetails_priceLabel),
+        ],
+      ),
     );
   }
 
   _getInformationWithLabel(String label) {
-    final TextTheme textTheme = Provider.of<ProjectThemeData>(context, listen: false).getThemeData.textTheme;
+    final TextTheme textTheme = Provider.of<ProjectThemeData>(context, listen: false).themeData.textTheme;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ProjectText(text: _getVariable(label), style: textTheme.subtitle2.copyWith(fontWeight: FontWeight.w600),),
-        ProjectText(text: label, style: textTheme.subtitle2.copyWith(color: Colors.black54))
+        ProjectTextLocale(text: _getVariable(label), style: textTheme.subtitle2.copyWith(fontWeight: FontWeight.w600),),
+        ProjectTextLocale(text: label, style: textTheme.subtitle2.copyWith(color: Colors.black54))
       ],
     );
   }
 
   String _getVariable(String label) {
     switch(label){
-      case "Distance":
-        return widget.trip != null ? "${widget.trip.distance} km" : _directionModel.distanceText;
-      case "Time":
-        return widget.trip!= null ? "${widget.trip.time} m" : _directionModel.durationText;
-      case "Price":
-        List<String> distance = _directionModel.distanceText.split(" ");
-        List<String> value = distance[0].split(",");
-        double price = 4 + 4.5 * double.parse(value[0] + "." + value[1]);
-        return widget.trip != null ? "${widget.trip.price} TL" : price.toStringAsFixed(2) + " TL";
+      case LocaleKeys.trips_tripDetails_distanceLabel:
+        return "${widget.trip.distance} km";
+      case LocaleKeys.trips_tripDetails_durationLabel:
+        return "${widget.trip.time} m";
+      case LocaleKeys.trips_tripDetails_priceLabel:
+        return "${widget.trip.price} TL";
       default:
         return "Error";
     }

@@ -1,5 +1,5 @@
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
+import 'package:piton_taxi_app/core/init/theme/project_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
@@ -12,15 +12,15 @@ class TripCardTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
+    final TextTheme textTheme = Provider.of<ProjectThemeData>(context).themeData.textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ProjectText(
+        ProjectTextLocale(
           text: date,
           style: textTheme.bodyText1,
         ),
-        ProjectText(
+        ProjectTextLocale(
           text: status.toUpperCase(),
           style: textTheme.headline4.copyWith(color: Colors.amber),
         )
