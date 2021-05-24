@@ -1,0 +1,222 @@
+{
+  "splash" : {
+    "welcome" : "Welcome",
+    "splashText" : "Safety and comforts is our concerns",
+    "versionLabel" : "Version - ",
+    "info1" : {
+      "title" : "Select Destination",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "info_2" : {
+      "title" : "Get Your Taxi",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "info_3" : {
+      "title" : "Rate Your Trip",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  "login" : {
+    "title" : "Log In",
+    "instruction" : "Enter your phone number to receive a verification code",
+    "initialCountryCode" : "+90",
+    "initialCountryCodeText" : "TR",
+    "phoneNumberHint" : "5xx xxx xx xx",
+    "otp" : {
+      "seconds" : "s",
+      "verificationTitle" : "Phone Verification",
+      "resendOtpCode" : "Resend OTP code"
+    },
+    "error" : {
+      "phoneVerificationFieldError" : "Please enter valid phone number with minimum 10 characters"
+    },
+    "addPersonalInfo" : {
+      "instruction" : "Enter your personal information",
+      "nameSurnameLabel" : "Name Surname",
+      "enterNameSurname" : "Enter name surname",
+      "emailLabel" : "Email",
+      "enterEmail" : "Enter email"
+    }
+  },
+
+  "warning" : {
+    "warningLabel" : "Warning"
+  },
+
+  "home" : {
+    "whereFromTo" : {
+      "to" : "Where to...",
+      "from" : "Where from..."
+    }
+  },
+
+  "profile" : {
+    "title" : "Profile",
+    "contactInformation" : {
+      "title" : "PERSONAL INFORMATION",
+      "nameSurnameLabel" : "Name Surname",
+      "emailLabel" : "Email",
+      "phoneLabel" : "Phone Number"
+    },
+    "update" : {
+      "email" : "Update Email",
+      "hintEmail" : "Enter email",
+      "nameSurname" : "Update Name Surname",
+      "hintNameSurname" : "Enter name and surname",
+      "phone" : "Update Phone Number",
+      "hintPhone" : "Enter phone number"
+    },
+    "addressInformation" : {
+      "title" : "ADDRESS INFORMATION",
+      "addressesLabel" : "Addresses",
+      "favoriteLabel" : "Favorite"
+    },
+    "languageInformation" : {
+      "title" : "LANGUAGE INFORMATION",
+      "selectedLanguage" : "Selected Language",
+      "en" : "English",
+      "tr" : "Türkçe",
+      "changeLanguage" : "Change Language"
+    },
+    "logOutTitle" : "Log Out"
+  },
+
+  "addresses" : {
+    "homeLabel" : "Home",
+    "workLabel" : "Work",
+    "addAnotherLabel" : {
+      "title" : "Add Another",
+      "label" : "Label",
+      "addressLabel" : "Address"
+    }
+  },
+
+  "general" : {
+    "change" : "Change",
+    "moneyCurrency" : "TL",
+    "enter" : "Enter",
+    "minute" : "min"
+  },
+
+  "button_labels" : {
+    "start_trip" : "Start Trip Now",
+    "cancel" : "Cancel",
+    "save" : "Save",
+    "next" : "Next",
+    "skip" : "Skip",
+    "use" : "Use",
+    "ok" : "OK"
+  },
+
+  "payment" : {
+    "title" : "Payment Menu",
+    "cash" : "Cash",
+    "card" : "Card",
+    "walletLabel" : "My Wallet",
+    "registeredCards" : {
+      "title" : "Registered Cards",
+      "addCard" : {
+        "title" : "Add Card",
+        "error" : {
+          "title" : "Input Error",
+          "body" : "Please make sure the information is correct"
+        }
+      }
+    },
+    "wallet" : {
+      "budget_label" : "Total Budget"
+    }
+  },
+
+  "trips" : {
+    "title" : "My Trips",
+    "tabs" : {
+      "tab1Title" : "Oncoming",
+      "tab2Title" : "Completed",
+      "tab3Title" : "Cancelled"
+    },
+    "tripDetails" : {
+      "title" : "Trip Details",
+      "reviewTitle" : "Trip Review",
+      "distanceLabel" : "Distance",
+      "durationLabel" : "Duration",
+      "priceLabel" : "Price",
+      "noComment" : "No comment left, we hope you enjoyed the trip"
+    }
+  },
+
+  "searchLocation" : {
+    "hintText" : "Enter address",
+    "selectOnMap" : {
+      "title" : "Select a location on map",
+      "instruction" : "To select a location from the map, you can slide the map to the desired location or click the desired location on the map"
+    },
+    "useCurrentLocation" : "Use current location",
+    "enterLocationLabel" : "Enter Location"
+  },
+
+  "taxiComing" : {
+    "menu" : {
+      "callLabel" : "Call",
+      "messageLabel" : "Message"
+    }
+  },
+
+  "searchingTaxiLabel" : "Searching taxi...",
+
+  "bookLaterInstruction" : "Set trip date and time",
+
+  "tripRating" : {
+    "title" : "Rate Your Trip",
+    "tipInstruction" : "Consider giving a tip",
+    "commentHint" : "Please add your comments here"
+  },
+
+  "tripPaymentTitle" :  "Available Budget",
+
+  "paymentDone" : "Payment Done",
+
+  "helpSupport" : {
+    "title" : "Help and Support",
+    "about" : {
+      "title" : "About",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "passenger" : {
+      "title" : "Dear Passenger,",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "taxiAppInfo" : {
+      "title" : "Taxi App Name",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "termsAndConditions" : {
+      "title" : "Terms and Conditions",
+      "body" : "Version - 1.0"
+    },
+    "customerSupport" : "Call Customer Support",
+    "emailUs" : "Email Us Your Suggestions"
+  },
+
+  "notificationsOffersTitle" : "Notifications and Offers",
+
+  "addCreditCard" : {
+    "title" : "Add Card",
+    "body" : {
+      "cardHolder" :{
+        "label" :  "Card Holder",
+        "hint" : "Ex. John Doe"
+      },
+      "CardNumber" : {
+        "label" : "Card Number",
+        "hint" : "Ex. 54xx xxxx xxxx xx93"
+      },
+      "expirationDate" : "Expiration Date"
+    }
+  },
+
+  "errors" : {
+    "errorLabel" : "Error",
+    "snapshotError" : "An error occurred while running the application. Please close and reopen the application."
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "splash" : {
+    "welcome" : "Hoşgeldiniz",
+    "splashText" : "Güvenliğiniz ve rahatlığınız emin ellerde",
+    "versionLabel" : "Versiyon - ",
+    "info1" : {
+      "title" : "Hedef Noktasını Belirle",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "info_2" : {
+      "title" : "Taksiyi Çağır",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "info_3" : {
+      "title" : "Yolculuğunu Değerlendir",
+      "instruction" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  "login" : {
+    "title" : "Giriş Yap",
+    "instruction" : "Doğrulama kodunu almak için telefon numaranızı giriniz",
+    "initialCountryCode" : "+90",
+    "initialCountryCodeText" : "TR",
+    "phoneNumberHint" : "5xx xxx xx xx",
+    "otp" : {
+      "seconds" : "s",
+      "verificationTitle" : "Telefon Doğrulama",
+      "resendOtpCode" : "Yeniden OTP Gönder"
+    },
+    "error" : {
+      "phoneVerificationFieldError" : "Lütfen en az 10 karakter içeren geçerli bir telefon numarası giriniz"
+    },
+    "addPersonalInfo" : {
+      "instruction" : "Kişisel bilgilerinizi giriniz",
+      "nameSurnameLabel" : "İsim Soyisim",
+      "enterNameSurname" : "İsim soyisim giriniz",
+      "emailLabel" : "E-posta",
+      "enterEmail" : "E-posta giriniz"
+    }
+  },
+
+  "warning" : {
+    "warningLabel" : "Uyarı"
+  },
+
+  "home" : {
+    "whereFromTo" : {
+      "to" : "Nereye...",
+      "from" : "Nereden..."
+    }
+  },
+
+  "profile" : {
+    "title" : "Profil",
+    "contactInformation" : {
+      "title" : "KİŞİSEL BİLGİLER",
+      "nameSurnameLabel" : "İsim Soyisim",
+      "emailLabel" : "Email",
+      "phoneLabel" : "Telefon Numarası"
+    },
+    "update" : {
+      "email" : "E-Posta Güncelleme",
+      "hintEmail" : "E-posta giriniz",
+      "nameSurname" : "İsim Soyisim Güncelleme",
+      "hintNameSurname" : "İsim ve soyisim giriniz",
+      "phone" : "Telefon Numarası Güncelleme",
+      "hintPhone" : "Telefon numarası giriniz"
+    },
+    "addressInformation" : {
+      "title" : "ADRES BİLGİLERİ",
+      "addressesLabel" : "Adresler",
+      "favoriteLabel" : "Favori Adreslerim"
+    },
+    "languageInformation" : {
+      "title" : "DİL BİLGİLERİ",
+      "selectedLanguage" : "Seçili Dil",
+      "en" : "English",
+      "tr" : "Türkçe",
+      "changeLanguage" : "Dil Değiştir"
+    },
+    "logOutTitle" : "Çıkış Yap"
+  },
+
+  "addresses" : {
+    "homeLabel" : "Ev",
+    "workLabel" : "İş",
+    "addAnotherLabel" : {
+      "title" : "Yeni Adres",
+      "label" : "Etiket",
+      "addressLabel" : "Adres"
+    }
+  },
+
+  "general" : {
+    "change" : "Güncelle",
+    "moneyCurrency" : "TL",
+    "enter" : "Giriniz",
+    "minute" : "dk"
+  },
+
+  "button_labels" : {
+    "start_trip" : "Yolculuğu Şimdi Başlat",
+    "cancel" : "İptal",
+    "save" : "Kaydet",
+    "next" : "İleri",
+    "skip" : "Atla",
+    "use" : "Kullan",
+    "ok" : "Tamam"
+  },
+
+  "payment" : {
+    "title" : "Ödeme Yöntemleri",
+    "cash" : "Peşin",
+    "card" : "Kart",
+    "walletLabel" : "Cüzdanım",
+    "registeredCards" : {
+      "title" : "Kayıtlı Kartlar",
+      "addCard" : {
+        "title" : "Kart Ekle",
+        "error" : {
+          "title" : "Veri Hatası",
+          "body" : "Lütfen girdiğiniz bilgilerin doğruluğundan emin olunuz!"
+        }
+      }
+    },
+    "wallet" : {
+      "budget_label" : "Toplam Bütçe"
+    }
+  },
+
+  "trips" : {
+    "title" : "Yolculuklar",
+    "tabs" : {
+      "tab1Title" : "Yaklaşıyor",
+      "tab2Title" : "Tamamlandı",
+      "tab3Title" : "İptal Edildi"
+    },
+    "tripDetails" : {
+      "title" : "Yolculuk Detayları",
+      "reviewTitle" : "Yorumlar",
+      "distanceLabel" : "Mesafe",
+      "durationLabel" : "Süre",
+      "priceLabel" : "Ücret",
+      "noComment" : "Yorum yapılmadı, umarız yolculuğunuzdan keyif almışsınızdır"
+    }
+  },
+
+  "searchLocation" : {
+    "hintText" : "Adres giriniz",
+    "selectOnMap" : {
+      "title" : "Haritadan konum seç",
+      "instruction" : "Haritadan bir konum seçmek için, haritayı istediğiniz konuma kaydırabilir veya haritada istediğiniz konuma dokunabilirsiniz."
+    },
+    "useCurrentLocation" : "Şu anki konumu kullan",
+    "enterLocationLabel" : "Konum Giriniz"
+  },
+
+  "taxiComing" : {
+    "menu" : {
+      "callLabel" : "Arama",
+      "messageLabel" : "Mesaj"
+    }
+  },
+
+  "searchingTaxiLabel" : "Taksi aranyor...",
+
+  "bookLaterInstruction" : "Yolculuk için tarih ve saat seçiniz",
+
+  "tripRating" : {
+    "title" : "Yolculuğunuzu Yorumlayınız",
+    "tipInstruction" : "Bahşiş vermeyi düşünür müydünüz?",
+    "commentHint" : "Lütfen yorumlarınızı bizimle paylaşın"
+  },
+
+  "tripPaymentTitle" :  "Kalan Bütçe",
+
+  "paymentDone" : "Ödeme Tamamlandı",
+
+  "helpSupport" : {
+    "title" : "Destek ve Yardım",
+    "about" : {
+      "title" : "Hakkımızda",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "passenger" : {
+      "title" : "Sayın Yolcu,",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "taxiAppInfo" : {
+      "title" : "Taksi Uygulaması Adı",
+      "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    "termsAndConditions" : {
+      "title" : "Şartlar ve Koşullar",
+      "body" : "Versiyon - 1.0"
+    },
+    "customerSupport" : "Müsteri Hizmetlerini Ara",
+    "emailUs" : "Lütfen önerilerinizi maille paylaşınız"
+  },
+
+  "notificationsOffersTitle" : "Bildirimler ve Kampanyalar",
+
+  "addCreditCard" : {
+    "title" : "Kart Ekle",
+    "body" : {
+      "cardHolder" :{
+        "label" :  "Kart Sahibi",
+        "hint" : "İsim Soyisim"
+      },
+      "CardNumber" : {
+        "label" : "Kart Numarası",
+        "hint" : "Örn. 54xx xxxx xxxx xx93"
+      },
+      "expirationDate" : "Son Kullanma Tarihi"
+    }
+  },
+
+  "errors" : {
+    "errorLabel" : "Hata",
+    "snapshotError" : "Uygulama çalışırken bir hata oluştu. Lütfen uygulamayı kapatıp tekrar açınız."
+  }
+}
