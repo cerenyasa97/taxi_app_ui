@@ -10,10 +10,8 @@ import 'package:piton_taxi_app/core/constants/enums/payments.dart';
 import 'package:piton_taxi_app/core/components/image/project_image.dart';
 import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
 import 'package:piton_taxi_app/core/extensions/maps/maps_extension.dart';
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
 import 'package:piton_taxi_app/core/init/navigation/navigation_service.dart';
-import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
 import 'package:flutter/material.dart';
 import 'trip_bill.dart';
 

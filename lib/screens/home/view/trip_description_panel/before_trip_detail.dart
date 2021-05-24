@@ -1,7 +1,6 @@
 import 'package:piton_taxi_app/core/components/button/project_text_button.dart';
 import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/screens/book_later/view/book_later_dialog.dart';
-import 'package:piton_taxi_app/core/components/button/project_elevated_button.dart';
 import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'package:piton_taxi_app/core/components/image/project_image.dart';
 import 'package:piton_taxi_app/widgets/alert_dialogs/loading_alert_dialog.dart';

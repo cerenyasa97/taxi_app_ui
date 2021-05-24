@@ -4,9 +4,7 @@ import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dar
 import 'package:piton_taxi_app/core/extensions/context/divider_extension.dart';
 import 'package:piton_taxi_app/core/init/navigation/navigation_service.dart';
 import 'package:piton_taxi_app/screens/trips/model/dummy_trip_model.dart';
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
 import 'package:flutter/material.dart';
 import 'trip_card_title.dart';
 import 'trip_card_body.dart';

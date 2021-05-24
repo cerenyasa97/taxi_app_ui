@@ -1,7 +1,7 @@
-import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 import 'notification_list.dart';
 import 'offers_page_view.dart';
 
@@ -12,7 +12,7 @@ class TaxiNotifications extends BaseView {
 
 class _TaxiNotificationsState extends BaseState<TaxiNotifications> {
   @override
-  String appBarTitle() => TextConstants.MENU_NEWS_OFFERS;
+  String appBarTitle() => LocaleKeys.notificationsOffersTitle;
 
   @override
   Widget body() {

@@ -1,10 +1,8 @@
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/core/init/project_routes.dart';
-import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
-import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
+import 'package:piton_taxi_app/core/init/navigation/navigation_service.dart';
+import 'package:piton_taxi_app/widgets/list_tile/custom_list_tile.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 import 'package:flutter/material.dart';
 
 class SelectLocationOnMapWidget extends StatelessWidget {
@@ -16,7 +14,7 @@ class SelectLocationOnMapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomListTile(
-      title: TextConstants.SELECT_ON_MAP,
+      title: LocaleKeys.searchLocation_selectOnMap_title,
       titleBold: false,
       leadingIcon: Icon(
         Icons.add_location_alt_outlined,
@@ -24,12 +22,9 @@ class SelectLocationOnMapWidget extends StatelessWidget {
         size: 30,
       ),
       onTap: () {
-        Navigator.of(context)
-            .push(ProjectRoute.generateSlidePageRouteBuilder(
-                Pages.SELECT_LOCATION_ON_MAP,
-                ProjectConstants.FAST_PAGE_TRANSITION_DURATION,
-                variable: searchLocationKey))
+        NavigationService.instance.navigatorPushSlidePage(context, Pages.SELECT_LOCATION_ON_MAP, variable: searchLocationKey)
             .then((location) {
+              debugPrint("*************************************************\nIn select location on map" + location.toString());
           searchLocationKey.currentState.location = location;
           searchLocationKey.currentState.controller.text = location.name;
         });

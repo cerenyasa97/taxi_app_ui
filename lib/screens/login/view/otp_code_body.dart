@@ -1,12 +1,13 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
+import 'package:piton_taxi_app/core/init/theme/project_theme.dart';
 import 'package:piton_taxi_app/screens/login/view/otp_dialog_content.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/extensions/string/string_extension.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
+import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
-import 'package:piton_taxi_app/core/init/project_routes.dart';
-import 'package:piton_taxi_app/widgets/next_page.dart';
+import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
+import 'package:piton_taxi_app/widgets/buttons/next_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -18,24 +19,24 @@ class OtpCodeDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme =
-        Provider.of<ProjectThemeData>(context).getThemeData.textTheme;
+        Provider.of<ProjectThemeData>(context).themeData.textTheme;
     return AlertDialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(context.dynamicWidth(20 / 412)),
+        borderRadius: BorderRadius.circular(ProjectConstants.ALERT_DIALOG_RADIUS),
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ProjectText(
-            text: TextConstants.GET_OTP_TITLE,
+          Text(
+            LocaleKeys.login_otp_verificationTitle.locale,
             style: textTheme.headline5.copyWith(color: Colors.black87),
           ),
           TweenAnimationBuilder(
             tween:
                 Tween(begin: ProjectConstants.OTP_CODE_DURATION_SECOND, end: 0),
             duration: context.otpCodeDuration,
-            builder: (context, value, child) => ProjectText(
-              text: (value.toInt().toString() + TextConstants.SECONDS),
+            builder: (context, value, child) => ProjectTextLocale(
+              text: (value.toInt().toString() + LocaleKeys.login_otp_seconds),
               style: textTheme.bodyText1.copyWith(fontWeight: FontWeight.w600),
             ),
             onEnd: () {
@@ -49,9 +50,9 @@ class OtpCodeDialog extends StatelessWidget {
       }),
       actions: [
         TextButton(
-          child: ProjectText(
+          child: ProjectTextLocale(
             color: Colors.black,
-            text: "Resend OTP code",
+            text: LocaleKeys.login_otp_resendOtpCode,
             style: textTheme.bodyText1,
           ),
           onPressed: () {
@@ -61,9 +62,9 @@ class OtpCodeDialog extends StatelessWidget {
         NextPageButton(
           onTap: () {
             // otp kod doğruluğunu test et
-            Navigator.of(context).pushReplacement(
-                ProjectRoute.generateSlidePageRouteBuilder(Pages.HOME,
-                    ProjectConstants.FAST_PAGE_TRANSITION_DURATION));
+            Navigator.of(context).pushAndRemoveUntil(
+                ProjectRoute.generateSlidePageRouteBuilder(Pages.PERSONAL_INFORMATION,
+                    ProjectConstants.FAST_PAGE_TRANSITION_DURATION),(Route<dynamic> route) => false);
           },
         )
       ],

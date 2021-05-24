@@ -1,7 +1,5 @@
 import 'package:piton_taxi_app/core/components/button/project_circular_button.dart';
-import 'package:piton_taxi_app/core/constants/theme/light_theme.dart';
 import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
-import 'package:piton_taxi_app/core/extensions/theme/theme_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/screens/home/view/homepage.dart';
 import 'menu_listview.dart';

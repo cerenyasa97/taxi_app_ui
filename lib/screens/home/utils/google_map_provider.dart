@@ -1,17 +1,22 @@
+import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:piton_taxi_app/core/constants/enums/payments.dart';
+import 'package:piton_taxi_app/core/constants/images/image_constants.dart';
 import 'dart:async';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 import 'package:piton_taxi_app/screens/search_location/model/place_model.dart';
 import 'package:piton_taxi_app/screens/home/service/google_api_repository.dart';
 import 'package:piton_taxi_app/screens/home/service/locator.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:piton_taxi_app/screens/home/model/direction_model.dart';
+import 'package:piton_taxi_app/core/constants/enums/trip_status.dart';
 
 class GoogleMapProvider extends ChangeNotifier {
-  GoogleMapRepository _repository = locator<
-      GoogleMapRepository>(); // Intermediary class that performs API operations
+  GoogleMapRepository _repository = locator<GoogleMapRepository>();
 
   GoogleMapController mapController; // Google Maps controller
 
@@ -24,27 +29,89 @@ class GoogleMapProvider extends ChangeNotifier {
   List<PlaceModel> placePredictions =
       []; // Keeps predictions from API for autocomplete
 
-  DirectionModel directionModel;
+  DirectionModel tripDirectionModel;
+  DirectionModel driverDirectionModel;
 
   TextEditingController initialLocationController = TextEditingController();
-  TextEditingController destinationLocationController = TextEditingController();
+  TextEditingController destinationLocationController =
+      TextEditingController();
 
   Map<MarkerId, Marker> markerMap =
       Map<MarkerId, Marker>(); // Keeps markers and marker ids
   Set<Polyline> polylineSet = {}; //Keeps polyline
   Set<Circle> circleSet = {};
 
+  PermissionStatus
+      permissionStatus; // Intermediary class that performs API operations
+  TripStatus
+      tripStatus; // Enum variable that controls the states of the journey
+  Payments
+      paymentStatus; // Enum variable that controls the states of the payment
+
+  List<LatLng> tripLatLng;
+  List<LatLng> driverLatLng;
+
+  BitmapDescriptor taxiIcon;
+  BitmapDescriptor generalIcon;
+
   GoogleMapProvider() {
-    fetchCurrentLocation();
+    checkLocationPermission();
+    dummyDuration = 0;
+    changeTripStatus(TripStatus.BEFORE_TRIP);
+    _createCustomMarker();
+  }
+
+  clearCurrentLocation() {
+    if (currentLocation != null) currentLocation = null;
+  }
+
+  // It is checked whether the user gives location permission in Runtime.
+  // If permission is denied, the user is directed to the settings page.
+  void checkLocationPermission() async {
+    permissionStatus = await Permission.location.status;
+    if (permissionStatus.isPermanentlyDenied) {
+      openAppSettings();
+      exit(0);
+    } else if (permissionStatus.isDenied) {
+      permissionStatus = await Permission.location.request();
+      if (!permissionStatus.isGranted) {
+        bool settingsOpened = await openAppSettings();
+        // The life cycle stops when you leave the application and go to the settings page.
+        // Therefore, when you return to the application by handling this situation,
+        // the permissions are checked again as a result of the changes made in the settings.
+        if (settingsOpened) {
+          BasicMessageChannel<String> lifecycleChannel =
+              SystemChannels.lifecycle;
+          lifecycleChannel.setMessageHandler((msg) async {
+            // When the app is resumed, we'll stop listening to lifecycle changes
+            if (msg.contains("resumed")) {
+              lifecycleChannel.setMessageHandler(null);
+              checkLocationPermission();
+            }
+            return msg.toString();
+          });
+        }
+      } else if (permissionStatus.isGranted) _setCurrentToInitial();
+    } else if (permissionStatus.isGranted) _setCurrentToInitial();
+    notifyListeners();
+  }
+
+  _setCurrentToInitial() async {
+    setInitialLocation(await fetchCurrentLocation());
+  }
+
+  changeTripStatus(TripStatus newStatus) {
+    tripStatus = newStatus;
+    notifyListeners();
+  }
+
+  changePaymentStatus(Payments newStatus) {
+    paymentStatus = newStatus;
+    notifyListeners();
   }
 
   addPolyline(Polyline polyline) {
     polylineSet.add(polyline);
-    notifyListeners();
-  }
-
-  clearPolylineSet() {
-    polylineSet.clear();
     notifyListeners();
   }
 
@@ -53,35 +120,64 @@ class GoogleMapProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  clearMarkers() {
-    markerMap = {};
-    notifyListeners();
-  }
-
   addCircle(Circle circle) {
     circleSet.add(circle);
     notifyListeners();
   }
 
-  clearCircles(){
-    circleSet.clear();
+  clearPolylineSet() {
+    if (polylineSet.isNotEmpty) polylineSet.clear();
     notifyListeners();
   }
 
-  clearAll(){
+  clearMarkers() {
+    if (markerMap.isNotEmpty) markerMap = {};
+    notifyListeners();
+  }
+
+  clearCircles() {
+    if (circleSet.isNotEmpty) circleSet.clear();
+    notifyListeners();
+  }
+
+  clearInitialLocation() {
+    initialLocation = currentLocation;
+  }
+
+  clearDestinationLocation() {
+    if (destinationLocation != null) destinationLocation = null;
+  }
+
+  clearPlacePredictions() {
+    placePredictions.clear();
+    notifyListeners();
+  }
+
+  clearAll() {
+    changeTripStatus(TripStatus.BEFORE_TRIP);
     clearCircles();
     clearMarkers();
     clearPolylineSet();
+    clearPlacePredictions();
+    clearInitialLocation();
+    clearDestinationLocation();
+    changePaymentStatus(Payments.DONE);
+    animateCameraNewLatLng(currentLocation);
+    if (driverLatLng != null) driverLatLng.clear();
+    if (tripLatLng != null) tripLatLng.clear();
   }
 
   /// Captures the instant position and returns it to the location model and stores it in currentLocation
   fetchCurrentLocation() async {
     Position currentPosition = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.best);
-    currentLocation = LocationModel("CurrentLocation", "Current Location",
-        currentPosition.latitude, currentPosition.longitude);
-    initialLocation = currentLocation;
+    currentLocation = await _repository.getPlaceFromAddress(
+        "${currentPosition.latitude},${currentPosition.longitude}");
+    if (currentLocation == null)
+      currentLocation =
+          await _repository.getPlaceFromAddress("39.9030394,32.4825798");
     notifyListeners();
+    return currentLocation;
   }
 
   /// Takes a parameter of the LocationModel type and assigns this parameter to the initialLocation
@@ -107,34 +203,37 @@ class GoogleMapProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  clearPlacePredictions() {
-    placePredictions.clear();
-    notifyListeners();
-  }
-
   /// Retrieves the details of the user's chosen address from the API
   Future<LocationModel> getPlaceDetail(String placeID) async {
     return await _repository.getPlaceDetail(placeID);
   }
 
+  /// Calls the function that request the direction by sending the trip initial and destination locations
+  getTripDirection() async {
+    changeTripStatus(TripStatus.AFTER_DRAWING_TRIP_ROUTE);
+    await getDirection(initialLocation, destinationLocation);
+  }
+
   /// Makes a request to the API to get Direction information and calls the method that draws the route with this returning response
-  Future<DirectionModel> getDirection() async {
-    directionModel = await _repository.apiService
-        .getDirection(initialLocation, destinationLocation);
+  getDirection(LocationModel initial, LocationModel destination) async {
+    DirectionModel directionModel =
+        await _repository.apiService.getDirection(initial, destination);
+
+    tripStatus == TripStatus.TAXI_COMING
+        ? driverDirectionModel = directionModel
+        : tripDirectionModel = directionModel;
+
     drawPolyline(directionModel.encodedPoints);
     notifyListeners();
   }
 
-  /// Solves the points in encoded points taken from the direction details to take their latitudes and longitudes
+  /// Decode the points in encoded points taken from the direction details to take their latitudes and longitudes
   /// Creates polyline with this location list
   drawPolyline(String encodedPoints) {
     List<LatLng> polylineCoordinates = [];
     PolylinePoints polylinePoints = PolylinePoints();
     List<PointLatLng> decodedPolylinePoints =
         polylinePoints.decodePolyline(encodedPoints);
-    print("********************************************************************");
-    print("Decoded polyline points: "  + decodedPolylinePoints.toString());
-    print("********************************************************************");
     if (decodedPolylinePoints.isNotEmpty) {
       decodedPolylinePoints.forEach((pointLatLng) {
         polylineCoordinates
@@ -142,7 +241,9 @@ class GoogleMapProvider extends ChangeNotifier {
       });
     }
 
-    clearPolylineSet();
+    tripStatus == TripStatus.AFTER_DRAWING_TRIP_ROUTE
+        ? tripLatLng = polylineCoordinates
+        : driverLatLng = polylineCoordinates;
 
     Polyline polyline = createPolyline(polylineCoordinates);
 
@@ -151,10 +252,14 @@ class GoogleMapProvider extends ChangeNotifier {
     applyLatLngBounds();
   }
 
+  // Creates and returns polyline
   Polyline createPolyline(List<LatLng> polylineCoordinates) {
     return Polyline(
-      color: Colors.amber,
-      polylineId: PolylineId("PolylineId"),
+      color:
+          tripStatus == TripStatus.TAXI_COMING ? Colors.yellow : Colors.amber,
+      polylineId: tripStatus == TripStatus.TAXI_COMING
+          ? PolylineId("Taxi")
+          : PolylineId("Trip"),
       jointType: JointType.round,
       points: polylineCoordinates,
       width: 5,
@@ -164,6 +269,8 @@ class GoogleMapProvider extends ChangeNotifier {
     );
   }
 
+  // Sets borders by selecting the closest positions from 4 sides to the initial and
+  // destination locations to find the closest route while drawing the polyline
   applyLatLngBounds() {
     LatLngBounds latLngBounds;
     if (currentLocation.latitude > destinationLocation.latitude &&
@@ -189,9 +296,12 @@ class GoogleMapProvider extends ChangeNotifier {
           northeast: destinationLocation.latLong);
     }
 
-    mapController.animateCamera(CameraUpdate.newLatLngBounds(latLngBounds, 50));
+    if (tripStatus == TripStatus.AFTER_DRAWING_TRIP_ROUTE)
+      mapController
+          .animateCamera(CameraUpdate.newLatLngBounds(latLngBounds, 70));
   }
 
+  // Adds markers and circles to initial and destination locations
   addInitialDestinationMarkersAndCircles() {
     clearMarkers();
     clearCircles();
@@ -203,23 +313,90 @@ class GoogleMapProvider extends ChangeNotifier {
     addCircle(createCircle(destinationLocation));
   }
 
+  // Creates and returns marker
   Marker createMarker(MarkerId id, LocationModel location) {
     return Marker(
-      markerId: id,
-      position: location.latLong,
-      infoWindow: InfoWindow(title: location.name),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueViolet)
-    );
+        markerId: id,
+        position: location.latLong,
+        infoWindow: InfoWindow(title: location.name),
+        icon: generalIcon);
   }
 
-  Circle createCircle(LocationModel location){
+  // Creates and returns circle
+  Circle createCircle(LocationModel location) {
     return Circle(
-      fillColor: Colors.amberAccent.shade100,
-      center: location.latLong,
-      radius: 10,
-      strokeColor: Colors.amberAccent.shade100,
-      strokeWidth: 4,
-      circleId: CircleId(location.name)
-    );
+        fillColor: Colors.amberAccent.shade100,
+        center: location.latLong,
+        radius: 10,
+        strokeColor: Colors.amberAccent.shade100,
+        strokeWidth: 4,
+        circleId: CircleId(location.name));
+  }
+
+  // Creates custom markers to be used in the application
+  _createCustomMarker() async {
+    if (taxiIcon == null) {
+      var customIcon = await BitmapDescriptor.fromAssetImage(
+          ImageConfiguration(), ImageConstants.TAXI_MARKER);
+      taxiIcon = customIcon;
+    }
+    if (generalIcon == null) {
+      var customIcon = await BitmapDescriptor.fromAssetImage(
+          ImageConfiguration(), ImageConstants.GENERAL_MARKER);
+      generalIcon = customIcon;
+    }
+  }
+
+  double dummyDuration;
+
+  // This method is written as a dummy
+  tripStarted() async {
+    LocationModel driverModel =
+        LocationModel("Driver", "Driver", 39.774279, 30.512047);
+    await getDirection(driverModel, initialLocation);
+    var index1 = 0;
+    var index2 = 0;
+    dummyDuration = (driverDirectionModel.duration % 3600) / 60;
+    var factor = dummyDuration / driverLatLng.length;
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      if (tripStatus == TripStatus.TAXI_COMING) {
+        if (index1 < driverLatLng.length) {
+          addMarker(
+              Marker(
+                  markerId: MarkerId("Taxi"),
+                  position: driverLatLng[index1],
+                  icon: taxiIcon,
+                  flat: true,
+                  anchor: Offset(0.5, 0.5)),
+              MarkerId("Taxi"));
+          animateCameraNewLatLng(LocationModel("Taxi", "Taxi",
+              driverLatLng[index1].latitude, driverLatLng[index1].longitude));
+          index1 += 1;
+          dummyDuration -= factor;
+        } else {
+          if (index2 == 0) changeTripStatus(TripStatus.TRIP_STARTED);
+          if (index2 < tripLatLng.length) {
+            addMarker(
+                Marker(
+                    markerId: MarkerId("Taxi"),
+                    position: tripLatLng[index2],
+                    icon: taxiIcon,
+                    flat: true,
+                    anchor: Offset(0.5, 0.5)),
+                MarkerId("Taxi"));
+            animateCameraNewLatLng(LocationModel("Taxi", "Taxi",
+                tripLatLng[index2].latitude, tripLatLng[index2].longitude));
+            index2 += 1;
+          } else {
+            changeTripStatus(TripStatus.TRIP_END);
+            timer.cancel();
+          }
+        }
+      } else {
+        timer.cancel();
+      }
+    });
+    index1 = 0;
+    index2 = 0;
   }
 }

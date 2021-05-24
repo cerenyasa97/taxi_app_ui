@@ -1,8 +1,9 @@
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
+import 'package:piton_taxi_app/core/extensions/string/string_extension.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/screens/trips/view/cancelled_page.dart';
 import 'package:piton_taxi_app/screens/trips/view/oncoming_page.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 import 'package:flutter/material.dart';
 import 'completed_page.dart';
 
@@ -13,7 +14,7 @@ class Trips extends BaseView {
 
 class _TripsState extends BaseState<Trips> {
   @override
-  String appBarTitle() => TextConstants.TRIPS_TITLE;
+  String appBarTitle() => LocaleKeys.trips_title;
 
   @override
   Widget body() {
@@ -23,13 +24,13 @@ class _TripsState extends BaseState<Trips> {
           children: [
             TabBar(tabs: [
               Tab(
-                text: TextConstants.TRIPS_TAB_BAR_TITLE_1,
+                text: LocaleKeys.trips_tabs_tab1Title.locale,
               ),
               Tab(
-                text: TextConstants.TRIPS_TAB_BAR_TITLE_2,
+                text: LocaleKeys.trips_tabs_tab2Title.locale,
               ),
               Tab(
-                text: TextConstants.TRIPS_TAB_BAR_TITLE_3,
+                text: LocaleKeys.trips_tabs_tab3Title.locale,
               )
             ]),
             Expanded(

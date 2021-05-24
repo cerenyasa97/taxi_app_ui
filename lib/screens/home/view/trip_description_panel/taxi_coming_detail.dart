@@ -84,7 +84,7 @@ class _TaxiComingDetailState extends State<TaxiComingDetail> {
           children: [
             _getButtons((){}, ProjectImage(imagePath: ImageConstants.PHONE_ICON, width: 40,), LocaleKeys.taxiComing_menu_callLabel),
             _getButtons((){}, ProjectImage(imagePath: ImageConstants.MESSAGE_ICON, width: 40,), LocaleKeys.taxiComing_menu_messageLabel),
-            _getButtons((){}, Icon(Icons.clear, size: 40,), LocaleKeys.button_labels_cancel)
+            _getButtons(() => context.mapProvider.clearAll(), Icon(Icons.clear, size: 40,), LocaleKeys.button_labels_cancel)
           ],
         )
       ],

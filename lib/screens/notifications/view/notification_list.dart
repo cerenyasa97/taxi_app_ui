@@ -1,11 +1,12 @@
+import 'package:piton_taxi_app/core/components/container/white_container_with_shadow.dart';
 import 'package:piton_taxi_app/screens/notifications/model/notification_model.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dart';
 import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
-import 'package:piton_taxi_app/core/init/project_routes.dart';
-import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
+import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
+import 'package:piton_taxi_app/widgets/list_tile/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class NotificationList extends StatefulWidget {
@@ -26,21 +27,12 @@ class _NotificationListState extends State<NotificationList> {
   Widget build(BuildContext context) {
     return Container(
       margin: context.lowEdgeInsetsVertical,
-      height: context.dynamicHeight(1 / 2),
+      height: context.dynamicHeight(435),
       child: ListView.builder(
-        itemBuilder: (context, index) => Container(
+        itemBuilder: (context, index) => WhiteContainerWithShadow(
           margin: context.lowEdgeInsetsVertical,
-          height: context.dynamicHeight(65 / 870),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0x29000000),
-                offset: Offset(0, 3),
-                blurRadius: 6,
-              ),
-            ],
-          ),
+          width: context.width,
+          height: context.dynamicHeight(70),
           child: CustomListTile(
             title: _notificationList[index].notificationTitle,
             leadingIcon: Icon(

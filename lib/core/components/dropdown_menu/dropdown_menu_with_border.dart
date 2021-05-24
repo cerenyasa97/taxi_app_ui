@@ -1,7 +1,6 @@
 import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/init/theme/project_theme.dart';
-import 'package:provider/provider.dart';
+import 'package:piton_taxi_app/core/extensions/theme/theme_extension.dart';
 
 class DropDownMenuWithBorder extends StatefulWidget {
 
@@ -39,13 +38,13 @@ class _DropDownMenuWithBorderState extends State<DropDownMenuWithBorder> {
             value: e.toString(),
           ))
               .toList(),
-          style: Provider.of<ProjectThemeData>(context).themeData.textTheme.bodyText1,
+          style: context.textTheme.bodyText1,
           value: currentValue,
-          onChanged: (value) {
+          onChanged: (String value) {
             setState(() {
               currentValue = value.toString();
             });
-            widget.onChanged(value);
+            widget.onChanged(value ?? "");
           },
         ),
       ),

@@ -1,9 +1,7 @@
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
+import 'package:piton_taxi_app/widgets/list_tile/custom_list_tile.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 import 'package:flutter/material.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
-import 'package:piton_taxi_app/widgets/custom_list_tile.dart';
-import 'package:provider/provider.dart';
 
 class UseCurrentLocation extends StatelessWidget {
   final VoidCallback onTap;
@@ -13,7 +11,7 @@ class UseCurrentLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomListTile(
-      title: TextConstants.USE_CURRENT_LOCATION,
+      title: LocaleKeys.searchLocation_useCurrentLocation,
       titleBold: false,
       leadingIcon: Icon(
         Icons.my_location,

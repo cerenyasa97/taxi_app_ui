@@ -1,7 +1,7 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/components/transition_indicator_dot.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/components/indicator/transition_indicator_dot.dart';
 import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
-import 'package:piton_taxi_app/core/components/project_image.dart';
+import 'package:piton_taxi_app/core/components/image/project_image.dart';
 import 'package:flutter/material.dart';
 
 class OffersPageView extends StatefulWidget {
@@ -32,7 +32,7 @@ class _OffersPageViewState extends State<OffersPageView> {
     return Column(
       children: [
         Container(
-          height: context.dynamicHeight(7 / 24),
+          height: context.dynamicHeight(254),
           child: PageView.builder(
             controller: _controller,
             onPageChanged: (pageIndex) => _pageIndex.value = pageIndex,

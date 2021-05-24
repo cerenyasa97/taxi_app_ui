@@ -27,7 +27,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-
   flutter_screenutil: ^4.0.4+1
   country_code_picker: ^2.0.1
   provider: ^5.0.0-nullsafety
@@ -37,8 +36,12 @@ dependencies:
   http: ^0.13.1
   get_it: ^6.1.1
   flutter_polyline_points: ^1.0.0
-
-  flutter_rating_bar: ^1.3.0+1
+  location: ^4.1.1
+  easy_localization: ^3.0.0-nullsafety.0
+  permission_handler: ^7.1.0
+  auto_size_text: 3.0.0-nullsafety.0
+  mask_text_input_formatter: ^1.2.1
+  package_info: ^2.0.0
   intl: ^0.17.0-nullsafety.2
   flutter_svg: ^0.21.0-nullsafety.0
 
@@ -62,34 +65,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/ic_logo.png
-    - images/map-marker.png
-    - images/navigation.png
-    - images/car.png
-    - images/city.png
-    - images/hatchback.png
-    - images/tuk.png
-    - images/van.png
-    - images/driver.jpg
-    - images/driver_img.jpg
-    - images/stopwatch.png
-    - images/ic_close.png
-    - images/ic_facebook.png
-    - images/ic_twitter.png
-    - images/ic_instagram.png
-    - images/payments/cash.png
-    - images/payments/card.png
-    - images/payments/points.png
-    - images/menu/user.png
-    - images/menu/payment.png
-    - images/menu/book_later.png
-    - images/menu/my_trips.png
-    - images/menu/rate_card.png
-    - images/menu/news_offers.png
-    - images/menu/emergency_contacts.png
-    - images/menu/help_support.png
+    - images/
     - assets/images/
     - lib/core/constants/dummy_data/
+    - assets/maps/
+    - assets/languages/
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

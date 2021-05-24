@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:piton_taxi_app/core/constants/app/constants.dart';
 
 final ThemeData lightTheme = ThemeData(
   appBarTheme: AppBarTheme(
@@ -73,7 +74,7 @@ final ThemeData lightTheme = ThemeData(
   textTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 50.0,
+      fontSize: 45.0,
       fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
@@ -153,7 +154,7 @@ final ThemeData lightTheme = ThemeData(
   primaryTextTheme: TextTheme(
     headline1: TextStyle(
       color: Color(0x8a000000),
-      fontSize: 50.0,
+      fontSize: 45.0,
       fontWeight: FontWeight.w700,
       fontStyle: FontStyle.normal,
     ),
@@ -244,7 +245,7 @@ final ThemeData lightTheme = ThemeData(
       fontStyle: FontStyle.normal,
     ),
     hintStyle: TextStyle(
-      color: Color(0xdd000000),
+      color: Colors.grey,
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
@@ -295,7 +296,7 @@ final ThemeData lightTheme = ThemeData(
         width: 2.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.circular(5.0),
+      borderRadius: BorderRadius.circular(ProjectConstants.TEXT_FIELD_BORDER_RADIUS),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderSide: BorderSide(
@@ -303,7 +304,7 @@ final ThemeData lightTheme = ThemeData(
         width: 2.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.circular(5.0),
+      borderRadius: BorderRadius.circular(ProjectConstants.TEXT_FIELD_BORDER_RADIUS),
     ),
     disabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
@@ -311,7 +312,7 @@ final ThemeData lightTheme = ThemeData(
         width: 1.0,
         style: BorderStyle.solid,
       ),
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.all(Radius.circular(ProjectConstants.TEXT_FIELD_BORDER_RADIUS)),
     ),
     enabledBorder: OutlineInputBorder(
       borderSide: BorderSide(

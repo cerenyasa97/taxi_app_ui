@@ -1,59 +1,71 @@
 import 'dart:async';
-
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
 import 'package:piton_taxi_app/screens/search_location/model/location_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
-import 'package:piton_taxi_app/screens/home/utils/google_map_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
+import 'package:piton_taxi_app/core/extensions/maps/maps_extension.dart';
+import 'package:piton_taxi_app/widgets/progress_indicator/custom_progress_indicator.dart';
 
 abstract class MapBaseView extends StatefulWidget {
   MapBaseView({Key key}) : super(key: key);
 }
 
 abstract class MapBaseState<Page extends MapBaseView> extends State<Page> {
+  String _mapStyle;
   GoogleMapController mapController;
   Map<MarkerId, Marker> markerMap = Map<MarkerId, Marker>();
+
   // ignore: close_sinks
-  StreamController<Map<MarkerId, Marker>> markerStreamController = StreamController<Map<MarkerId, Marker>>();
+  StreamController<Map<MarkerId, Marker>> markerStreamController =
+      StreamController<Map<MarkerId, Marker>>();
+
   Stream<Map<MarkerId, Marker>> get markerStream =>
       markerStreamController.stream;
+
   //ValueNotifier<Map<MarkerId, Marker>> listenableMapMarker = ValueNotifier<Map<MarkerId, Marker>>({});
 
   String appBarTitle();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    setMapStyle();
     markerStreamController.sink.add(markerMap);
   }
 
   @override
   Widget build(BuildContext context) {
-    final GoogleMapProvider mapModel =
-        Provider.of<GoogleMapProvider>(context, listen: false);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           StreamBuilder(
               stream: markerStream,
               builder: (context, snapshot) {
-            return GoogleMap(
-              initialCameraPosition: CameraPosition(
-                target: mapModel.currentLocation.latLong,
-                zoom: 15,
-              ),
-              zoomControlsEnabled: false,
-              onMapCreated: (controller) => mapController = controller,
-              markers: Set<Marker>.from(snapshot.data != null ? snapshot.data.values : <Marker>[]),
-              myLocationEnabled: true,
-              myLocationButtonEnabled: false,
-              onTap: onTap,
-              onCameraMove: onCameraMove,
-            );
-          }),
+                return context.mapProvider.currentLocation == null
+                    ? CustomProgressIndicator()
+                    : GoogleMap(
+                        initialCameraPosition: CameraPosition(
+                          target: context.mapProvider.currentLocation.latLong,
+                          zoom: 15,
+                        ),
+                        zoomControlsEnabled: false,
+                        onMapCreated: (controller) {
+                          mapController = controller;
+                          mapController.setMapStyle(_mapStyle);
+                        },
+                        markers: Set<Marker>.from(snapshot.data != null
+                            ? snapshot.data.values
+                            : <Marker>[]),
+                        myLocationEnabled: true,
+                        myLocationButtonEnabled: false,
+                        onTap: onTap,
+                        onCameraMove: onCameraMove,
+                      );
+              }),
           Padding(
             padding: padding(),
             child: body(),
@@ -70,24 +82,10 @@ abstract class MapBaseState<Page extends MapBaseView> extends State<Page> {
   onTap(LatLng location);
 
   onCameraMove(CameraPosition position);
+
+  setMapStyle() {
+    rootBundle
+        .loadString(TextConstants.MAP_STYLE_PATH)
+        .then((value) => _mapStyle = value);
+  }
 }
-/*
-ValueListenableBuilder(
-              valueListenable: listenableMapMarker,
-              builder: (context, markerMap, child) {
-                return GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: mapModel.currentLocation.latLong,
-                    zoom: 15,
-                  ),
-                  zoomControlsEnabled: false,
-                  onMapCreated: (controller) => mapController = controller,
-                  markers: Set.from(listenableMapMarker.value.values),
-                  myLocationEnabled: true,
-                  myLocationButtonEnabled: false,
-                  onTap: onTap,
-                  onCameraMove: onCameraMove,
-                );
-              }
-          ),
- */

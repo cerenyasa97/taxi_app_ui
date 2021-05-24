@@ -1,12 +1,10 @@
 import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
-import 'package:piton_taxi_app/core/constants/app/constants.dart';
 import 'package:piton_taxi_app/core/constants/enums/routes.dart';
 import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/core/extensions/theme/theme_extension.dart';
 import 'package:piton_taxi_app/core/init/navigation/navigation_service.dart';
-import 'package:piton_taxi_app/core/init/navigation/project_routes.dart';
 import 'package:piton_taxi_app/widgets/general/wallet_detail.dart';
 
 class WalletPayment extends StatelessWidget {

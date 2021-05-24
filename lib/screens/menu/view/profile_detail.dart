@@ -39,7 +39,7 @@ class ProfileDetail extends StatelessWidget {
         ), flex:10),
         Flexible(
           child: Align(
-            child: CircleImage(image: ImageConstants.DRIVER_IMAGE, width: context.dynamicWidth(70),),
+            child: CircleImage(image: ImageConstants.USER_IMAGE, width: context.dynamicWidth(70),),
             alignment: Alignment.centerRight,
           ), flex: 4,)
       ],

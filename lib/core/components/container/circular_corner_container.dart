@@ -29,7 +29,7 @@ class CircularCornerContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: child,
+      child: child ?? Container(color: Colors.white,),
     );
   }
 }

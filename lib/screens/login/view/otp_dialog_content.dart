@@ -1,9 +1,7 @@
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/components/project_text_form_field.dart';
-import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/init/otp_dialog_focus_nodes.dart';
+import 'file:///C:/Users/Ceren/Desktop/piton_taxi_app/lib/core/init/focus_node/otp_dialog_focus_nodes.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/components/text_field/project_text_form_field.dart';
 import 'package:piton_taxi_app/core/constants/app/constants.dart';
-import 'package:piton_taxi_app/core/init/project_theme.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -43,18 +41,14 @@ class _OtpDialogContentState extends State<OtpDialogContent> {
 
   SizedBox _codeField(BuildContext context,
       {FocusNode currentFNode, FocusNode nextFNode}) {
-    final InputDecorationTheme inputTheme = Provider.of<ProjectThemeData>(context).getThemeData.inputDecorationTheme;
     return SizedBox(
-        width: context.dynamicWidth(35/412),
+        width: context.dynamicWidth(35),
         child: ProjectTextFormField(
           focusNode: currentFNode,
           keyboardType: TextInputType.number,
-          enabledBorder: inputTheme.enabledBorder,
-          focusedBorder: inputTheme.focusedBorder,
           hintText: "0",
           alignment: TextAlign.center,
           textFormatter: [LengthLimitingTextInputFormatter(1)],
-          cursorColor: Provider.of<ProjectThemeData>(context).getThemeData.textSelectionTheme.cursorColor,
           onChanged: (text) {
             if(text.isNotEmpty && otpCode.length <= 6) otpCode[OTPDialogConstants.getIndex(currentFNode)] = int.parse(text);
             if(currentFNode != OTPDialogConstants.field6FNode) nextField(text, nextFNode);

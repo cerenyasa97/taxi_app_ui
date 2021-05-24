@@ -1,4 +1,10 @@
 class ImageConstants{
+  //static ImageConstants _instance;
+
+  //static ImageConstants get instance => _instance ??= ImageConstants._internal();
+
+  //ImageConstants._internal();
+
   static const String IMAGES_PATH = "assets/images/";
   static const String TAXI_ICON = IMAGES_PATH + "taxi_icon.png";
   static const String ROUTE_ICON = IMAGES_PATH + "route_icon.svg";
@@ -38,4 +44,5 @@ class ImageConstants{
   static const String TWITTER_ICON = IMAGES_PATH + "ic_twitter.png";
   static const String INSTAGRAM_ICON = IMAGES_PATH + "ic_instagram.png";
   static const String PROGRESS_INDICATOR = IMAGES_PATH + "progress_indicator.gif";
+  static const String ALERT_GIF = IMAGES_PATH + "alert.gif";
 }

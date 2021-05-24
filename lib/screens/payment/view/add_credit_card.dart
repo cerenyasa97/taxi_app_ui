@@ -1,17 +1,17 @@
-import 'package:piton_taxi_app/core/components/dropdown_menu_with_border.dart';
-import 'package:piton_taxi_app/core/extensions/project_context_extension.dart';
-import 'package:piton_taxi_app/core/extensions/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/components/dropdown_menu/dropdown_menu_with_border.dart';
+import 'package:piton_taxi_app/core/extensions/context/project_context_extension.dart';
+import 'package:piton_taxi_app/core/extensions/context/edge_insets_extension.dart';
+import 'package:piton_taxi_app/core/init/languages/locale_keys.g.dart';
 import 'package:piton_taxi_app/screens/payment/model/credit_card_model.dart';
 import 'package:piton_taxi_app/core/constants/dummy_data/dummy_data.dart';
-import 'package:piton_taxi_app/core/extensions/sized_box_extension.dart';
-import 'package:piton_taxi_app/core/components/project_text_field.dart';
-import 'package:piton_taxi_app/core/constants/text/text_constants.dart';
-import 'package:piton_taxi_app/core/components/project_button_bar.dart';
-import 'package:piton_taxi_app/core/extensions/theme_extension.dart';
-import 'package:piton_taxi_app/core/components/project_text.dart';
-import 'package:piton_taxi_app/widgets/error_alert_dialog.dart';
+import 'package:piton_taxi_app/core/extensions/context/sized_box_extension.dart';
+import 'package:piton_taxi_app/core/components/text_field/project_text_field.dart';
+import 'package:piton_taxi_app/core/components/button_bar/project_button_bar.dart';
+import 'package:piton_taxi_app/core/extensions/theme/theme_extension.dart';
+import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
+import 'package:piton_taxi_app/widgets/alert_dialogs/error_alert_dialog.dart';
 import 'package:piton_taxi_app/core/base/view/base_view.dart';
-import 'package:piton_taxi_app/core/init/pages_import.dart';
+import 'package:piton_taxi_app/core/init/navigation/pages_import.dart';
 
 class AddCreditCard extends BaseView {
   @override
@@ -30,14 +30,13 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
   String year;
 
   @override
-  String appBarTitle() => TextConstants.ADD_CREDIT_CARD_TITLE;
+  String appBarTitle() => LocaleKeys.addCreditCard_title;
 
   @override
   void initState() {
     super.initState();
     focusNode0 = FocusNode();
     focusNode1 = FocusNode();
-    focusNode0.requestFocus();
     month = monthList.first.toString();
     year = yearList.first.toString();
   }
@@ -47,20 +46,12 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProjectText(
-            text: "Card Holder",
-            style: context.textTheme.bodyText1
-                .copyWith(color: Colors.grey.shade700)),
-        _getText(context, focusNode0),
+        _getText(context, focusNode0, LocaleKeys.addCreditCard_body_cardHolder_hint, LocaleKeys.addCreditCard_body_cardHolder_label),
         context.lowSizedBoxHeight,
-        ProjectText(
-            text: "Card Number",
-            style: context.textTheme.bodyText1
-                .copyWith(color: Colors.grey.shade700)),
-        _getText(context, focusNode1),
+        _getText(context, focusNode1, LocaleKeys.addCreditCard_body_CardNumber_hint, LocaleKeys.addCreditCard_body_CardNumber_label),
         context.lowSizedBoxHeight,
-        ProjectText(
-            text: "Expiration Date",
+        ProjectTextLocale(
+            text: LocaleKeys.addCreditCard_body_expirationDate,
             style: context.textTheme.bodyText1
                 .copyWith(color: Colors.grey.shade700)),
         Row(
@@ -86,8 +77,8 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
                 barrierDismissible: false,
                 context: context,
                 builder: (context) => ErrorAlertDialog(
-                      contentText: TextConstants.CREDIT_CARD_ADD_ERROR,
-                      title: TextConstants.INPUT_ERROR,
+                      contentText: LocaleKeys.payment_registeredCards_addCard_error_body,
+                      title: LocaleKeys.payment_registeredCards_addCard_error_title,
                     ));
           }
         })
@@ -95,21 +86,32 @@ class _AddCreditCardState extends BaseState<AddCreditCard> {
     );
   }
 
-  ProjectTextField _getText(
-      BuildContext context, FocusNode node) {
-    return ProjectTextField(
-      fNode: node,
-      keyboardType:
-          node == focusNode0 ? TextInputType.text : TextInputType.number,
-      contentPadding: context.textInputPadding,
-      enabledBorder: context.inputDecorationTheme.enabledBorder,
-      focusedBorder: context.inputDecorationTheme.focusedBorder,
-      maxLength: node == focusNode0 ? null : 16,
-      onChanged: (value) =>
-          node == focusNode0 ? cardHolder = value : cardNumber = value,
-      onSubmitted: (text) => node == focusNode0
-          ? context.nextFocusNode(focusNode1)
-          : focusNode1.unfocus(),
+  Widget _getText(
+      BuildContext context, FocusNode node, String hint, String label) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ProjectTextLocale(
+            text: label,
+            style: context.textTheme.bodyText1
+                .copyWith(color: Colors.grey.shade700)),
+        context.lowest0SizedBoxHeight,
+        ProjectTextField(
+          fNode: node,
+          hintText: hint,
+          keyboardType:
+              node == focusNode0 ? TextInputType.text : TextInputType.number,
+          contentPadding: context.textInputPadding,
+          enabledBorder: context.inputDecorationTheme.enabledBorder,
+          focusedBorder: context.inputDecorationTheme.focusedBorder,
+          maxLength: node == focusNode0 ? null : 16,
+          onChanged: (value) =>
+              node == focusNode0 ? cardHolder = value : cardNumber = value,
+          onSubmitted: (text) => node == focusNode0
+              ? context.nextFocusNode(focusNode1)
+              : focusNode1.unfocus(),
+        ),
+      ],
     );
   }
 
