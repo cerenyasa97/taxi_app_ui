@@ -16,8 +16,8 @@ class ProjectImage extends StatelessWidget {
     return Image.asset(
       imagePath,
       fit: fit,
-      width: width ?? context.dynamicWidth(50),
-      height: height ?? context.dynamicWidth(50),
+      width: width,
+      height: height,
     );
   }
 }

@@ -218,5 +218,10 @@
   "errors" : {
     "errorLabel" : "Hata",
     "snapshotError" : "Uygulama çalışırken bir hata oluştu. Lütfen uygulamayı kapatıp tekrar açınız."
+  },
+
+  "uploadProfilePhoto" : {
+    "selectPhoneGallery" : "Galeriden Seç",
+    "takePhoto" : "Fotoğraf Çek"
   }
 }

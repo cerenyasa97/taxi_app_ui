@@ -15,7 +15,6 @@ class ProjectTextField extends StatefulWidget {
   final Function(String) onChanged;
   final Function(String) onSubmitted;
   final String hintText;
-  final String label;
   final Icon prefixIcon;
   final Icon suffixIcon;
   final Color cursorColor;
@@ -44,7 +43,6 @@ class ProjectTextField extends StatefulWidget {
       this.onChanged,
       this.onSubmitted,
       this.hintText,
-      this.label,
       this.prefixIcon,
       this.suffixIcon,
       this.cursorColor,
@@ -97,7 +95,6 @@ class _ProjectTextFieldState extends State<ProjectTextField> {
         contentPadding: widget.contentPadding ?? context.textInputPadding,
         hintText: (widget.hintText ?? LocaleKeys.general_enter).locale,
         hintStyle: context.textTheme.bodyText2.copyWith(color: Colors.blueGrey),
-        labelText: (widget.label ?? "").locale,
         suffixIcon: widget.suffixIcon ?? null,
         prefixIcon: widget.prefixIcon ?? null,
       ),

@@ -159,5 +159,8 @@ abstract class  LocaleKeys {
   static const errors_errorLabel = 'errors.errorLabel';
   static const errors_snapshotError = 'errors.snapshotError';
   static const errors = 'errors';
+  static const uploadProfilePhoto_selectPhoneGallery = 'uploadProfilePhoto.selectPhoneGallery';
+  static const uploadProfilePhoto_takePhoto = 'uploadProfilePhoto.takePhoto';
+  static const uploadProfilePhoto = 'uploadProfilePhoto';
 
 }

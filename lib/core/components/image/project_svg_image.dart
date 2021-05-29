@@ -15,8 +15,8 @@ class ProjectSVGImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       imagePath,
-      width: width ?? context.dynamicWidth(50),
-      height: context.dynamicHeight(50),
+      width: width,
+      height: height,
     );
   }
 }

@@ -16,7 +16,6 @@ class ProjectTextFormField extends StatelessWidget {
   final Function(String) validator;
   final VoidCallback onEditingComplete;
   final String hintText;
-  final String label;
   final Icon prefixIcon;
   final Icon suffixIcon;
   final Color cursorColor;
@@ -41,7 +40,6 @@ class ProjectTextFormField extends StatelessWidget {
       this.onChanged,
       this.onSaved,
       this.hintText,
-      this.label,
       this.prefixIcon,
       this.suffixIcon,
       this.cursorColor,
@@ -75,7 +73,6 @@ class ProjectTextFormField extends StatelessWidget {
         contentPadding: contentPadding ?? null,
         hintStyle: context.textTheme.headline6.copyWith(color: Colors.grey.shade600),
         hintText: (hintText ?? LocaleKeys.general_enter).locale,
-        labelText: (label ?? "").locale,
         suffixIcon: suffixIcon ?? null,
         prefixIcon: prefixIcon ?? null,
       ),

@@ -1,4 +1,5 @@
 import 'package:piton_taxi_app/core/components/custom_dialog.dart';
+import 'package:piton_taxi_app/core/components/text/project_text_locale.dart';
 import 'package:piton_taxi_app/core/constants/methods/show_dialog.dart';
 import 'package:piton_taxi_app/widgets/image/circle_image.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +24,14 @@ class ProfileImage extends StatelessWidget {
                 ),
               ),
               onPressed: () => ProjectShowDialog.show(context, CustomDialog(
-                title: "Add Photo",
-                content: "fglkdşgkd",
-                action: "şfkşkfş",
+                contentChild: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ProjectTextLocale(
+                      text: ,
+                    )
+                  ],
+                ),
               ))),
         )
       ]),

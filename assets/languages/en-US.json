@@ -218,5 +218,10 @@
   "errors" : {
     "errorLabel" : "Error",
     "snapshotError" : "An error occurred while running the application. Please close and reopen the application."
+  },
+
+  "uploadProfilePhoto" : {
+    "selectPhoneGallery" : "Select Gallery",
+    "takePhoto" : "Take Photo"
   }
 }

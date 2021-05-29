@@ -23,4 +23,5 @@ class ProjectConstants{
   static const double CONTAINER_BORDER_RADIUS = 15;
   static const double MENU_ITEM_BORDER_RADIUS = 37;
   static const double ALERT_DIALOG_RADIUS = 25;
+  static const double ALERT_DIALOG_ICON_RADIUS = 30;
 }
