@@ -99,6 +99,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
               text: LocaleKeys.splash_splashText,
               style:
                   context.textTheme.headline3.copyWith(color: Colors.black87),
+              align: TextAlign.center,
             ),
           ],
         ))),

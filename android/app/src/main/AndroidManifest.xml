@@ -6,7 +6,7 @@
     <uses-feature android:name="android.hardware.location.network" android:required="false" />
     <uses-feature android:name="android.hardware.location.gps" android:required="false"  />
     <application
-        android:label="piton_taxi_app"
+        android:label="taxi_app"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

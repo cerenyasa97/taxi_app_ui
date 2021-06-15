@@ -359,7 +359,7 @@ class GoogleMapProvider extends ChangeNotifier {
     dummyDuration = (driverDirectionModel.duration % 3600) / 60;
     var factor = dummyDuration / driverLatLng.length;
     Timer.periodic(Duration(seconds: 1), (timer) {
-      if (tripStatus == TripStatus.TAXI_COMING) {
+      if (tripStatus == TripStatus.TAXI_COMING || tripStatus == TripStatus.TRIP_STARTED) {
         if (index1 < driverLatLng.length) {
           addMarker(
               Marker(
