@@ -15,6 +15,14 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+# Sample APK
+
+[Download APK](https://drive.google.com/file/d/1YPLbtRh19KD8QRrK0WydzbP7xRVurnMg/view?usp=sharing)
+
+# App Video
+
+[Watch Video](https://drive.google.com/file/d/1uNPbFXNnjFMHzbc5rZxlXcA1VU8Mqwsy/view?usp=sharing)
+
 # Adobe XD Design
 
 [Download Design](https://drive.google.com/file/d/1HK9A7abmGQj0jKDYWO6LZ14sjsLBJU5I/view?usp=sharing)
